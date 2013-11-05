@@ -1,0 +1,79 @@
+<html>
+<head>
+		<script src="jquery-1.5.2.min.js"></script>
+		<script src="jquery.maskedinput-1.3.min.js"></script>
+
+<title>Cadastro</title>
+</head>
+	<script>
+		jQuery(function($){
+		       $("#campoData").mask("9999-99-99");
+		       $("#campoTelefone").mask("(999) 999-9999");
+		       $("#campoSenha").mask("***-****");
+		});
+	</script>
+<body>
+<form name="frmcadastrar" id="id_cadastrar" action="bd_cadastro">
+  <table >
+    <tr>
+      <td>Nome completo</td>
+      <td colspan="3"><input type="text" size="55px" name="txtlogin" value=""></td>
+    </tr>
+    <tr>
+      <td>RG</td>
+      <td><input type="text" name="txtlogin" value=""></td>
+      <td>CPF</td>
+      <td><input type="text" name="txtlogin" value=""></td>
+    </tr>
+    <tr>
+      <td>Data de Nascimento</td>
+      <td><input type="text" id="campoData" name="txtdata"></td> <!--colocar mascara no campo-->
+      <td>Sexo</td>
+      <td>M<input type="radio" name="txtsexo">
+          F<input type="radio" name="txtsexo"></td> <!--colocar mascara no campo-->
+    </tr>
+    <tr>
+      <td>Telefone</td>
+      <td><input type="text" id="campoTelefone" name="txttelefone"></td> <!--colocar mascara no campo-->
+      <td>E-mail</td>
+      <td><input type="text" name="txtlogin" value=""></td>
+    </tr>
+    <tr>
+      <td>Login</td>
+      <td><input type="text" name="txtlogin" value=""></td>
+      <td>Senha</td>
+      <td><input type="text" name="txtsenha" value=""></td>
+    </tr>
+  </table>
+  <hr>
+  <table>
+    <tr>
+      <td>Rua</td>
+      <td colspan="2"><input type="text" name="txtrua" size="55px" value=""></td>
+      <td>Número
+      <input name="numero" type="text" size="2px" class="text"/></td>
+    </tr>
+    <tr>
+      <td>Bairro</td>
+      <td><input name="bairro" type="text" class="text" value=""  maxlength="70" >
+      <td>Cidade
+      <input name="txtcidade" type="text" class="text" value="" maxlength="70" ></td>
+      <td>CEP
+      <input type="text" name="txtcep" value="" maxlength="9"></td>
+    </tr>
+    <tr>
+      <td>Complemento</td>
+      <td><input name="txtcomplemento" type="text" maxlength="20"/></td>
+      <td>Estado
+      <input name="txtestado" type="text" ></td>
+      <td>País
+      <input name="txpais" type="text" ></td>
+    </tr>
+  </table>
+<input type="button" name="cancelar" value="Cancelar" onClick="history.go(-1)" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
+<input type="submit" name="cadastrar" value="Cadastrar" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
+
+</form>
+</body>
+</html>
+</html>

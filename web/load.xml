@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"  standalone="yes"?>
+<main>
+   <entry name="games">
+     <code>
+        <![CDATA[
+            <div class="sidebar">
+                CATEGORIAS
+                <ul>
+                    <li>
+                        <a href="#estrategia" class="button s-nine normal"><span class="s-third est"></span>Estratégia</a>
+                    </li>
+                    <li>
+                        <a href="#corrida" class="button s-nine right normal"><span class="s-third cor"></span>Corrida</a>
+                    </li>
+                    <li>
+                        <a href="#acao" class="button s-nine normal"><span class="s-third acao"></span>Ação</a>
+                    </li>
+                    <li>
+                        <a href="#aventura" class="button s-nine right normal"><span class="s-third aven"></span>Aventura</a>
+                    </li>
+                    <li>
+                        <a href="#esporte" class="button s-nine normal"><span class="s-third esp"></span>Esporte</a>
+                    </li>
+                    <li>
+                        <a href="#rpg" class="button s-nine right normal"><span class="s-third rpg"></span>RPG</a>
+                    </li>
+                </ul>
+            </div>
+             <div class="result">
+                <div class="accordion">
+                    <p class="search">
+                        Resultados para: <span></span>
+                    </p>
+                    <p class="count">
+                        Total:<span></span>
+                    </p>
+                </div>
+             </div>
+        ]]>
+     </code>
+   </entry>
+	<entry name="sobre">
+            <code>
+               <![CDATA[
+                    sobre web 2.0
+               ]]>
+            </code>
+	</entry>
+	<entry name="contato">
+         <code>
+            <![CDATA[
+                contato 2
+            ]]>
+       </code>
+	</entry>
+	<entry name="minhaconta">
+		<code>
+			<![CDATA[
+                            conta
+			]]>
+		</code>
+    </entry>
+    <entry name="meuspedidos">
+        <code>
+                <![CDATA[
+                        pedidos
+                ]]>
+        </code>
+    </entry>
+    <entry name="televendas">
+            <code>
+                    <![CDATA[
+                            televendas carregado
+                    ]]>
+            </code>
+    </entry>
+    <entry name="notfound">
+            <code>
+                    <![CDATA[
+                            Terá pagina especial para link não encontrado
+                    ]]>
+            </code>
+    </entry>
+</main>

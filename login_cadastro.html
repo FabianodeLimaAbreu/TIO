@@ -1,0 +1,58 @@
+
+
+
+<!--Separar os fieldset's e colocar o nome dos input dentro da caixa-->
+
+
+
+<html>
+<head>
+<title>Login/Cadastro</title>
+
+<script language="javascript" type="text/javascript">
+
+function Cadastrar(){
+  location.href = "cadastrar.html";
+}
+
+</script>
+</head>
+<body>
+
+  <form id="id_login" name="login" action="tela_login.jsp">
+<table>
+  <tr>
+    <td>
+  	  <fieldset style="width: 270px">
+  	    <legend><span style="color: green; ">Já tenho cadastro</span></legend>
+  	    <table height="115px">
+  	      <tr>
+  	        <td>Login</td>
+  	        <td><input type="text" name="txtlogin" value=""></td>
+  	      </tr>
+  	      <tr>
+  	        <td>Senha</td>
+  	        <td><input type="text" name="txtlogin" value=""></td>
+  	      </tr>
+	    </table>
+	    <br>
+	    <input type="submit" name="login" value="Entrar" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
+	    <a href="esqueceu_senha.jsp">Esqueceu sua senha?</a>
+      </fieldset>
+    </td>
+
+    <td> <!--Dar espaço--->
+      <fieldset style="width: 300px ">
+        <legend><span style="color: green; ">Não tenho cadastro</span></legend>
+          <p>O cadastro é gratuito e fácil de fazer. Continue para criar a sua conta e
+          possuir acesso para à realização da compra de seus jogos.</p>
+		  <br><br>
+		  <input type="button" name="cadastrar" value="Cadastrar-se" onclick="Cadastrar();" onMouseOver="style.cursor='pointer'; style.cursor='hand'";><!--colocar para direita-->
+      </fieldset>
+    </td>
+  </tr>
+</table>
+
+  </form>
+</body>
+</html>

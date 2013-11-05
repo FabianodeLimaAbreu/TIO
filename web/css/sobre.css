@@ -1,0 +1,17 @@
+p{
+    font-size:11pt;
+    margin-top:4px;
+    color:#EBEBE8;
+    text-align:left;
+    margin-left: 15px;
+}
+
+.content .title p {
+    color:#0a80c1;
+  }
+
+  ul{
+    color:#EBEBE8;
+    margin-left: 15px;
+
+  }
