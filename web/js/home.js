@@ -39,23 +39,23 @@ var PageMenu=function(){
     //Classe PageMenu
     this.change=function(atual){
         //Ao mudar a opção do PageMenu selecionado
-    	$(this.elMenu).find("a").bind("click",function(){
+    	$(this.elPageMenu).find("a").bind("click",function(){
             //Caso o menu clicado for igual ao hash, forçamos o carrinho a fechar, já que o hash não foi mudado
                 if($(this).attr("href").replace("#","")===atual){
-                    $(this).hasClass("sel") || Element.elMenu.find("a").removeClass("sel"),$(this).addClass("sel");
+                    $(this).hasClass("sel") || Element.elPageMenu.find("a").removeClass("sel"),$(this).addClass("sel");
                 }  		
     	});
         if(atual===""){
             //Caso não tenha hash, a tela sera games então o menu será games. Então a tela atual é games
-            atual="games";
+            atual="home";
         }
-        $(this.elMenu).find("a").each(function(){
+        $(this.elPageMenu).find("a").each(function(){
             //Muda o menu de acordo com o hash
             if($(this).attr("href").replace("#","")===atual){
-                $(this).hasClass("sel") || Element.elMenu.find("a").removeClass("sel"),$(this).addClass("sel");
+                $(this).hasClass("sel") || Element.elPageMenu.find("a").removeClass("sel"),$(this).addClass("sel");
             }
             else{
-            	Element.elMenu.find("a").removeClass("sel");
+            	Element.elPageMenu.find("a").removeClass("sel");
             }
         });
     };
@@ -78,6 +78,10 @@ var Home=function(){
             newsflash=new News();
             slide.render("#slider");
         }
+        $(".user-box a[href='#modal']").bind("click",function(){
+        	modal=new Modal();
+        	modal.load();
+        });
     };
     
     var Slides=function(){
@@ -113,7 +117,7 @@ var Home=function(){
 		                    },200);
 		            }
 		    });
-		    newsflash.render(".news");
+		    //newsflash.render(".news");
 		    /*topSelles=new TopSelles();
 		    topSelles.load();*/
 		};
@@ -128,14 +132,22 @@ var Home=function(){
 				html+="<a href='"+Element.json[i].link+"' target='_blank'><img src='images/news/"+Element.json[i].url+"'/>"+"<p>"+Element.json[i].title+"</p></a>";
 			}
 			this.el.html(html);
-			/*this.news=xml.find("news");
-			this.news.each(function(){
-				newsflash.el.append(
-					"<a href='"+$(this).attr("link")+"' target='_blank'><img src='images/news/"+$(this).attr("url")+"'/>"+
-					"<p>"+$(this).attr("title")+"</p></a>"
-				);
-			});*/
 		};
+	};
+	
+	var Modal=function(){
+	    //Classe modal
+	    this.load=function(){
+	       console.log("Modal carrega");
+	        this.render();
+	    };
+	    this.render=function(){
+	        if(!this.loading){
+	        	console.log("Modal abre");
+	            //menu.change("sobre");
+	            //this.elContainer.fadeIn();
+	        }
+	    };
 	};
 };
 
@@ -159,7 +171,7 @@ var TeleVendas=function(){
     };
     this.render=function(){
         if(!this.loading){
-            menu.disable();
+            //menu.disable();
             this.elContainer.fadeIn();
         }
     };
@@ -177,7 +189,7 @@ var Sobre=function(){
     };
     this.render=function(){
         if(!this.loading){
-            menu.change("sobre");
+            //menu.change("sobre");
             this.elContainer.fadeIn();
         }
     };
@@ -195,13 +207,14 @@ var NotFound=function(){
     };
     this.render=function(){
         if(!this.loading){
-            menu.disable();
+            //menu.disable();
             this.elContainer.fadeIn();
         }
     };
 };
 
 PageMenu.prototype=Element;
+Modal.prototype=Element;
 Home.prototype=Element;
 Slides.prototype=Element;
 News.prototype=Element;
