@@ -46,13 +46,6 @@
                ]]>
             </code>
 	</entry>
-	<entry name="contato">
-         <code>
-            <![CDATA[
-                contato 2
-            ]]>
-       </code>
-	</entry>
 	<entry name="minhaconta">
 		<code>
 			<![CDATA[
@@ -71,6 +64,13 @@
             <code>
                     <![CDATA[
                             televendas carregado
+                    ]]>
+            </code>
+    </entry>
+    <entry name="home">
+            <code>
+                    <![CDATA[
+                            Conteudo da home
                     ]]>
             </code>
     </entry>

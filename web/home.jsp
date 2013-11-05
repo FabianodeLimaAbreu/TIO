@@ -67,9 +67,9 @@
                                     </div>
                             </div>
                             <div class="slides">
-                                    <img src="images/home/diablo.jpg"/>
+                                    <img src="images/home/battlefield.jpg"/>
                                     <div class="caption">
-                                            <p>Teste</p>
+                                            <p>Battlefield 4</p>
                                     </div>
                             </div>
                         </div>
