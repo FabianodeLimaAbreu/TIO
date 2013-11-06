@@ -36,7 +36,7 @@ nav .holder a.sel{background: url(../images/gui.png) no-repeat;background-positi
 #container{height:auto;top:210px;}
 .home #container{top:160px;}
 #container .content{position: relative;float:left;width: 960px;height: auto;min-height: 600px;padding:10px;background:url(../images/content_bkg.png) repeat;}
-.home #container .content{padding: 0}
+.home #container .content{padding: 0;width: 960px;height: auto;}
 #tabs{position: relative;float:left; margin: 0;}
 
 /*Sidebar*/
@@ -251,3 +251,15 @@ table.simple-table thead{background-color: #585858; color:#f5f5f5;border:1px sol
 .pagination li{list-style-type:none;float:left;margin-left:15px}
 .pagination li a{width:19px;height:19px;background:url(../images/gui.png) no-repeat;background-position:-290px -281px;display:block;overflow:hidden;text-indent:-99px;font-size:0;line-height:0}
 .pagination li.current a{background-position:-310px -281px}
+
+/*TopVendas*/
+.topVendas {position:relative;float: right;height:380px;width: 260px;padding:10px 0;}
+.topVendas table{position:relative;float: right;height:370px;width: 260px;background:url(../images/gui.png) no-repeat;background-position:0 -575px ;padding:0;}
+
+/*News*/
+.news {position:relative;float: left;height:auto;width: 960px;margin: 0;padding: 10px 0 0;background:none;}
+.news a{position:relative;float:left;margin:0 5px 10px;width:310px;height:205px;display:block;cursor:pointer;}
+.news a img{margin:2px;width:306px;height:auto}
+.news a p{font-size:11pt;margin-top:4px;color:#f5f5f5;text-align:left}
+.news a:hover img{margin:0;border:2px solid #fa8200}
+.news a:hover p{color:#fa8200}

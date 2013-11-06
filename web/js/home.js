@@ -6,8 +6,10 @@ function bug(msg){
 var xml;
 var Element={
 	elPageMenu:$(".pagemenu"),
-    loading:!1,
-    change:function(hash,json){
+        loading:!1,
+        elContent:$(".content"),
+        elContainer:$("#container"),
+        change:function(hash,json){
         this.json=json;
         menu=new PageMenu();
         menu.change(hash);
@@ -85,54 +87,54 @@ var Home=function(){
     };
     
     var Slides=function(){
-		this.render=function(el){
-		    //bug("render slides");
-		    $("#slider").slides({
-		            preload: true,
-		            preloadImage: 'images/loader2.gif',
-		            play: 4000,
-		            pause: 2500,
-		            slideSpeed:700,
-		            animationStart: function(current){
-		                    $('.caption').animate({
-		                            bottom:-35
-		                    },100);
-		                    if (window.console && console.log) {
-		                            //retorna o numero do slide atual
-		                            console.log('animationStart on slide: ', current);
-		                    };
-		            },
-		            animationComplete: function(current){
-		                    $('.caption').animate({
-		                            bottom:0
-		                    },200);
-		                    if (window.console && console.log) {
-		                            //retorna o numero do slide atual
-		                            console.log('animationComplete on slide: ', current);
-		                    };
-		            },
-		            slidesLoaded: function() {
-		                    $('.caption').animate({
-		                            bottom:0
-		                    },200);
-		            }
-		    });
-		    //newsflash.render(".news");
-		    /*topSelles=new TopSelles();
-		    topSelles.load();*/
-		};
+            this.render=function(el){
+                //bug("render slides");
+                $("#slider").slides({
+                    preload: true,
+                    preloadImage: 'images/loader2.gif',
+                    play: 4000,
+                    pause: 2500,
+                    slideSpeed:700,
+                    animationStart: function(current){
+                            $('.caption').animate({
+                                    bottom:-35
+                            },100);
+                            if (window.console && console.log) {
+                                    //retorna o numero do slide atual
+                                    console.log('animationStart on slide: ', current);
+                            };
+                    },
+                    animationComplete: function(current){
+                            $('.caption').animate({
+                                    bottom:0
+                            },200);
+                            if (window.console && console.log) {
+                                    //retorna o numero do slide atual
+                                    console.log('animationComplete on slide: ', current);
+                            };
+                    },
+                    slidesLoaded: function() {
+                            $('.caption').animate({
+                                    bottom:0
+                            },200);
+                    }
+                });
+                newsflash.render(".news");
+                /*topSelles=new TopSelles();
+                topSelles.load();*/
+            };
 	};
 	
 	var News=function(){
-		this.render=function(el){
-			var i,length,html="";
-			length=Element.json.length;
-			this.el=$(el);
-			for(i=0;i<length;i++){
-				html+="<a href='"+Element.json[i].link+"' target='_blank'><img src='images/news/"+Element.json[i].url+"'/>"+"<p>"+Element.json[i].title+"</p></a>";
-			}
-			this.el.html(html);
-		};
+            this.render=function(el){
+                var i,length,html="";
+                length=Element.json.length;
+                this.el=$(el);
+                for(i=0;i<length;i++){
+                        html+="<a href='"+Element.json[i].link+"' target='_blank'><img src='images/news/"+Element.json[i].url+"'/>"+"<p>"+Element.json[i].title+"</p></a>";
+                }
+                this.el.html(html);
+            };
 	};
 	
 	var Modal=function(){
@@ -214,10 +216,7 @@ var NotFound=function(){
 };
 
 PageMenu.prototype=Element;
-Modal.prototype=Element;
 Home.prototype=Element;
-Slides.prototype=Element;
-News.prototype=Element;
 NotFound.prototype=Element;
 //TopSelles.prototype=Element;
 TeleVendas.prototype=Element;
@@ -239,13 +238,13 @@ $.getJSON( "js/ajax/news.js", function(json) {
                 }).trigger("hashchange"); //trigger para assim que entrar no sistema já chamar o metodo acima
              }
     });
-	console.log( "success" );
+	console.log("success");
 })
 .fail(function() {
     ///Em caso de falha
-  console.log( "error" );
+  console.log("error");
 })
 .always(function() {
     //Sempre
-  console.log( "complete" );
+  console.log("complete");
 });
