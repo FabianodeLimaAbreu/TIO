@@ -254,7 +254,21 @@ table.simple-table thead{background-color: #585858; color:#f5f5f5;border:1px sol
 
 /*TopVendas*/
 .topVendas {position:relative;float: right;height:380px;width: 260px;padding:10px 0;}
-.topVendas table{position:relative;float: right;height:370px;width: 260px;background:url(../images/gui.png) no-repeat;background-position:0 -575px ;padding:0;}
+.topVendas .toptable{position:relative;float: right;height:370px;width: 260px;background:url(../images/gui.png) no-repeat;background-position:0 -575px ;padding:0;}
+
+.toptable td {background: #282828;}
+.toptable td.selles {background: #202020}
+
+
+.content_top{position: relative;float: right;width: 260px;height:380px;display:block;border-top: none; overflow:hidden;background-color:#282828}
+.scrollContent tr{position: relative;float: left;height: 60px;width: auto;padding:0;border-right:1px solid #EBEBE8;color:#585858;font-size: 16pt;vertical-align: text-top}
+.scrollContent td{width:455px;}
+.scrollContent td+td{width:120px;text-align: center}
+.scrollContent td+td+td{width:150px;}
+.scrollContent td+td+td+td{width:130px}
+.scrollContent td+td+td+td+td{width:85px}
+
+
 
 /*News*/
 .news {position:relative;float: left;height:auto;width: 960px;margin: 0;padding: 10px 0 0;background:none;}

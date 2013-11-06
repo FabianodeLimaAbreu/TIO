@@ -76,8 +76,13 @@
                     </div>
                     <div class="topVendas">
                         <h1>Top Vendas</h1>
-                        <table>
-                            
+                        <table class="toptable">
+                            <tbody class="content_top">
+                                <tr>
+                                    <td><img src="images/games/cart/1.jpg"/>Fable III<span>RPG</span></td>
+                                    <td class="selles">Total de Vendas: 55</td>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                     <div class="news">
