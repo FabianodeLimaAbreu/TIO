@@ -70,7 +70,58 @@
     <entry name="home">
             <code>
                     <![CDATA[
-                            Conteudo da home
+                        <div id="slider">
+                            <div class="slides_container">
+                                <div class="slides">
+                                        <img src="images/home/diablo.jpg"/>
+                                        <div class="caption">
+                                                <p>Diablo III</p>
+                                        </div>
+                                </div>
+                                <div class="slides">
+                                        <img src="images/home/gta5.jpg"/>
+                                        <div class="caption">
+                                                    <p>GTA V</p>
+                                        </div>
+                                </div>
+                                <div class="slides">
+                                        <img src="images/home/battlefield.jpg"/>
+                                        <div class="caption">
+                                                <p>Battlefield 4</p>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="topVendas">
+                            <h1>Top Vendas</h1>
+                            <table class="toptable">
+                                <tbody class="content_top">
+                                    <tr>
+                                        <td><img src="images/games/cart/1.jpg"/><p>Fable III<span>RPG</span></p></td>
+                                        <td class="selles">Total de Vendas: <span>55</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="images/games/cart/1.jpg"/><p>Fable III<span>RPG</span></p></td>
+                                        <td class="selles">Total de Vendas: <span>55</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="images/games/cart/1.jpg"/><p>Fable III<span>RPG</span></p></td>
+                                        <td class="selles">Total de Vendas: <span>55</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="images/games/cart/1.jpg"/><p>Fable III<span>RPG</span></p></td>
+                                        <td class="selles">Total de Vendas: <span>55</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="images/games/cart/1.jpg"/><p>Fable III<span>RPG</span></p></td>
+                                        <td class="selles">Total de Vendas: <span>55</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="news">
+
+                        </div>
                     ]]>
             </code>
     </entry>

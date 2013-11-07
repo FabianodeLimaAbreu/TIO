@@ -41,22 +41,19 @@ var PageMenu=function(){
     //Classe PageMenu
     this.change=function(atual){
         //Ao mudar a opção do PageMenu selecionado
-    	$(this.elPageMenu).find("a").bind("click",function(){
-            //Caso o menu clicado for igual ao hash, forçamos o carrinho a fechar, já que o hash não foi mudado
-                if($(this).attr("href").replace("#","")===atual){
-                    $(this).hasClass("sel") || Element.elPageMenu.find("a").removeClass("sel"),$(this).addClass("sel");
-                }  		
-    	});
         if(atual===""){
             //Caso não tenha hash, a tela sera games então o menu será games. Então a tela atual é games
             atual="home";
         }
         $(this.elPageMenu).find("a").each(function(){
             //Muda o menu de acordo com o hash
+            //alert($(this).attr("href").replace("#","")===atual);
             if($(this).attr("href").replace("#","")===atual){
-                $(this).hasClass("sel") || Element.elPageMenu.find("a").removeClass("sel"),$(this).addClass("sel");
+                Element.elPageMenu.find("a").removeClass("sel"),$(this).addClass("sel");
             }
             else{
+                /*alert(atual);
+                console.log("oi");*/
             	Element.elPageMenu.find("a").removeClass("sel");
             }
         });
@@ -67,7 +64,7 @@ var Home=function(){
 	this.load=function(){
        xml.each(function(){
             if($(this).attr("name")==="home"){
-               //Element.elContent.html($(this).find("code").text());
+               Element.elContent.html($(this).find("code").text());
             }
         });
         this.render();

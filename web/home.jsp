@@ -40,7 +40,7 @@
                             <li><a href="#sobre">SOBRE</a></li> 
                         </ul>
                     </div>
-                    <p>Olá, <span class="name">Etevaldo</span></p>
+                    <p>Olá, <span class="name">Visitante</span></p>
                     <div class="user-box">
                         <ul>
                             <li><a href="#modal">Cadastre-se</a><span class="cadastre"></span><span>|</span>
@@ -49,49 +49,16 @@
                     </div> 
                     <a href="#" class="logo"></a>
                 </div>
+                <!--<div align=center>
+                    <a href='http://contador.s12.com.br'>
+                        <img src='http://contador.s12.com.br/img-5A8bCy7b-23.gif' border='0' alt='contador de visitantes'>
+                    </a>
+                    <script type='text/javascript' src='http://contador.s12.com.br/ad.js?id=5A8bCy7b'></script>
+                </div>-->
             </header>
-            <div id="container" class="holder">
+            <div id="container" class="holder hide">
                 <div class="content">
-                    <div id="slider">
-                        <div class="slides_container">
-                            <div class="slides">
-                                    <img src="images/home/diablo.jpg"/>
-                                    <div class="caption">
-                                            <p>Diablo III</p>
-                                    </div>
-                            </div>
-                            <div class="slides">
-                                    <img src="images/home/gta5.jpg"/>
-                                    <div class="caption">
-                                                <p>GTA V</p>
-                                    </div>
-                            </div>
-                            <div class="slides">
-                                    <img src="images/home/battlefield.jpg"/>
-                                    <div class="caption">
-                                            <p>Battlefield 4</p>
-                                    </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="topVendas">
-                        <h1>Top Vendas</h1>
-                        <table class="toptable">
-                            <tbody class="content_top">
-                                <tr>
-                                    <td><img src="images/games/cart/1.jpg"/>Fable III<span>RPG</span></td>
-                                    <td class="selles">Total de Vendas: 55</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="news">
-                        <!--Carrega as noticias do mundo dos games-->
-                        <!--<a href="index.html" target='_blank'>
-                            <img src='images/news/1.jpg'/>
-                            <p>GTA 5 alcança a marca de US$ 800 milhões no primeiro dia de vendas</p>
-                        </a>-->
-                    </div>
+                    <!--Carreega o conteudo dinamicamente-->
                 </div>
                 <footer>
                     <div class="payform">
