@@ -81,31 +81,36 @@
                 </div>
                 <div class="content">
                     <div class="title">
-                        <p>Sobre</p>
+                        <label>Sobre</label>
                     </div>
                     <div class="info">
                         <p>A Drummond Games é uma empresa especializada na venda de jogos para plataforma PC (Personal Computer), onde disponibiliza para seus clientes uma vasta gama de títulos das maiores produtoras do mundo, como Eletronic Arts, Activision, Sega,Paradox, além dos principais lançamentos indies. Temos o intuito de oferecer aos nossos clientes os melhores preços e produtos aprimando sempre pela qualidade e a satisfação.</p>
 
                         <div class="title">
-                          <p>Missão</p>
+                          <label>Missão</label>
                         </div>
                         <p>Missão: Nossa razão de ser é comercializar e distribuir jogos, com a finalidade de oferecer os melhores jogos (duas vezes a mesma palavra) para a plataforma PC para o entretenimento de nossos clientes.</p>
 
                         <div class="title">
-                          <p>Visão</p>
+                          <label>Visão</label>
                         </div>
                         <p>Visão: Estar entre os principais do mercado e ser referência emcomercialização de jogos no Brasil.</p>
 
                         <div class="title">
-                          <p>Valores</p>
+                          <label>Valores</label>
                         </div>
+                        <div class="lista">
                         <ul>
-                          <li> Satisfação do cliente </li>
-                          <li> Responsabilidade </li>
-                          <li> Segurança </li>
-                          <li> Ética </li>
-                          <li> Confiança </li>
+                          <li> Satisfação do cliente </li>
+                          <li> Responsabilidade </li>
+                          <li> Segurança </li>
+                          <li> Ética </li>
+                          <li> Confiança </li>
                         </ul>
+                        </div>
+                    </div>
+                    <div>
+                      <img src="images/news/games.png" class="img_sobre">
                     </div>
                 </div>
                 <footer>

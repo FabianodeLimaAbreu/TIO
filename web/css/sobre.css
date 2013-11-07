@@ -1,17 +1,8 @@
-p{
-    font-size:11pt;
-    margin-top:4px;
-    color:#EBEBE8;
-    text-align:left;
-    margin-left: 15px;
-}
+p{font-size:11pt;margin-top:4px;color:#EBEBE8;text-align:left;margin-left: 15px;}
 
-.content .title p {
-    color:#0a80c1;
-  }
+.content .title label {position: relative;float: left;font-size: 20pt;margin:15px;color:#0a80c1;}
 
-  ul{
-    color:#EBEBE8;
-    margin-left: 15px;
+.lista ul{float: left;font-size:11pt;color:#EBEBE8;margin-left: 35px;}
+.lista li{list-style-type: square;margin-top:5px;}
 
-  }
+.img_sobre{position: relative;width: 50%;left: 15%;border: thin silver solid; top: 0px; margin-left: 20px;}
