@@ -66,9 +66,9 @@
                         <li>
                             <a href="#sobre" class="button s-one">Sobre</a>
                         </li>
-                        <li>
+                        <!--<li>
                             <a href="#contato" class="button s-one">Contato</a>
-                        </li>
+                        </li>-->
                     </ul>
                 </div>
             </nav>

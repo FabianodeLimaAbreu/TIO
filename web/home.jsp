@@ -30,7 +30,7 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     </head>
     <body>
-        <div id="wrap" class="home">
+        <div id="wrap" class="home hide">
             <!--Wrap de todo o conteudo-->
             <header>
                 <div class="holder">
@@ -74,12 +74,30 @@
                             </div>
                         </div>
                     </div>
+                    <div class="topVendas">
+                        <h1>Top Vendas</h1>
+                        <table class="toptable">
+                            <tbody class="content_top">
+                                <tr>
+                                    <td><img src="images/games/cart/1.jpg"/>Fable III<span>RPG</span></td>
+                                    <td class="selles">Total de Vendas: 55</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="news">
+                        <!--Carrega as noticias do mundo dos games-->
+                        <!--<a href="index.html" target='_blank'>
+                            <img src='images/news/1.jpg'/>
+                            <p>GTA 5 alcança a marca de US$ 800 milhões no primeiro dia de vendas</p>
+                        </a>-->
+                    </div>
                 </div>
                 <footer>
                     <div class="payform">
                         <h1>FORMA DE PAGAMENTO</h1>
                         Boleto<br/>
-                        <span class="button"></span>
+                        <span class="button boleto"></span>
                     </div>
                     <span class="logo_mini"></span>
                     <span class="lock"></span>
