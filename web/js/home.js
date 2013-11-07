@@ -5,14 +5,13 @@ function bug(msg){
 
 var xml;
 var Element={
-	elPageMenu:$(".pagemenu"),
+		elPageMenu:$(".pagemenu"),
         loading:!1,
         elContent:$(".content"),
         elContainer:$("#container"),
         change:function(hash,json){
+		Element.elPageMenu.find("a").removeClass("sel");
         this.json=json;
-        menu=new PageMenu();
-        menu.change(hash);
         console.log("Init do componente");
         if(!hash || hash==="home"){
             home=new Home();
@@ -35,29 +34,6 @@ var Element={
             }
        	}
     }
-};
-
-var PageMenu=function(){
-    //Classe PageMenu
-    this.change=function(atual){
-        //Ao mudar a opção do PageMenu selecionado
-        if(atual===""){
-            //Caso não tenha hash, a tela sera games então o menu será games. Então a tela atual é games
-            atual="home";
-        }
-        $(this.elPageMenu).find("a").each(function(){
-            //Muda o menu de acordo com o hash
-            //alert($(this).attr("href").replace("#","")===atual);
-            if($(this).attr("href").replace("#","")===atual){
-                Element.elPageMenu.find("a").removeClass("sel"),$(this).addClass("sel");
-            }
-            else{
-                /*alert(atual);
-                console.log("oi");*/
-            	Element.elPageMenu.find("a").removeClass("sel");
-            }
-        });
-    };
 };
 
 var Home=function(){
@@ -143,7 +119,6 @@ var Home=function(){
 	    this.render=function(){
 	        if(!this.loading){
 	        	console.log("Modal abre");
-	            //menu.change("sobre");
 	            //this.elContainer.fadeIn();
 	        }
 	    };
@@ -161,6 +136,7 @@ var Home=function(){
 var TeleVendas=function(){
     //Classe televendas
     this.load=function(){
+		Element.elPageMenu.find("a").removeClass("sel"),$("a[href='#televendas']").addClass("sel");
        xml.each(function(){
             if($(this).attr("name")==="televendas"){
                Element.elContent.html($(this).find("code").text());
@@ -179,6 +155,7 @@ var TeleVendas=function(){
 var Sobre=function(){
     //Classe sobre
     this.load=function(){
+		Element.elPageMenu.find("a").removeClass("sel"),$("a[href='#sobre']").addClass("sel");
        xml.each(function(){
             if($(this).attr("name")==="sobre"){
                Element.elContent.html($(this).find("code").text());
@@ -188,7 +165,6 @@ var Sobre=function(){
     };
     this.render=function(){
         if(!this.loading){
-            //menu.change("sobre");
             this.elContainer.fadeIn();
         }
     };
@@ -206,13 +182,11 @@ var NotFound=function(){
     };
     this.render=function(){
         if(!this.loading){
-            //menu.disable();
             this.elContainer.fadeIn();
         }
     };
 };
 
-PageMenu.prototype=Element;
 Home.prototype=Element;
 NotFound.prototype=Element;
 //TopSelles.prototype=Element;
