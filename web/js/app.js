@@ -6,11 +6,13 @@ var xml;
 var Element={
     //Classe mãe
     //Abaixo alguns atribudos da aplicação que serão uteis em outros objetos
+    elPageMenu:$(".pagemenu"),
     elContent:$(".content"),
     elContainer:$("#container"),
     elMenu:$("nav"),
     loading:!1,
     modalPage:$("#cart"),
+    mask:$(".mask"),
     change:function(hash,json){
     //Metodo executado a cada mudança de hash
         $("#search :text").bind({
@@ -81,12 +83,35 @@ var Element={
         //Atualiza BreadCrumb
         this.el=$(".bread-search");
         this.el.find("span").not(".inicial").not(".separador").text(atual);
+    },
+    maskOpen:function(loader){
+        this.loading=!0;
+        $("body").addClass("noscroll");
+        this.mask.fadeIn();
+        if(loader){
+            this.mask.find(".loader").fadeIn();
+        }
+    },
+    maskClose:function(loader){
+        if(loader){
+            setTimeout(function(){
+                $(".mask").fadeOut().find(".loader").fadeOut();
+                $("body").removeClass("noscroll");
+            },1500);
+        }
+        else{
+            $(".mask").fadeOut();
+            $("body").removeClass("noscroll");
+        }
+        this.loading=!1;
     }
+    
 };
 
 var Menu=function(){
     //Classe Menu
     this.change=function(atual){
+        Element.elPageMenu.find("a").removeClass("sel");
         //Ao mudar a opção do menu selecionado
     	$(this.elMenu).find("a").bind("click",function(){
             //Caso o menu clicado for igual ao hash, forçamos o carrinho a fechar, já que o hash não foi mudado
@@ -94,7 +119,7 @@ var Menu=function(){
                     $(".bcart").removeClass("sel");
                     $(this).hasClass("sel") || Element.elMenu.find("a").removeClass("sel"),$(this).addClass("sel");
                     $("#cart").fadeOut();
-                }  		
+                }
     	});
         if(atual===""){
             //Caso não tenha hash, a tela sera games então o menu será games. Então a tela atual é games
@@ -130,7 +155,9 @@ var Cart=function(){
                 menu.disable();
                 Element.close(); //Fecha o modal que estiver aberto, caso esteja
                 Element.modalPage=cart.el; //Indica a classe mãe que o carrinho esta aberto
+                Element.maskOpen(true);
                 cart.render();
+                Element.maskClose(true);
                 return true;
             }
         });
@@ -218,9 +245,9 @@ var Games=function(){
         //this.box;
         if(!this.loading){
             menu.change("games");
-            //$(".mask").fadeIn();
+            Element.maskOpen(true);
             this.accordion.find(".count").find("span").html(Element.json.length);
-            //$(".mask").fadeOut();
+            Element.maskClose(true);
             this.creatBox();
             this.elContainer.fadeIn(); //Exibe o conteudo inserido
         }
@@ -299,6 +326,7 @@ var Games=function(){
                     }
                 }
             }
+
             Element.modalPage=this.el; //Indica a classe mae que o detail está aberto
             Element.open();
             this.el.find(".title a").bind({
@@ -337,6 +365,7 @@ var TeleVendas=function(){
     this.render=function(){
         if(!this.loading){
             menu.disable();
+            Element.elPageMenu.find("a").removeClass("sel"),$("a[href='#televendas']").addClass("sel");
             this.elContainer.fadeIn();
         }
     };
@@ -360,33 +389,17 @@ var Sobre=function(){
     };
 };
 
-var Contato=function(){
-    //Classe Contato
-    this.load=function(){
-       xml.each(function(){
-            if($(this).attr("name")==="contato"){
-               Element.elContent.html($(this).find("code").text());
-            }
-        });
-        this.render();
-    };
-    this.render=function(){
-        if(!this.loading){
-            menu.change("contato");
-            this.elContainer.fadeIn();
-        }
-    };
-};
-
 var MinhaConta=function(){
     //Classe minha conta
-	this.load=function(){
-       xml.each(function(){
-            if($(this).attr("name")==="minhaconta"){
-               Element.elContent.html($(this).find("code").text());
-            }
-        });
-        this.render();
+    this.load=function(){
+        menu.disable();
+        Element.elPageMenu.find("a").removeClass("sel"),$("a[href='#minhaconta']").addClass("sel");
+        xml.each(function(){
+             if($(this).attr("name")==="minhaconta"){
+                Element.elContent.html($(this).find("code").text());
+             }
+         });
+         this.render();
     };
     this.render=function(){
         if(!this.loading){
@@ -398,13 +411,15 @@ var MinhaConta=function(){
 
 var MeusPedidos=function(){
     //Classe meus pedidos
-	this.load=function(){
-       xml.each(function(){
-            if($(this).attr("name")==="meuspedidos"){
-               Element.elContent.html($(this).find("code").text());
-            }
-        });
-        this.render();
+    this.load=function(){
+        menu.disable();
+        Element.elPageMenu.find("a").removeClass("sel"),$("a[href='#meuspedidos']").addClass("sel");
+        xml.each(function(){
+             if($(this).attr("name")==="meuspedidos"){
+                Element.elContent.html($(this).find("code").text());
+             }
+         });
+         this.render();
     };
     this.render=function(){
         if(!this.loading){
@@ -416,17 +431,18 @@ var MeusPedidos=function(){
 
 var NotFound=function(){
         //Classe para tela não encontrada
-	this.load=function(){
-       xml.each(function(){
-            if($(this).attr("name")==="notfound"){
-               Element.elContent.html($(this).find("code").text());
-            }
-        });
-        this.render();
+    this.load=function(){
+        xml.each(function(){
+             if($(this).attr("name")==="notfound"){
+                Element.elContent.html($(this).find("code").text());
+             }
+         });
+         this.render();
     };
     this.render=function(){
         if(!this.loading){
             menu.disable();
+            Element.elPageMenu.find("a").removeClass("sel");
             this.elContainer.fadeIn();
         }
     };
@@ -437,8 +453,6 @@ Menu.prototype=Element;
 Cart.prototype=Element;
 Games.prototype=Element;
 TeleVendas.prototype=Element;
-Sobre.prototype=Element;
-Contato.prototype=Element;
 MinhaConta.prototype=Element;
 NotFound.prototype=Element;
 MeusPedidos.prototype=Element;

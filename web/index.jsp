@@ -31,10 +31,10 @@
     </head>
     <body>
         <div id="wrap" class="hide">
-            <!--Wrap de todo o conteudo-->
             <div class="mask">
                 <img src="images/loader.GIF" class="loader">
             </div>
+            <!--Wrap de todo o conteudo-->
             <header>
                 <div class="holder">
                     <div class="pagemenu">
@@ -170,10 +170,10 @@
                         </table>
                         <div class="button-box">
                             TOTAL<div><span>R$</span>1079,82</div>
-                            <ul>
-                                <li><a href="#" class="button send"></a></li>
-                                <li><a href="#" class="button cont"></a></li>
-                            </ul>
+                                <ul>
+                                    <li><a href="#" class="button send"></a></li>
+                                    <li><a href="#" class="button cont"></a></li>
+                                </ul>
                         </div>
                     </div>
                 </div>

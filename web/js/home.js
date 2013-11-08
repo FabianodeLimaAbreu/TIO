@@ -5,14 +5,15 @@ function bug(msg){
 
 var xml;
 var Element={
-		elPageMenu:$(".pagemenu"),
+	elPageMenu:$(".pagemenu"),
         loading:!1,
         elContent:$(".content"),
         elContainer:$("#container"),
         change:function(hash,json){
-		Element.elPageMenu.find("a").removeClass("sel");
+	Element.elPageMenu.find("a").removeClass("sel");
         this.json=json;
         console.log("Init do componente");
+
         if(!hash || hash==="home"){
             home=new Home();
             home.load();
@@ -53,10 +54,11 @@ var Home=function(){
             newsflash=new News();
             slide.render("#slider");
         }
-        $(".user-box a[href='#modal']").bind("click",function(){
+        /*$(".user-box a").bind("click",function(a){
+                a.preventDefault();
         	modal=new Modal();
         	modal.load();
-        });
+        });*/
     };
     
     var Slides=function(){
@@ -155,7 +157,7 @@ var TeleVendas=function(){
 var Sobre=function(){
     //Classe sobre
     this.load=function(){
-		Element.elPageMenu.find("a").removeClass("sel"),$("a[href='#sobre']").addClass("sel");
+        Element.elPageMenu.find("a").removeClass("sel"),$("a[href='#sobre']").addClass("sel");
        xml.each(function(){
             if($(this).attr("name")==="sobre"){
                Element.elContent.html($(this).find("code").text());

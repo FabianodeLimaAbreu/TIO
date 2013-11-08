@@ -41,12 +41,10 @@
                         </ul>
                     </div>
                     <p>Olá, <span class="name">Visitante</span></p>
-                    <div class="user-box">
-                        <ul>
-                            <li><a href="#modal">Cadastre-se</a><span class="cadastre"></span><span>|</span>
-                            <li><span class="logout"></span><a href="index.jsp">Login</a></li>
-                        </ul>
-                    </div> 
+                    <ul class="user-box">
+                        <li><a href="#modal">Cadastre-se</a><span class="cadastre"></span><span>|</span>
+                        <li><span class="logout"></span><a href="index.jsp">Login</a></li>
+                    </ul> 
                     <a href="#" class="logo"></a>
                 </div>
                 <!--<div align=center>
