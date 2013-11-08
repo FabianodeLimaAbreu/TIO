@@ -1,9 +1,9 @@
 html, body{height:100%; overflow:hidden;background:url(../images/body_bkg.png);background-repeat: repeat}
 body{position: fixed; overflow: hidden; width: 100%;;font:normal 400 10pt 'Arial', sans-serif; color:#b4b3b3;}
-form{width: 100%; margin-left: 15px;}
+form{width: 100%;}
 
 
-.label p{position: relative;float: left;font-size: 15pt;color:#0a80c1;height: 30px;}
+.label p{position: relative;float: left;font-size: 16pt;color:#0a80c1;height: 30px;}
 .label {float:left; width:70%;font-size:11pt; border: 0px solid red;}
 .label_input{float: left; width: 70%; height:25px; border: 0px solid red;}
 
