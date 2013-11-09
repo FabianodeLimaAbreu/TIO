@@ -122,6 +122,9 @@
                             </div>
                         </div>
                         <div class="topVendas">
+                            <div class="mask_default mask_vendas">
+                                <img src="images/spinner.gif" class="loader">
+                            </div>
                             <h1>Top Vendas</h1>
                             <table class="toptable">
                                 <tbody class="content_top">
@@ -149,7 +152,9 @@
                             </table>
                         </div>
                         <div class="news">
-
+                            <div class="mask_default mask_news">
+                                <img src="images/spinner.gif" class="loader">
+                            </div>
                         </div>
                     ]]>
             </code>

@@ -50,6 +50,8 @@ var Home=function(){
         if(!this.loading){
             //menu.change("sobre");
             this.elContainer.fadeIn();
+            $(".mask_vendas").fadeIn().find(".loader").fadeIn();
+            $(".mask_news").fadeIn().find(".loader").fadeIn();
             slide=new Slides();
             newsflash=new News();
             slide.render("#slider");
@@ -108,7 +110,10 @@ var Home=function(){
                 for(i=0;i<length;i++){
                         html+="<a href='"+Element.json[i].link+"' target='_blank'><img src='images/news/"+Element.json[i].url+"'/>"+"<p>"+Element.json[i].title+"</p></a>";
                 }
-                this.el.html(html);
+                this.el.append(html);
+                setTimeout(function(){
+                    $(".mask_default").fadeOut().find(".loader").fadeOut();
+                },1500);
             };
 	};
 	
