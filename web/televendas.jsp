@@ -26,7 +26,7 @@
         <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
         <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
         <link href="css/common.min.css" rel="stylesheet" type="text/css" media="screen">
-        <link href="css/cadastro.css" rel="stylesheet" type="text/css" media="screen">
+        <link href="css/televendas.css" rel="stylesheet" type="text/css" media="screen">
         <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <link href="css/iehack.css" rel="stylesheet">
@@ -45,10 +45,17 @@
             <div id="container" class="holder">
               <div class="content">
                   <div class="title">
-                      <p>Cadastro de Clientes</p>
+                      <p>Televendas</p>
                   </div>
                   <form name="frmcadastrar" id="id_cadastrar" action="bd_cadastro">
-                  <p>xxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <div class="title">
+                      <h2>O que é</h2>
+                    </div>
+                      <p>É um serviço de vendas por telefone para você comprar ou tirar dúvidas sobre produtos e preços, com toda comodidade. Nossos atendentes são treinados para oferecer a você o melhor atendimento, com rapidez e qualidade.</p>
+                    <div class="title">
+                      <h2>Horário de atendimento</h2>
+                    </div>
+                    <p>De segunda-feira a sexta-feira, das 8h às 22h. Sábado, domingo e feriados das 8h às 20h.</p>
                   </form>
             </div>
                 <footer>
