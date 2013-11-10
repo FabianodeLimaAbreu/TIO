@@ -69,6 +69,37 @@
                     <p>Copyright © 2013 - Drummond Games - Todos os direitos reservados</p>
                 </footer>
             </div>
+            <div id="modal" class="hide">
+                <div class="modal-content">
+                    <a href="#close" class="button s-third"></a>
+                    <!--<span class="big-icon"></span>-->
+                    <div class="modal-text">
+                        <div class="login">
+                            <h2>Já tenho cadastro</h2>
+                            <form action="index.jsp" method="post">
+                                <label for="user">Login</label><input type="text" name="user" class="button" autocomplete="off"/>
+                                <label for="senha">Senha</label><input type="password" name="senha" class="button" autocomplete="off"/>
+                                <a href="#forgot">Esqueceu sua senha?</a>
+                                <input type="button" value="" class="button"/>
+                            </form>
+                        </div>
+                        <div class="cadastro">
+                            <h2>Não tenho cadastro</h2
+                            <p>
+                                O cadastro é gratuito e fácil de fazer. Continue
+                                para criar a sua conta e possuir acesso para à 
+                                realização da compra de seus jogos.O cadastro é gratuito 
+                                e fácil de fazer. Continue para criar a sua conta e possuir 
+                                acesso para à realização da compra de seus jogos.
+                            </p>
+                            <a href="cadastro.jsp" class="button bcadastro"></a>
+                        </div>
+                        <div class="status">
+                            <!--<p>Usuário ou senha inválido(s)</p>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/slides.min.jquery.js"></script>

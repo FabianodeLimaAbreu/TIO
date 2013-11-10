@@ -48,7 +48,6 @@ var Home=function(){
     };
     this.render=function(){
         if(!this.loading){
-            //menu.change("sobre");
             this.elContainer.fadeIn();
             $(".mask_vendas").fadeIn().find(".loader").fadeIn();
             $(".mask_news").fadeIn().find(".loader").fadeIn();
@@ -56,11 +55,11 @@ var Home=function(){
             newsflash=new News();
             slide.render("#slider");
         }
-        /*$(".user-box a").bind("click",function(a){
+        $(".user-box a").bind("click",function(a){
                 a.preventDefault();
         	modal=new Modal();
         	modal.load();
-        });*/
+        });
     };
     
     var Slides=function(){
@@ -120,14 +119,24 @@ var Home=function(){
 	var Modal=function(){
 	    //Classe modal
 	    this.load=function(){
+                $("#modal").fadeIn();
 	       console.log("Modal carrega");
 	        this.render();
 	    };
 	    this.render=function(){
-	        if(!this.loading){
-	        	console.log("Modal abre");
-	            //this.elContainer.fadeIn();
-	        }
+                console.log("Modal abre");
+                $(".modal-content a[href='#close']").click(function(a){
+                    a.preventDefault();
+                    $("#modal").fadeOut();
+                });
+                $("input").focus(function(){
+                    $(this).parent().find("label").fadeOut();
+                }).blur(function(){
+                    $(this).val()||$(this).parent().find("label").fadeIn();
+                });
+                $("#modal input[type='button']").click(function(){
+                    $("#modal form").submit();
+                });
 	    };
 	};
 };
@@ -153,7 +162,6 @@ var TeleVendas=function(){
     };
     this.render=function(){
         if(!this.loading){
-            //menu.disable();
             this.elContainer.fadeIn();
         }
     };

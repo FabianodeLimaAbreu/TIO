@@ -34,7 +34,7 @@
             <!--Wrap de todo o conteudo-->
             <header>
                 <div class="holder">
-                    <a href="#" class="logo"></a>
+                    <a href="home.jsp" class="logo"></a>
                 </div>
             </header>
             <div id="container" class="holder">
@@ -130,7 +130,7 @@
                     </div>
                     <div class="main">
                       <input type="submit" name="cadastrar" value="Cadastrar" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
-                      <input type="button" name="cancelar" value="Cancelar" onClick="history.go(-1)" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
+                      <input type="button" name="cancelar" value="Cancelar" onClick="window.location.href='home.jsp';" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
                     </div>
                   </form>
             </div>

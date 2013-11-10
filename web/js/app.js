@@ -76,7 +76,6 @@ var Element={
     },
     close:function(){
             //Pega o modal aberto e fecha. Caso a janela abaixo seja
-           //cart.verify(this.json.length);
            this.modalPage.fadeOut();
     },
     breadBox:function(atual){
@@ -85,7 +84,6 @@ var Element={
         this.el.find("span").not(".inicial").not(".separador").text(atual);
     },
     maskOpen:function(loader){
-        this.loading=!0;
         $("body").addClass("noscroll");
         this.mask.fadeIn();
         if(loader){
@@ -97,13 +95,14 @@ var Element={
             setTimeout(function(){
                 $(".mask").fadeOut().find(".loader").fadeOut();
                 $("body").removeClass("noscroll");
+                Element.loading=!1;
+                console.log(Element.loading);
             },1500);
         }
         else{
             $(".mask").fadeOut();
             $("body").removeClass("noscroll");
         }
-        this.loading=!1;
     }
     
 };
@@ -115,11 +114,11 @@ var Menu=function(){
         //Ao mudar a opção do menu selecionado
     	$(this.elMenu).find("a").bind("click",function(){
             //Caso o menu clicado for igual ao hash, forçamos o carrinho a fechar, já que o hash não foi mudado
-                if($(this).attr("href").replace("#","")===atual){
-                    $(".bcart").removeClass("sel");
-                    $(this).hasClass("sel") || Element.elMenu.find("a").removeClass("sel"),$(this).addClass("sel");
-                    $("#cart").fadeOut();
-                }
+            if($(this).attr("href").replace("#","")===atual){
+                $(".bcart").removeClass("sel");
+                $(this).hasClass("sel") || Element.elMenu.find("a").removeClass("sel"),$(this).addClass("sel");
+                $("#cart").fadeOut();
+            }
     	});
         if(atual===""){
             //Caso não tenha hash, a tela sera games então o menu será games. Então a tela atual é games
@@ -158,7 +157,6 @@ var Cart=function(){
                 Element.maskOpen(true);
                 cart.render();
                 Element.maskClose(true);
-                return true;
             }
         });
    };
@@ -242,19 +240,12 @@ var Games=function(){
         this.result=$(".result");
         this.accordion=$(".result .accordion");
         this.sidebar=$(".result .sidebar");
-        //this.box;
-        if(!this.loading){
             menu.change("games");
             Element.maskOpen(true);
             this.accordion.find(".count").find("span").html(Element.json.length);
             Element.maskClose(true);
             this.creatBox();
             this.elContainer.fadeIn(); //Exibe o conteudo inserido
-        }
-        else{
-            return false;
-        }
-        return true;
     };
     this.creatBox=function(){
         //Metodo que cria os games na tela
@@ -363,11 +354,9 @@ var TeleVendas=function(){
         this.render();
     };
     this.render=function(){
-        if(!this.loading){
             menu.disable();
             Element.elPageMenu.find("a").removeClass("sel"),$("a[href='#televendas']").addClass("sel");
             this.elContainer.fadeIn();
-        }
     };
 };
 
@@ -382,10 +371,8 @@ var Sobre=function(){
         this.render();
     };
     this.render=function(){
-        if(!this.loading){
             menu.change("sobre");
-            this.elContainer.fadeIn();
-        }
+            Element.elContainer.fadeIn();
     };
 };
 
@@ -402,10 +389,8 @@ var MinhaConta=function(){
          this.render();
     };
     this.render=function(){
-        if(!this.loading){
             menu.disable();
             this.elContainer.fadeIn();
-        }
     };
 };
 
@@ -422,10 +407,8 @@ var MeusPedidos=function(){
          this.render();
     };
     this.render=function(){
-        if(!this.loading){
             menu.disable();
             this.elContainer.fadeIn();
-        }
     };
 };
 
@@ -440,11 +423,9 @@ var NotFound=function(){
          this.render();
     };
     this.render=function(){
-        if(!this.loading){
             menu.disable();
             Element.elPageMenu.find("a").removeClass("sel");
             this.elContainer.fadeIn();
-        }
     };
 };
 
