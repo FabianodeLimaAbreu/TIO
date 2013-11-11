@@ -76,23 +76,37 @@
                     <div class="modal-text">
                         <div class="login">
                             <h2>Já tenho cadastro</h2>
-                            <form action="index.jsp" method="post">
+                            <form action="index.jsp" method="post" class="sign">
                                 <label for="user">Login</label><input type="text" name="user" class="button" autocomplete="off"/>
-                                <label for="senha">Senha</label><input type="password" name="senha" class="button" autocomplete="off"/>
+                                <label for="senha" >Senha</label><input type="password" name="senha" class="button" autocomplete="off"/>
                                 <a href="#forgot">Esqueceu sua senha?</a>
-                                <input type="button" value="" class="button"/>
+                                <input type="button" value="" class="button blogin"/>
+                            </form>
+                            <form action="index.jsp" method="post" class="changepass hide">
+                                <label for="user">Login</label><input type="text" name="user" class="button" autocomplete="off"/>
+                                <label for="senha">Nova senha</label><input type="password" name="senha" class="button" autocomplete="off"/>
+                                <label for="confsenha">Confirme a Nova senha</label><input type="password" name="confsenha" class="button" autocomplete="off"/>
+                                <input type="button" value="" class="button forgot"/>
+                                <input type="button" value="" class="button back"/>
                             </form>
                         </div>
-                        <div class="cadastro">
-                            <h2>Não tenho cadastro</h2
+                        <div class="cadastro default">
+                            <h2>Não tenho cadastro</h2>
                             <p>
                                 O cadastro é gratuito e fácil de fazer. Continue
                                 para criar a sua conta e possuir acesso para à 
-                                realização da compra de seus jogos.O cadastro é gratuito 
-                                e fácil de fazer. Continue para criar a sua conta e possuir 
-                                acesso para à realização da compra de seus jogos.
+                                realização da compra de seus jogos.
                             </p>
                             <a href="cadastro.jsp" class="button bcadastro"></a>
+                        </div>
+                        
+                        <div class="cadastro pass hide">
+                            <h2>Recuperação de senha</h2>
+                            <p>
+                                Preenchendo os campos ao lado com seu atual login cadastrado na 
+                                Drummond Games e a nova senha desejada, sua senha será alterada 
+                                e você poderá realizar seu login normalmente.
+                            </p>
                         </div>
                         <div class="status">
                             <!--<p>Usuário ou senha inválido(s)</p>-->
