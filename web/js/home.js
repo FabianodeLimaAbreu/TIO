@@ -15,11 +15,13 @@ var Element={
         console.log("Init do componente");
 
         if(!hash || hash==="home"){
+            this.elContent.css("padding","0px");
             home=new Home();
             home.load();
 	        //topSelles.render(".top_selles");
         }
         else{
+            this.elContent.css("padding","10px");
             switch(hash){
             	case "sobre":
                     sobre=new Sobre();

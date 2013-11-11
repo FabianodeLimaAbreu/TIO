@@ -48,7 +48,7 @@ nav .holder a.sel{background: url(../images/gui.png) no-repeat;background-positi
 #container{height:auto;top:210px;}
 .home #container{top:160px;}
 #container .content{position: relative;float:left;width: 960px;height: auto;min-height: 600px;padding:10px;background:url(../images/content_bkg.png) repeat;}
-.home #container .content{padding: 0;width: 960px;height: auto;}
+.home #container .content{width: 960px;height: auto;}
 #tabs{position: relative;float:left; margin: 0;}
 
 /*Sidebar*/
