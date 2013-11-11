@@ -192,7 +192,38 @@ var Cart=function(){
    };
     this.render=function(){
         //Abre o carrinho
+        var length,car,i,html="",json,item,select;
+        select="<select name='unidade' class='button'><option value='1' name='quantidade'>1 Unidade</option><option value='2' name='quantidade'>2 Unidade</option><option value='3' name='quantidade'>3 Unidade</option><option value='4' name='quantidade'>4 Unidade</option><option value='5' name='quantidade'>5 Unidade</option><option value='6' name='quantidade'>6 Unidade</option><option value='7' name='quantidade'>7 Unidade</option><option value='8' name='quantidade'>8 Unidade</option><option value='9' name='quantidade'>9 Unidade</option></select>";
+        json=Element.json;
+        car=this.input.val().replace(" ","");
+        length=car.length;
+        for(i=0;i<length;i++){
+        	item=parseInt(car[i])-1;
+        	if(!isNaN(item)){
+        		alert(item);
+        		if(i%2){
+        			html+="<tr class='"+json[item].cod+" odd'>";
+	        	}
+	        	else{
+	        		html+="<tr class='"+json[item].cod+"'>";
+	        	}
+	        	html+="<td><img src='./images/games/cart/"+json[item].cod+".jpg'/>"+json[item].name+"</td>";
+	        	html+="<td class='val'>"+json[item].preco+"</td>";
+	        	html+="<td>"+select+"</td>";
+	        	html+="<td><input type='text' value='' disabled='disable'/></td>";
+	        	html+="<td><a href='#"+json[item].cod+"' class='button'></a></td></tr>";
+        	}
+        }
+        $("#cart tbody.scrollContent").html(html);
         Element.open();
+        
+        $("#cart tr a").click(function(a){
+        	a.preventDefault();
+        	bug(Element.input.val().replace(" ",""));
+        	cart.remove(a.attr("href").replace("#",""));
+        	a.parent().remove();
+        	bug(Element.input.val().replace(" ",""));
+        });
     };
     this.verify=function(length){
         //metodo que verifica a quantidade de itens no carrinho para atribuir classe ao botão dos games
