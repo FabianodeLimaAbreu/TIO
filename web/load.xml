@@ -95,7 +95,7 @@
                             <div class="title">
                                 <p>Televendas</p>
                             </div>
-                            <form name="frmcadastrar" id="id_cadastrar" action="bd_cadastro">
+                            <div class="televendas">
 
                                 <div class="center_num">
                                   <span class="espaco_tel_1">4003-1234</span><span class="espaco_tel_2">0XX11 4003-1234</span>
@@ -116,7 +116,7 @@
                               </div>
                               <p>Ligações para o serviço 4003 feitas de telefone fixo têm custo de ligação local + imposto locais, conforme o Estado de origem; chamadas feitas de celulares têm custo de ligação + imposto para celulares, conforme a operadora. Essas tarifas, cobradas nas respectivas faturas, não são válidas para ligação com DDD. 
                                  <br /><br />Para verificar se a cidade de onde você está falando permite chamadas sem o código da operadora, tente discar diretamente 4003-1000.</p>
-                            </form>
+                            </div>
                     ]]>
             </code>
     </entry>

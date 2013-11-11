@@ -42,14 +42,10 @@
             <div class="title">
               <p>Minha conta</p>
             </div>
-
-              <div class="subtitle">
-                <p>Pedidos</p>
-              </div>
               <div>
-                <input type="button" name="pedidos_aberto" value="Pedidos Abertos">
-                <input type="button" name="ultimos_aberto" value="Últimos Pedidos">
-                <input type="button" name="todos_aberto" value="Todos Abertos">
+                <input type="button" name="dados_pessoais" value="Alterar Dados Pessoais">
+                <input type="button" name="alt_end" value="Alterar Endereço">
+                <input type="button" name="alt_senha" value="Alterar Senha">
               </div>
           </div>
           <footer>
