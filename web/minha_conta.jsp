@@ -42,11 +42,11 @@
             <div class="title">
               <p>Minha conta</p>
             </div>
-              <div>
-                <input type="button" name="dados_pessoais" value="Alterar Dados Pessoais">
-                <input type="button" name="alt_end" value="Alterar Endereço">
-                <input type="button" name="alt_senha" value="Alterar Senha">
-              </div>
+            <div class="minha_conta">
+              <input type="button" class="button_end" name="alt_end" value="Alterar Endereço">
+              <input type="button" class="button_dados" name="dados_pessoais" value="Alterar Dados Pessoais">
+              <input type="button" class="button_senha" name="alt_senha" value="Alterar Senha">
+            </div>
           </div>
           <footer>
             <span class="logo_mini"></span>
