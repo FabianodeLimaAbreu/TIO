@@ -97,7 +97,7 @@
                                 </tr>
                             </thead>
                             <tbody class="scrollContent">
-                                <tr>
+                                <!--<tr>
                                     <td><img src="images/games/cart/1.jpg"/>Fable III</td>
                                     <td class="val">69,99</td>
                                     <td>
@@ -119,57 +119,11 @@
                                     <td>
                                         <a href="#" class="button"></a>
                                     </td>
-                                </tr>
-                                <tr class="odd">
-                                    <td><img src="images/games/cart/1.jpg"/>Fable III</td>
-                                    <td class="val">69,99</td>
-                                    <td>
-                                        <select name="unidade" class="button">
-                                            <option value="1" name="quantidade">1 Unidade</option>
-                                            <option value="2" name="quantidade">2 Unidade</option>
-                                            <option value="3" name="quantidade">3 Unidade</option>
-                                            <option value="4" name="quantidade">4 Unidade</option>
-                                            <option value="5" name="quantidade">5 Unidade</option>
-                                            <option value="6" name="quantidade">6 Unidade</option>
-                                            <option value="7" name="quantidade">7 Unidade</option>
-                                            <option value="8" name="quantidade">8 Unidade</option>
-                                            <option value="9" name="quantidade">9 Unidade</option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                        <input type="text" value="629,91" disabled="disable"/>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="button"></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><img src="images/games/cart/1.jpg"/>Fable III</td>
-                                    <td class="val">69,99</td>
-                                    <td>
-                                        <select name="unidade" class="button">
-                                            <option value="1" name="quantidade">1 Unidade</option>
-                                            <option value="2" name="quantidade">2 Unidade</option>
-                                            <option value="3" name="quantidade">3 Unidade</option>
-                                            <option value="4" name="quantidade">4 Unidade</option>
-                                            <option value="5" name="quantidade">5 Unidade</option>
-                                            <option value="6" name="quantidade">6 Unidade</option>
-                                            <option value="7" name="quantidade">7 Unidade</option>
-                                            <option value="8" name="quantidade">8 Unidade</option>
-                                            <option value="9" name="quantidade">9 Unidade</option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                        <input type="text" value="629,91" disabled="disable"/>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="button"></a>
-                                    </td>
-                                </tr>
+                                </tr>-->
                             </tbody>
                         </table>
                         <div class="button-box">
-                            TOTAL<div><span>R$</span>1079,82</div>
+                            TOTAL<div><!--<span>R$</span>1079,82--></div>
                                 <ul>
                                     <li><a href="#" class="button send"></a></li>
                                     <li><a href="#" class="button cont"></a></li>

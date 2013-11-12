@@ -192,7 +192,7 @@ var Cart=function(){
    };
     this.render=function(){
         //Abre o carrinho
-        var length,car,i,html="",json,item,select;
+        var length,car,i,html="",json,item,select,total=0;
         select="<select name='unidade' class='button'><option value='1' name='quantidade'>1 Unidade</option><option value='2' name='quantidade'>2 Unidade</option><option value='3' name='quantidade'>3 Unidade</option><option value='4' name='quantidade'>4 Unidade</option><option value='5' name='quantidade'>5 Unidade</option><option value='6' name='quantidade'>6 Unidade</option><option value='7' name='quantidade'>7 Unidade</option><option value='8' name='quantidade'>8 Unidade</option><option value='9' name='quantidade'>9 Unidade</option></select>";
         json=Element.json;
         car=this.input.val().replace(" ","");
@@ -200,7 +200,6 @@ var Cart=function(){
         for(i=0;i<length;i++){
         	item=parseInt(car[i])-1;
         	if(!isNaN(item)){
-        		alert(item);
         		if(i%2){
         			html+="<tr class='"+json[item].cod+" odd'>";
 	        	}
@@ -208,22 +207,36 @@ var Cart=function(){
 	        		html+="<tr class='"+json[item].cod+"'>";
 	        	}
 	        	html+="<td><img src='./images/games/cart/"+json[item].cod+".jpg'/>"+json[item].name+"</td>";
-	        	html+="<td class='val'>"+json[item].preco+"</td>";
+	        	html+="<td class='val'>"+json[item].preco.replace(".",",")+"</td>";
 	        	html+="<td>"+select+"</td>";
-	        	html+="<td><input type='text' value='' disabled='disable'/></td>";
+	        	html+="<td><input type='text' value='' disabled='disable' class='disabled'/></td>";
 	        	html+="<td><a href='#"+json[item].cod+"' class='button'></a></td></tr>";
         	}
         }
-        $("#cart tbody.scrollContent").html(html);
-        Element.open();
-        
+        $("#cart tbody.scrollContent").html(html);        
         $("#cart tr a").click(function(a){
+                var id=$(this).attr("href").replace("#","");
         	a.preventDefault();
-        	bug(Element.input.val().replace(" ",""));
-        	cart.remove(a.attr("href").replace("#",""));
-        	a.parent().remove();
-        	bug(Element.input.val().replace(" ",""));
+                $("a[href='#"+id+"']").removeClass("remove-cart");
+        	cart.remove(id);
+        	$(this).closest("tr").remove();
+                
         });
+        this.el.find("select").change(function(){
+            var preco;
+            preco=parseFloat($(this).closest("tr").find(".val").text().replace(",","."));
+            $(this).closest("tr").find("td input").val($(this).val()*preco);
+            total+=preco;
+            cart.price(total);
+        }).trigger("change");
+        Element.open();
+        $("#cart .send").click(function(a){
+            a.preventDefault();
+            alert("ok");
+        });
+    };
+    this.price=function(total){
+        this.el.find(".button-box").find("div").html("<span>R$ </span>"+String(total).replace(".",","));
     };
     this.verify=function(length){
         //metodo que verifica a quantidade de itens no carrinho para atribuir classe ao botão dos games
