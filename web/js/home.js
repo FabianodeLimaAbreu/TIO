@@ -41,6 +41,7 @@ var Element={
 
 var Home=function(){
 	this.load=function(){
+		//Carregar xml da Home
        xml.each(function(){
             if($(this).attr("name")==="home"){
                Element.elContent.html($(this).find("code").text());
@@ -58,6 +59,7 @@ var Home=function(){
             slide.render("#slider");
         }
         $(".user-box a").bind("click",function(a){
+        	//Chama o metodo de abertura do modal de login
                 a.preventDefault();
         	modal=new Modal();
         	modal.load();
@@ -66,7 +68,7 @@ var Home=function(){
     
     var Slides=function(){
             this.render=function(el){
-                //bug("render slides");
+            	//Carrega slides
                 $("#slider").slides({
                     preload: true,
                     preloadImage: 'images/loader2.gif',
@@ -105,6 +107,7 @@ var Home=function(){
 	
 	var News=function(){
             this.render=function(el){
+            	//Carrega noticias
                 var i,length,html="";
                 length=Element.json.length;
                 this.el=$(el);
@@ -113,6 +116,7 @@ var Home=function(){
                 }
                 this.el.append(html);
                 setTimeout(function(){
+                	//Remove a mascara
                     $(".mask_default").fadeOut().find(".loader").fadeOut();
                 },1500);
             };
@@ -121,7 +125,7 @@ var Home=function(){
 	var Modal=function(){
 	    //Classe modal
 	    this.load=function(){
-               $("#modal").fadeIn();
+             $("#modal").fadeIn();
 	        this.render();
 	    };
 	    this.render=function(){
@@ -159,6 +163,7 @@ var Home=function(){
                 });
 	    };
             this.inicial=function(){
+            	//O padrao inicial do modal
                 $(".changepass").addClass("hide");
                 $("form.sign").removeClass("hide");
                 $(".login").find("h2").text("Já tenho cadastro");

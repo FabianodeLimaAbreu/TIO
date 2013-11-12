@@ -84,6 +84,7 @@ var Element={
         this.el.find("span").not(".inicial").not(".separador").text(atual);
     },
     maskOpen:function(loader){
+    	//Abre a mascara com loader
         $("body").addClass("noscroll");
         this.mask.fadeIn();
         if(loader){
@@ -91,6 +92,7 @@ var Element={
         }
     },
     maskClose:function(loader){
+    	//Fecha a mascara com loader
         if(loader){
             setTimeout(function(){
                 $(".mask").fadeOut().find(".loader").fadeOut();
@@ -192,12 +194,13 @@ var Cart=function(){
    };
     this.render=function(){
         //Abre o carrinho
-        var length,car,i,html="",json,item,select,total=0;
+        var length,car,i,html="",json,item,select,id,preco,total=0;
         select="<select name='unidade' class='button'><option value='1' name='quantidade'>1 Unidade</option><option value='2' name='quantidade'>2 Unidade</option><option value='3' name='quantidade'>3 Unidade</option><option value='4' name='quantidade'>4 Unidade</option><option value='5' name='quantidade'>5 Unidade</option><option value='6' name='quantidade'>6 Unidade</option><option value='7' name='quantidade'>7 Unidade</option><option value='8' name='quantidade'>8 Unidade</option><option value='9' name='quantidade'>9 Unidade</option></select>";
         json=Element.json;
         car=this.input.val().replace(" ","");
         length=car.length;
         for(i=0;i<length;i++){
+        	//Criar as linhas da tabela carrinho com os itens adicionados ao mesmo
         	item=parseInt(car[i])-1;
         	if(!isNaN(item)){
         		if(i%2){
@@ -215,15 +218,16 @@ var Cart=function(){
         }
         $("#cart tbody.scrollContent").html(html);        
         $("#cart tr a").click(function(a){
-                var id=$(this).attr("href").replace("#","");
+        	//Ao clicar no botão remover do carrinho da tabela carrinho
+            id=$(this).attr("href").replace("#","");
         	a.preventDefault();
-                $("a[href='#"+id+"']").removeClass("remove-cart");
+            $("a[href='#"+id+"']").removeClass("remove-cart");
         	cart.remove(id);
         	$(this).closest("tr").remove();
                 
         });
         this.el.find("select").change(function(){
-            var preco;
+        	//Ao alterar a quantidade de itens na compra
             preco=parseFloat($(this).closest("tr").find(".val").text().replace(",","."));
             $(this).closest("tr").find("td input").val($(this).val()*preco);
             total+=preco;
@@ -236,6 +240,7 @@ var Cart=function(){
         });
     };
     this.price=function(total){
+    	//Atualizando o preco total da compra
         this.el.find(".button-box").find("div").html("<span>R$ </span>"+String(total).replace(".",","));
     };
     this.verify=function(length){
@@ -253,7 +258,7 @@ var Cart=function(){
         //Remove itens do carrinho
         var car,id,temp=0;
         car=this.input.val().replace(" ","");
-        var id=parseInt(id);
+        id=parseInt(id);
         this.input.val(car.replace(id," ")); //Pega o id clicado e transforma ele em espaço dentro do input
         //Daqui para baixo é um metodo para atualizar o contador
         car=this.input.val().replace(" ","");
@@ -328,10 +333,10 @@ var Games=function(){
         this.el=$("#detail");
        this.creat=function(id,status_cart){
            //Cria modal de detalhes de acordo com o game clicado
+           var i=0,id=parseInt(id),img;
            this.desc=$(".desc-side");
            this.info=$(".info-side");
            this.require=$(".require-side");
-            var i=0,id=parseInt(id),img;
             for(i=0;i<json.length;i++){
                 //Passa em cada linha do json
                 if(json[i].cod===id){
