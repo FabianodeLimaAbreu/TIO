@@ -174,10 +174,10 @@ footer p{position:absolute;bottom:0;width: 400px;left:50%;margin-left: -200px;fo
 .box{width:190px; height:400px; margin:0 5px 10px;padding: 20px; float: left; display: block;cursor: pointer;border-radius: 5px;}
 .box:hover{background-color: #181818}
 .box img{float: left; width: 190px; height: auto;}
-.box-info{float: left; position: relative; width:190px;height: 120px; /*bottom: 50px;*/;margin-top: 10px;}
-.box h1{float:left;width: 100%; font-size:10pt; /*padding: 2px 2px 0;*/ font-weight:400;color: #00a6ff;}
-.box h4{float:left;width: 100%; font-size:9pt;  /*padding: 0 2px 2px;*/ margin-top: 15px;color: #b4b3b3}
-.box h2{float:left;width: 100%; font-size:16pt;  /*padding: 0 2px 2px;*/ margin-top: 15px;color: #0a80c1}
+.box-info{float: left; position: relative; width:190px;height: 120px;margin-top: 10px;}
+.box h1{float:left;width: 100%; font-size:10pt;font-weight:400;color: #00a6ff;}
+.box h4{float:left;width: 100%; font-size:9pt;margin-top: 15px;color: #b4b3b3}
+.box h2{float:left;width: 100%; font-size:16pt;margin-top: 15px;color: #0a80c1}
 .box span{font-size: 9pt;margin-right: 5px}
 .box .button-cart{position: absolute;left: 30px;bottom: 0;z-index:99 }
 .box-info a{width:130px;height: 20px;;padding: 0;margin: 0;}
@@ -291,12 +291,9 @@ table.simple-table thead{background-color: #585858; color:#f5f5f5;border:1px sol
 
 /*Sobre*/
 .info p{font-size:11pt;margin-top:4px;color:#EBEBE8;text-align:left;margin-left: 15px;}
-
 .content .title h2 {position: relative;float: left;font-size: 16pt;margin:15px;color:#0a80c1;}
-
 .lista ul{float: left;font-size:11pt;color:#EBEBE8;margin-left: 35px;}
 .lista li{list-style-type: square;margin-top:5px;}
-
 .img_sobre{position: relative;width: 50%;left: 15%;border: thin silver solid; top: 0px; margin-left: 20px;}
 
 /*Modal*/

@@ -5,12 +5,12 @@ function bug(msg){
 
 var xml;
 var Element={
-	elPageMenu:$(".pagemenu"),
+		elPageMenu:$(".pagemenu"),
         loading:!1,
         elContent:$(".content"),
         elContainer:$("#container"),
         change:function(hash,json){
-	Element.elPageMenu.find("a").removeClass("sel");
+		Element.elPageMenu.find("a").removeClass("sel");
         this.json=json;
         console.log("Init do componente");
 
@@ -60,7 +60,7 @@ var Home=function(){
         }
         $(".user-box a").bind("click",function(a){
         	//Chama o metodo de abertura do modal de login
-                a.preventDefault();
+            a.preventDefault();
         	modal=new Modal();
         	modal.load();
         });
@@ -147,12 +147,21 @@ var Home=function(){
                     $(".cadastro").addClass("hide");
                     $(".pass").removeClass("hide");
                 });
-                $("input").focus(function(){
-                    /*Ao clicar nos inputs apaga o label*/
+                
+                //$(".label_comp span").click(function(a){ $(a.target).parent().find("input").focus()});
+		        $("input").focus(function(){
+					$(this).parent().find("span").fadeOut();
+				}).blur(function(){
+					if(!$(this).val()) $(this).parent().find("span").fadeIn();
+					//Colocar um label e o span e input dentro ai vou dar parent pegando o label e find span pegando o span daquele label
+				});
+                
+                /*$("input").focus(function(){
+                    //Ao clicar nos inputs apaga o label
                     $(this).parent().find("label").fadeOut();
                 }).blur(function(){
                     $(this).val()||$(this).parent().find("label").fadeIn();
-                });
+                });*/
                 $("input.back").click(function(){
                     /*Ao clicar em voltar*/
                     modal.inicial();
@@ -162,14 +171,14 @@ var Home=function(){
                     $("#modal form").submit();
                 });
 	    };
-            this.inicial=function(){
-            	//O padrao inicial do modal
-                $(".changepass").addClass("hide");
-                $("form.sign").removeClass("hide");
-                $(".login").find("h2").text("Já tenho cadastro");
-                $(".pass").addClass("hide");
-                $(".default").removeClass("hide");
-            };
+        this.inicial=function(){
+        	//O padrao inicial do modal
+            $(".changepass").addClass("hide");
+            $("form.sign").removeClass("hide");
+            $(".login").find("h2").text("Já tenho cadastro");
+            $(".pass").addClass("hide");
+            $(".default").removeClass("hide");
+        };
 	};
 };
 
