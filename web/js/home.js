@@ -149,9 +149,11 @@ var Home=function(){
                 });
                 
                 $("label span").click(function(a){
+                	//Ao clicar sobre o span do label de logins
                     $(a.target).parent().find("input").focus();
                 });
                 $("input").focus(function(){
+                	//Ao dar foco no input do modal de login
                     $(this).parent().find("span").fadeOut();
                 }).blur(function(){
                     if(!$(this).val()) $(this).parent().find("span").fadeIn();

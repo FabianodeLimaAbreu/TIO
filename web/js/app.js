@@ -16,9 +16,11 @@ var Element={
     change:function(hash,json){
     //Metodo executado a cada mudança de hash
         $(".label label").click(function(a){
+        	//Ao clicar no label do input de pesquisa de games
             $(a.target).parent().find("input[type='text']").focus();
         });
         $(".label input[type='text']").focus(function(){
+        	//Ao focar o input de pesquisa do game
             $(this).parent().find("label").fadeOut();
         }).blur(function(){
             if(!$(this).val()) $(this).parent().find("label").fadeIn();
@@ -287,14 +289,14 @@ var Games=function(){
         this.render();
     };
     this.render=function(){
-        //renderiza o accordion
+        //chamada do creatbox com os lançamentos e filtrados
         menu.change("games");      
         filtro=filterBy(Element.json,'lanc',"true");
-        this.creatBox(filtro,"Laçamento");
+        this.creatBox(filtro,"Lançamento");
         this.elContainer.fadeIn(); //Exibe o conteudo inserido
     };
     this.creatBox=function(filtro,search){
-        //Metodo que cria os games na tela
+        //Metodo que cria os games na tela de acordo com o filtro passado com parametro
         this.filter=filtro;
         var i,length=filtro.length,html="";
         this.result=$(".result");
@@ -306,7 +308,7 @@ var Games=function(){
         this.accordion.find(".search").find("span").html(search);
         Element.maskClose(true);
         for(i=0;i<length;i++){
-            //Para cada linha do json cria um box com as propriedades
+            //Para cada linha do json(filtrado) cria um box com as propriedades
             html+="<div class='box' id='"+filtro[i].cod+"'>";
             html+="<img src='./images/games/large/"+filtro[i].cod+".jpg'/>";
             html+="<div class='box-info'><h1>"+filtro[i].name+"</h1><h4>"+filtro[i].category+"</h4><h2><span>R$</span>"+filtro[i].preco.replace(".",",")+"</h2><div class='button-cart'><a href='#"+filtro[i].cod+"' class='button add-cart'></a></div></div>";
@@ -320,20 +322,23 @@ var Games=function(){
             detail.creat($(this).attr("id"),$(this).find("a").hasClass("remove-cart"));
         });
         $(".bsearch").click(function(a){
+        	//Ao se clicar no botão de pesquisa do input pesquisa
             a.preventDefault();
-            var text=$("input[name='search']").val().toLowerCase();
+            var text=$("input[name='search']").val().toLowerCase(); //transforma o texto digitado para letras minusculas
             if(!text){
+            	//Caso não exista texto e o usuario clique em pesquisar
                 return false;
             }
             else{
-                games.sidebar.find("a").removeClass("sel");
-                Element.close();
+                games.sidebar.find("a").removeClass("sel"); //Remove a seleçao de todas as categorias
+                Element.close(); //Fecha qualquer modal que esteja aberto
                 for(var i=0;i<Element.json.length;i++){
+                	//Cria atributo temporario no json de games com o nome do game em letra minuscula
                     Element.json[i].temp=Element.json[i].name.toLowerCase();
                 }
                 filtro=filterBy(Element.json,'temp',text);
                 games.creatBox(filtro,text.initialCaps());
-                $("input[name='search']").val("").blur();
+                $("input[name='search']").val("").blur();  //Retira o blur do input de busca
                 for(var i=0;i<Element.json.length;i++){
                     delete Element.json[i].temp;
                     //Deleta o atributo temporario criado
@@ -341,15 +346,17 @@ var Games=function(){
             }
         });
         this.sidebar.find("a").click(function(a){
+        	//Ao selecionar uma categoria no menu sidebar dos games
             a.preventDefault();
             if(!$(this).hasClass("sel")){
+            	//Caso o link selecionado já não esteja selecionado
                 $(this).addClass("sel");
                 $(this).parent().siblings().each(function(a,b){
                     $(this).find("a").removeClass("sel").addClass("disable");
                 });
                 link=$(this).attr("href").replace("#","");
                 filtro=filterBy(Element.json,'link',link);
-                games.creatBox(filtro,filtro[1].category);
+                games.creatBox(filtro,filtro[1].category); //Chamada do metodo de criação dos box de games
                 return true;
             }
             else{
