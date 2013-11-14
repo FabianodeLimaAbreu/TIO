@@ -15,14 +15,15 @@ var Element={
     mask:$(".mask"),
     change:function(hash,json){
     //Metodo executado a cada mudança de hash
-        $("#search :text").bind({
-            click:function(){
-                $("label.pre").fadeOut();
-            },
-            mouseout:function(){
-                $("label.pre").fadeIn();
-            }
+        $(".label label").click(function(a){
+            $(a.target).parent().find("input[type='text']").focus();
         });
+        $(".label input[type='text']").focus(function(){
+            $(this).parent().find("label").fadeOut();
+        }).blur(function(){
+            if(!$(this).val()) $(this).parent().find("label").fadeIn();
+        });
+        
         menu=new Menu();
         cart=new Cart();
         cart.load();
@@ -274,7 +275,8 @@ var Cart=function(){
 
 var Games=function(){
     //Classe dos games
-    var json=Element.json;
+    var link;
+    this.filter;        
     this.load=function(){
         //Carrega xml dentro do content
        xml.each(function(){
@@ -286,24 +288,28 @@ var Games=function(){
     };
     this.render=function(){
         //renderiza o accordion
+        menu.change("games");      
+        filtro=filterBy(Element.json,'lanc',"true");
+        this.creatBox(filtro,"Laçamento");
+        this.elContainer.fadeIn(); //Exibe o conteudo inserido
+    };
+    this.creatBox=function(filtro,search){
+        //Metodo que cria os games na tela
+        this.filter=filtro;
+        var i,length=filtro.length,html="";
         this.result=$(".result");
         this.accordion=$(".result .accordion");
-        this.sidebar=$(".result .sidebar");
-            menu.change("games");
-            Element.maskOpen(true);
-            this.accordion.find(".count").find("span").html(Element.json.length);
-            Element.maskClose(true);
-            this.creatBox();
-            this.elContainer.fadeIn(); //Exibe o conteudo inserido
-    };
-    this.creatBox=function(){
-        //Metodo que cria os games na tela
-        var i,length=json.length,html="";
+        this.sidebar=$(".sidebar");
+        this.result.find(".box").remove();
+        Element.maskOpen(true);
+        this.accordion.find(".count").find("span").html(filtro.length);
+        this.accordion.find(".search").find("span").html(search);
+        Element.maskClose(true);
         for(i=0;i<length;i++){
             //Para cada linha do json cria um box com as propriedades
-            html+="<div class='box' id='"+json[i].cod+"'>";
-            html+="<img src='./images/games/large/"+json[i].cod+".jpg'/>";
-            html+="<div class='box-info'><h1>"+json[i].name+"</h1><h4>"+json[i].category+"</h4><h2><span>R$</span>"+String(json[i].preco).replace(".",",")+"</h2><div class='button-cart'><a href='#"+json[i].cod+"' class='button add-cart'></a></div></div>";
+            html+="<div class='box' id='"+filtro[i].cod+"'>";
+            html+="<img src='./images/games/large/"+filtro[i].cod+".jpg'/>";
+            html+="<div class='box-info'><h1>"+filtro[i].name+"</h1><h4>"+filtro[i].category+"</h4><h2><span>R$</span>"+filtro[i].preco.replace(".",",")+"</h2><div class='button-cart'><a href='#"+filtro[i].cod+"' class='button add-cart'></a></div></div>";
             html+="</div>";
         };
         this.result.append(html); //Joga o html dentro da div result
@@ -312,6 +318,43 @@ var Games=function(){
             //Ao clicar em algum dos games
             detail=new Detail();
             detail.creat($(this).attr("id"),$(this).find("a").hasClass("remove-cart"));
+        });
+        $(".bsearch").click(function(a){
+            a.preventDefault();
+            var text=$("input[name='search']").val().toLowerCase();
+            if(!text){
+                return false;
+            }
+            else{
+                games.sidebar.find("a").removeClass("sel");
+                Element.close();
+                for(var i=0;i<Element.json.length;i++){
+                    Element.json[i].temp=Element.json[i].name.toLowerCase();
+                }
+                filtro=filterBy(Element.json,'temp',text);
+                games.creatBox(filtro,text.initialCaps());
+                $("input[name='search']").val("").blur();
+                for(var i=0;i<Element.json.length;i++){
+                    delete Element.json[i].temp;
+                    //Deleta o atributo temporario criado
+                }
+            }
+        });
+        this.sidebar.find("a").click(function(a){
+            a.preventDefault();
+            if(!$(this).hasClass("sel")){
+                $(this).addClass("sel");
+                $(this).parent().siblings().each(function(a,b){
+                    $(this).find("a").removeClass("sel").addClass("disable");
+                });
+                link=$(this).attr("href").replace("#","");
+                filtro=filterBy(Element.json,'link',link);
+                games.creatBox(filtro,filtro[1].category);
+                return true;
+            }
+            else{
+                return false;
+            }
         });
         this.result.find(".button-cart a").bind("click",function(a){
             //Ao clicar no botão carrinho
@@ -333,7 +376,12 @@ var Games=function(){
         this.el=$("#detail");
        this.creat=function(id,status_cart){
            //Cria modal de detalhes de acordo com o game clicado
-           var i=0,id=parseInt(id),img;
+           var i=0,id=parseInt(id),img,json;
+           json=games.filter;
+           $('html, body').animate({
+               //Sobre a barra de rolagem
+                scrollTop: 0  
+            }, 800);
            this.desc=$(".desc-side");
            this.info=$(".info-side");
            this.require=$(".require-side");

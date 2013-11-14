@@ -148,20 +148,15 @@ var Home=function(){
                     $(".pass").removeClass("hide");
                 });
                 
-                //$(".label_comp span").click(function(a){ $(a.target).parent().find("input").focus()});
-		        $("input").focus(function(){
-					$(this).parent().find("span").fadeOut();
-				}).blur(function(){
-					if(!$(this).val()) $(this).parent().find("span").fadeIn();
-					//Colocar um label e o span e input dentro ai vou dar parent pegando o label e find span pegando o span daquele label
-				});
-                
-                /*$("input").focus(function(){
-                    //Ao clicar nos inputs apaga o label
-                    $(this).parent().find("label").fadeOut();
+                $("label span").click(function(a){
+                    $(a.target).parent().find("input").focus();
+                });
+                $("input").focus(function(){
+                    $(this).parent().find("span").fadeOut();
                 }).blur(function(){
-                    $(this).val()||$(this).parent().find("label").fadeIn();
-                });*/
+                    if(!$(this).val()) $(this).parent().find("span").fadeIn();
+                });
+                
                 $("input.back").click(function(){
                     /*Ao clicar em voltar*/
                     modal.inicial();

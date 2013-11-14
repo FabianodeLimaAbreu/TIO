@@ -1,3 +1,10 @@
+function filterBy(a, b, c){
+    var d = a.filter(function(d) {
+        return -1 !== d[b].indexOf(c);
+    });
+    return d;
+}
+
 String.prototype.initialCaps = function() {
     return this.replace(/[^|\.|\!|\?/]+/g, function(c, a, d) {
         return 0 > d.charAt(a - 1).search(/[^\s-]/) ? c.charAt(0).toUpperCase() + c.substr(1).toLowerCase() : " " + c.charAt(1).toUpperCase() + c.substr(2).toLowerCase();
@@ -9,7 +16,7 @@ Array.prototype.unique = function() {
     a = [];
     for ( c = this.length; c--; )
         d = this[c], -1 === $.inArray(d, a) && a.unshift(d);
-    return a
+    return a;
 };
 
 Array.prototype.remove=function(v){

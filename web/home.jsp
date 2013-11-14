@@ -77,15 +77,25 @@
                         <div class="login">
                             <h2>Já tenho cadastro</h2>
                             <form action="index.jsp" method="post" class="sign">
-                                <label for="user">Login</label><input type="text" name="user" class="button" autocomplete="off"/>
-                                <label for="senha" >Senha</label><input type="password" name="senha" class="button" autocomplete="off"/>
+                                <label for="user">
+                                    <span>Login</span><input type="text" name="user" class="button" autocomplete="off"/>
+                                </label>
+                                <label for="senha" >
+                                    <span>Senha</span><input type="password" name="senha" class="button" autocomplete="off"/>
+                                </label>
                                 <a href="#forgot">Esqueceu sua senha?</a>
                                 <input type="button" value="" class="button blogin"/>
                             </form>
                             <form action="index.jsp" method="post" class="changepass hide">
-                                <label for="user">Login</label><input type="text" name="user" class="button" autocomplete="off"/>
-                                <label for="senha">Nova senha</label><input type="password" name="senha" class="button" autocomplete="off"/>
-                                <label for="confsenha">Confirme a Nova senha</label><input type="password" name="confsenha" class="button" autocomplete="off"/>
+                                <label for="user">
+                                    <span>Login</span><input type="text" name="user" class="button" autocomplete="off"/>
+                                </label>
+                                <label for="senha">
+                                    <span>Nova Senha</span><input type="password" name="senha" class="button" autocomplete="off"/>
+                                </label>
+                                <label for="confsenha">
+                                    <span>Confirme a Nova senha</span><input type="password" name="confsenha" class="button" autocomplete="off"/>
+                                </label>
                                 <input type="button" value="" class="button forgot"/>
                                 <input type="button" value="" class="button back"/>
                             </form>

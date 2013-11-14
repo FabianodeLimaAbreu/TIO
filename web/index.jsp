@@ -48,7 +48,7 @@
                     <a href="#" class="logo"></a>
                     <form id="search">
                         <div class="label">
-                            <label class="pre" for="search">Digite sua busca</label>
+                            <label class="pre" for="search">Digite o nome do game:</label>
                             <input name="search" type="text" class="text s-two-quart" autocomplete="off" required/>
                             <input type="submit" class="button s-quart neat bsearch" value="" />
                         </div>
@@ -162,16 +162,16 @@
                         <div class="require-side">
                             <h1>Requisitos do Sistema</h1>
                             <dl>
-                                <dt>Processador:</dt>
+                                <dt>Processador: </dt>
                                 <dd class="proc"><!--esperando o conteudo do json--></dd>
-                                <dt>Velocidade do processador:</dt>
+                                <dt>Velocidade do processador: </dt>
                                 <dd class="v_proc"></dd>
-                                <dt>Memória RAM:</dt>
+                                <dt>Memória RAM: </dt>
                                 <dd class="ram"></dd>
-                                <dt>Disco Rígido:</dt><dd class="hd"></h2>
-                                <dt>Placa de Video:</dt><dd class="video"></dd>
-                                <dt>Memória de vídeo:</dt><dd class="m_video"></dd>
-                                <dt>Sistemas Operacionas:</dt><dd class="so"></dd>
+                                <dt>Disco Rígido: </dt><dd class="hd"></h2>
+                                <dt>Placa de Video: </dt><dd class="video"></dd>
+                                <dt>Memória de vídeo: </dt><dd class="m_video"></dd>
+                                <dt>Sistemas Operacionas: </dt><dd class="so"></dd>
                             </dl>
                         </div>
                     </div>

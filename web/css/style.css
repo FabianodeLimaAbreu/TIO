@@ -85,7 +85,7 @@ nav .holder a.sel{background: url(../images/gui.png) no-repeat;background-positi
 .sidebar a:hover .rpg,.sidebar a.sel .rpg{background-position:-245px -490px}
 
 /*Results*/
-.result{position: relative;float:right;width:720px;height:auto;background:url(../images/result_bkg.png) repeat;}
+.result{position: relative;float:right;width:720px;height:auto;min-height: 600px;background:url(../images/result_bkg.png) repeat;}
 #container .title{position:relative;float: left;width: 100%;height: 60px;}
 #container .title p{position: relative;float: left;font-size: 20pt;color:#f5f5f5;margin:15px}
 #detail .title p{color:#00a6ff}
@@ -123,9 +123,7 @@ nav .holder a.sel{background: url(../images/gui.png) no-repeat;background-positi
 .text{float:left;height:38px; margin-left: 40px 20px 0; font-size: 13pt; padding:0 9px; color:#010101; box-shadow:none;display: block;background:url(../images/gui.png) no-repeat;background-position: 0 -45px}
 .text.error{color:#CF1413}
 .label{position:relative; float:left;margin:40px 20px 0}
-.label label{position:absolute;width: 130px; top: 10px; left: 10px;color: #969696;font-size: 13pt;}
-.over{top:1px; width:160px; padding:9px 5px 5px 20px; color:#81878F; cursor:default; position:absolute;}
-.text.off{background:#F2F3F5; color:#ACB6BF;}
+.label label{position:absolute;width: auto; top: 10px; left: 10px;color: #969696;font-size: 13pt;}
 table.simple-table select{position: relative;float: left;width: 110px;height: 25px;color: #585858;padding: 0;margin: 0;background-position: -95px -360px;background-color: #ebebeb;-webkit-appearance: none;outline: 0;margin-left:20px;font-size: 11pt;}
 table.simple-table input[disabled]{position: relative;float: left;width: 88px;height: 23px;background-position: 0 -360px;border: 1px solid #a5a5a5;margin-left: 20px;text-align: center;line-height: 20pt}
 
@@ -312,10 +310,9 @@ table.simple-table thead{background-color: #585858; color:#f5f5f5;border:1px sol
 #modal .bcadastro{position: relative;float: right;;display:block;width: 100px;height: 30px;padding:0;background-position: -75px -1075px;margin-top: 20px}
 #modal .bcadastro:hover{background-position:-75px -1112px}
 #modal form{position: relative;float: left;width: 210px;height: 145px;}
-#modal label{position: absolute;left:12px;top:8px;z-index: 9}
-#modal label[for='senha']{top:47px}
-#modal label[for='confsenha']{top:85px}
-#modal input{position: relative;float: left;;display:block;width: 190px;height: 10px;background-position: 0 -1150px;margin-bottom: 10px}
+#modal label{position: relative;float: left;margin-bottom: 10px;}
+#modal label span{position: absolute;left:12px;top:8px;z-index: 9}
+#modal input{position: relative;float: left;display:block;width: 190px;height: 10px;background-position: 0 -1150px;}
 #modal .login a{float:left; position:relative;line-height: 15pt;color:#084084;font-size: 8pt;cursor: pointer;margin-top: 5px}
 #modal .login a:hover{text-decoration: underline}
 #modal input[type='button']{float: right;width: 70px;height:30px;margin-left: 10px}
