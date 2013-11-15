@@ -93,14 +93,67 @@
                     <input name="txtcidade" type="text" size="20" class="input_cad" maxlength="30" />
                     <input name="txtestado" type="text" size="20" class="input_cad" /> <!--criar combo-->
                   </div>
-                  <div class="main">
-                    <input type="submit" name="cadastrar" value="Alterar" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
-                    <input type="button" name="cancelar" value="Cancelar" onClick="window.location.href='home.jsp';" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
-                 </div>
-              </form>
             </div>
-          </div>
-        </div>
+           <div class="alt_dados">
+                    <div class="label">
+                      <p>Dados Pessoais</p>
+                    </div>
+                    <div class="label">
+                      <label>Nome completo</label>
+                      <div class="label_sexo">
+                        <label>Sexo</label>
+                      </div>
+                    </div>
+                    <div class="label_input">
+                        <input type="text" size="54px" name="txtnome" maxlength="45"/>
+                      <div class="sexo_mf">
+                        <label>M</label><input type="radio" name="txtsexo" />
+                        <label>F</label><input type="radio" name="txtsexo" />
+                      </div>
+                    </div>
+                    <div class="label">
+                      <label>RG</label>
+                      <div class="label_aux1">
+                        <label>CPF</label>
+                      </div>
+                      <div class="label_aux2">
+                        <label>Data de Nascimento</label>
+                      </div>
+                    </div>
+                    <div class="label_input">
+                      <input type="text" name="txtrg" id="campoRg" size="20px"/>
+                      <input type="text" name="txtcpf" id="campoCpf" size="20px" class="input_cad" />
+                      <input type="text" name="txtdata" size="20px" id="campoData" class="input_cad" /> 
+                    </div>
+                    <div class="label">
+                      <label>Telefone</label>
+                      <div class="label_aux1">
+                        <label>E-mail</label>
+                      </div>
+                    </div>
+                    <div class="label_input">
+                      <input type="text" id="campoTelefone" name="txttelefone" size="20" />
+                      <input type="text" name="txtemail" size="35" class="input_cad" maxlength="40"/>
+                    </div>
+                    <div class="label">
+                      <label>Login</label>
+                      <div class="label_aux1">
+                        <label>Senha</label>
+                      </div>
+                    </div>
+                    <div class="label_input">
+                        <input type="text" name="txtlogin" size="20" maxlength="13"/>
+                        <input type="text" name="txtsenha" size="20" class="input_cad" maxlength="15"/>
+                    </div>
+               </div>
+               <div class="main">
+                 <input type="submit" name="cadastrar" value="Alterar" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
+                 <input type="button" name="cancelar" value="Cancelar" onClick="window.location.href='home.jsp';" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
+               </div>
+             </form>
+
+            </div>
+       </div>
           <footer>
             <span class="logo_mini"></span>
               <p>Copyright © 2013 - Drummond Games - Todos os direitos reservados</p>
@@ -110,4 +163,14 @@
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/methods.js"></script>
         <script type="text/javascript" src="js/maskedinput.js"></script>
+        <script>
+          jQuery(function($){
+              $("#campoData").mask("99/99/9999");
+              $("#campoTelefone").mask("(999) 9999-9999");
+              $("#campoCpf").mask("999.999.999 - 99");
+              $("#campoRg").mask("99.999.999 - 9");
+              $("#campoCep").mask("99999 - 999");
+    });
+              $("#campoTelefone").mask("(999) 999-9999");
+	</script>
 </html>
