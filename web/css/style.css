@@ -22,7 +22,7 @@ body.noscroll{position: fixed; overflow: hidden; width: 100%;}
 .home .logo{margin-top: 10px}
 header  .logout{position:relative;float:right;color:#4ba9c8;text-decoration: underline;margin-top: 20px}
 header .logout:hover{color:#f5f5f5}
-header p{position:relative;float:left;margin:50px 0;color: #f5f5f5;}
+header p{position:absolute;bottom:50px;right:190px;color: #f5f5f5;}
 .home header p{margin:20px 0;}
 
 #wrap nav{position:relative;float: left;height:50px; width:100%; background:url(../images/menu_bkg.png) repeat;}
@@ -121,7 +121,7 @@ nav .holder a.sel{background: url(../images/gui.png) no-repeat;background-positi
 /*INPUTS*/ 
 .text{}
 .text{float:left;height:38px; margin-left: 40px 20px 0; font-size: 13pt; padding:0 9px; color:#010101; box-shadow:none;display: block;background:url(../images/gui.png) no-repeat;background-position: 0 -45px}
-.text.error{color:#CF1413}
+.error{color:#CF1413}
 .label{position:relative; float:left;margin:40px 20px 0}
 .label label{position:absolute;width: auto; top: 10px; left: 10px;color: #969696;font-size: 13pt;}
 table.simple-table select{position: relative;float: left;width: 110px;height: 25px;color: #585858;padding: 0;margin: 0;background-position: -95px -360px;background-color: #ebebeb;-webkit-appearance: none;outline: 0;margin-left:20px;font-size: 11pt;}

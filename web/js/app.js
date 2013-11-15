@@ -35,9 +35,13 @@ var Element={
         if(!hash || hash==="games"){
             this.breadBox("Games");
             games=new Games();
+            /*if($("#search").hasClass("hide")){
+                $("#search").removeClass("hide");
+            }*/
             games.load();
         }
         else{
+            //$("#search").addClass("hide");
             switch(hash){
                 case "sobre":
                     sobre=new Sobre();
@@ -145,8 +149,8 @@ var Menu=function(){
 
 var Cart=function(){
    this.el=$("#cart");
-   this.input=$(".itens");
    this.bcart=$("a.bcart");
+   this.itens_venda=[];
    this.load=function(){
        //Da inicio ao load do cart
         $("a.bcart").click(function(a){
@@ -181,19 +185,10 @@ var Cart=function(){
     });
    this.add=function(id){
        //Ao adicionar itens ao carrinho
-        var car,i,length,temp=0;
-        this.input.val(this.input.val()+id); //Pega o valor do hidden e adiciona o id do item clicado
-        //Daqui pra baixo são procedimento para atualizar o contador do carrinho
-        car=this.input.val().replace(" ","");
-        length=car.length;
-        for(i=0;i<length;i++){
-            //Passa por cada posição da string car
-            if(car[i]!==" "){
-                //Os valores que não forem nulos atribuimos mais um a variavel tempo que esta contando quantos temos no carrinho
-                temp++;
-            }
-        }
-        $(this.bcart).find("span").text(temp); //Coloca o valor no span do contador
+        var id=parseInt(id)-1;
+        this.itens_venda.push(Element.json[id]);
+        Element.json[id].incart=true;
+        $(this.bcart).find("span").text(this.itens_venda.length);
    };
     this.render=function(){
         //Abre o carrinho
@@ -239,39 +234,27 @@ var Cart=function(){
         Element.open();
         $("#cart .send").click(function(a){
             a.preventDefault();
-            alert("ok");
+            alert("voltando");
         });
     };
     this.price=function(total){
     	//Atualizando o preco total da compra
         this.el.find(".button-box").find("div").html("<span>R$ </span>"+String(total).replace(".",","));
     };
-    this.verify=function(length){
-        //metodo que verifica a quantidade de itens no carrinho para atribuir classe ao botão dos games
-        var temp,car,i;
-        car=this.input.val().replace(" ","");
-        for(i=0;i<=length;i++){
-            if(car.indexOf(String(i))!==-1){
-                temp = parseInt(car.charAt(car.indexOf(String(i))));  
-                $(".box#"+temp).find("a").addClass("remove-cart");             
-            }
-        }
-    };
+    
     this.remove=function(id){
         //Remove itens do carrinho
-        var car,id,temp=0;
-        car=this.input.val().replace(" ","");
-        id=parseInt(id);
-        this.input.val(car.replace(id," ")); //Pega o id clicado e transforma ele em espaço dentro do input
-        //Daqui para baixo é um metodo para atualizar o contador
-        car=this.input.val().replace(" ","");
-        length=car.length;
+        var id,length,i;
+        var id=parseInt(id)-1;
+        length=this.itens_venda.length;
+        Element.json[id].incart=false;
         for(i=0;i<length;i++){
-            if(car[i]!==" "){
-                temp++;
+            if(this.itens_venda[i].cod===id+1){
+                id=i;
             }
         }
-        $(this.bcart).find("span").text(temp);
+        this.itens_venda.splice(id,1);
+        $(this.bcart).find("span").text(this.itens_venda.length);
     };
 };
 
@@ -311,11 +294,16 @@ var Games=function(){
             //Para cada linha do json(filtrado) cria um box com as propriedades
             html+="<div class='box' id='"+filtro[i].cod+"'>";
             html+="<img src='./images/games/large/"+filtro[i].cod+".jpg'/>";
-            html+="<div class='box-info'><h1>"+filtro[i].name+"</h1><h4>"+filtro[i].category+"</h4><h2><span>R$</span>"+filtro[i].preco.replace(".",",")+"</h2><div class='button-cart'><a href='#"+filtro[i].cod+"' class='button add-cart'></a></div></div>";
+            html+="<div class='box-info'><h1>"+filtro[i].name+"</h1><h4>"+filtro[i].category+"</h4><h2><span>R$</span>"+filtro[i].preco.replace(".",",")+"</h2><div class='button-cart'>";
+            if(!filtro[i].incart){
+                html+="<a href='#"+filtro[i].cod+"' class='button add-cart'></a></div></div>";
+            }
+            else{
+                html+="<a href='#"+filtro[i].cod+"' class='button add-cart remove-cart'></a></div></div>";
+            }
             html+="</div>";
         };
         this.result.append(html); //Joga o html dentro da div result
-        cart.verify(length);
         this.result.find(".box").bind("click",function(){
             //Ao clicar em algum dos games
             detail=new Detail();
@@ -557,7 +545,7 @@ $.getJSON( "js/ajax/games.js", function(json) {
                     //Depois de tudo exibe a pagina que por enquanto esta oculta
                     $("#wrap").fadeIn();
                 }).trigger("hashchange"); //trigger para assim que entrar no sistema já chamar o metodo acima
-                $(".bcart").find("span").text($(".itens").val().replace(" ","").length); /*Verifica a quantidade de itens no carrinho e atualiza o botao*/
+                //$(".bcart").find("span").text($(".itens").val().replace(" ","").length); /*Verifica a quantidade de itens no carrinho e atualiza o botao*/
              }
     });
     console.log( "success" );
