@@ -342,17 +342,21 @@ table.simple-table thead{background-color: #585858; color:#f5f5f5;border:1px sol
 .button-conta:hover { border-bottom: 1px solid #cccccc; border-top: 2px solid #666666; border-right: 1px solid #cccccc; border-left: 2px solid #666666;} 
 //Div de baixo
 .divdebaixo{position: relative; float: left }
-.alt_end{float: left;}
 form{width: 100%; margin-left: 15px;}
+
+.alt_end{display: none;}
+.alt_dados{}
 .divdebaixo .label p{position: relative;float: left;font-size: 15pt;color:#0a80c1;height: 30px;}
 .divdebaixo .label {width:70%; font-size:11pt; border: 0px solid blue;}
-.divdebaixo .label label{position: relative; float:left; margin-top:-30px; font-size:11pt; border: 1px solid red;}
+.divdebaixo .label label{position: relative; width: -30%; float:left; margin-top:-30px; font-size:11pt; border: 1px solid red;}
 .divdebaixo .label_input{float: left; width: 70%; height:25px; border: 0px solid green;}
 
 .divdebaixo .label .label_aux1{margin-left: 203px; margin-top: -16px;}
 .divdebaixo .label .label_aux2{margin-left: 405px; margin-top: -16px;}
+.divdebaixo .label .label_sexo{margin-left: 450px; margin-top: -16px;}
 .divdebaixo .label .label_num{float: right; margin-right: 245px; }
 
 .label_input .input_cad{margin-left: 50px;}
+.label_input .sexo_mf{float: right; margin-right: 175px; }
 .label_input .input_num{margin-left: 20px;}
 
