@@ -57,29 +57,26 @@
             </div>
             <div class="divdebaixo">
               <div class="alt_end">
-                  <div class="title">
-                    <p>Alterar Endereço</p>
-                  </div>
+                  <!--Você não esta usando o id dos input pra nada então você pode remove-los-->
                   <form name="frmcadastrar" id="id_alt_end" action="bd_cadastro">
-                  <div class="label">
-                    <label>Rua</label>
-                    <label class="label_num">Número</label>
-                  </div>
-                  <div class="label_input">
-                     <input type="text" name="txtrua" size="54px" maxlength="50"/>
-                     <input name="txtnumero" type="text" size="3px" class="input_num" maxlength="5"/>
-                  </div>
-                  <div class="label">
-                    <label>CEP</label>
-                    <div class="label_aux1">
-                      <label>Complemento</label>
-                    </div>
-                  </div>
-                  <div class="label_input">
-                    <input type="text" name="txtcep" id="campoCep"/>
-                    <input name="txtcomplemento" type="text" class="input_cad" maxlength="20" />
-                  </div>
-                  <div class="label">
+                  <label for="txtrua">
+                      <span>Rua: </span>
+                      <input type="text" name="txtrua" size="54px" maxlength="50"/>
+                  </label>
+                  <label for="txtnumero">
+                      <span>Número: </span>
+                      <input name="txtnumero" type="text" size="3px" class="input_num" maxlength="5"/>
+                  </label>
+                  <label for="txtcep">
+                      <span>CEP: </span>
+                      <input type="text" name="txtcep" id="campoCep"/>
+                  </label>
+                  <label for="txtcomplemento">
+                      <span>Complemento: </span>
+                      <input name="txtcomplemento" type="text" class="input_cad" maxlength="20" />
+                  </label>
+                  
+                  <!--<div class="label">
                     <label>Bairro</label>
                     <div class="label_aux1">
                       <label>Cidade</label>
@@ -93,6 +90,13 @@
                     <input name="txtcidade" type="text" size="20" class="input_cad" maxlength="30" />
                     <input name="txtestado" type="text" size="20" class="input_cad" /> <!--criar combo-->
                   </div>
+                  <!--</div>-->
+                  <div class="main">
+                    <input type="submit" name="cadastrar" value="Alterar" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
+                    <input type="button" name="cancelar" value="Cancelar" onClick="window.location.href='home.jsp';" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
+                 </div>
+              </form>
+              </div>
             </div>
            <div class="alt_dados">
                     <div class="label">

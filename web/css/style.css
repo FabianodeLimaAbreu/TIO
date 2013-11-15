@@ -333,18 +333,20 @@ table.simple-table thead{background-color: #585858; color:#f5f5f5;border:1px sol
 .espaco_loc_2{float: right; margin-right: 230px}
 
 /*Minha Conta*/
-//Botões
-.minha_conta ul{position: relative; width: 940px; padding: 10px; height: 60px; float: left;}
-.minha_conta li {margin-top: 10px; float: left; margin-left: 130px;}
-.button-conta {font-size: 10pt; font-weight: bold; padding: 4px; background-color: #575756; color: #fff; text-decoration: none;} 
+/*Botões*/
+.minha_conta{position: relative; width: 960px;height: 35px; float: left;}
+.minha_conta ul{position: absolute;width: 480px;height:35px;left:50%;margin-left: -240px;}
+ul.ul_conta li {margin-top: 10px; float: left; margin-left: 30px;}
+.button-conta {font-size: 10pt; font-weight: bold; height:30px;padding: 5px;width:auto;  background-color: #575756; color: #fff; text-decoration: none;} 
 .button-conta:link, 
 .button-conta:visited {border-top: 1px solid #cccccc; border-bottom: 2px solid #666666; border-left: 1px solid #cccccc; border-right: 2px solid #666666;} 
 .button-conta:hover { border-bottom: 1px solid #cccccc; border-top: 2px solid #666666; border-right: 1px solid #cccccc; border-left: 2px solid #666666;} 
-//Div de baixo
-.divdebaixo{position: relative; float: left }
-form{width: 100%; margin-left: 15px;}
+/*Div de baixo*/
+.divdebaixo{position: relative; float: left ;width: 960px;height: auto;margin-top: 30px;}
+form{margin-left: 15px;width: 600px;;border:1px solid red} /*Mude o tamanho do formulario se a sua linha nao estiver cabendo*/
+.alt_end{position: relative; float: left ;width: 960px;}
+.divdebaixo label{float: left;margin-right: 30px;margin-bottom: 20px}
 
-.alt_end{display: none;}
 .alt_dados{}
 .divdebaixo .label p{position: relative;float: left;font-size: 15pt;color:#0a80c1;height: 30px;}
 .divdebaixo .label {width:70%; font-size:11pt; border: 0px solid blue;}
