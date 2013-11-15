@@ -343,11 +343,11 @@ ul.ul_conta li {margin-top: 10px; float: left; margin-left: 30px;}
 .button-conta:hover { border-bottom: 1px solid #cccccc; border-top: 2px solid #666666; border-right: 1px solid #cccccc; border-left: 2px solid #666666;} 
 /*Div de baixo*/
 .divdebaixo{position: relative; float: left ;width: 960px;height: auto;margin-top: 30px;}
-form{margin-left: 15px;width: 600px;;border:1px solid red} /*Mude o tamanho do formulario se a sua linha nao estiver cabendo*/
+.divdebaixo form{margin-left: 15px;width: 600px;;border:1px solid red} /*Mude o tamanho do formulario se a sua linha nao estiver cabendo*/
 .alt_end{position: relative; float: left ;width: 960px;}
 .divdebaixo label{float: left;margin-right: 30px;margin-bottom: 20px}
 
-.alt_dados{}
+.alt_dados{display:none}
 .divdebaixo .label p{position: relative;float: left;font-size: 15pt;color:#0a80c1;height: 30px;}
 .divdebaixo .label {width:70%; font-size:11pt; border: 0px solid blue;}
 .divdebaixo .label label{position: relative; width: -30%; float:left; margin-top:-30px; font-size:11pt; border: 1px solid red;}

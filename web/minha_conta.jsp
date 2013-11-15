@@ -89,15 +89,12 @@
                     <input name="txtbairro" type="text" size="20" maxlength="21" />
                     <input name="txtcidade" type="text" size="20" class="input_cad" maxlength="30" />
                     <input name="txtestado" type="text" size="20" class="input_cad" /> <!--criar combo-->
+                        <div class="main">
+                            <input type="submit" name="cadastrar" value="Alterar" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
+                            <input type="button" name="cancelar" value="Cancelar" onClick="window.location.href='home.jsp';" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
+                         </div>
+                      </form>
                   </div>
-                  <!--</div>-->
-                  <div class="main">
-                    <input type="submit" name="cadastrar" value="Alterar" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
-                    <input type="button" name="cancelar" value="Cancelar" onClick="window.location.href='home.jsp';" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
-                 </div>
-              </form>
-              </div>
-            </div>
            <div class="alt_dados">
                     <div class="label">
                       <p>Dados Pessoais</p>
@@ -149,14 +146,13 @@
                         <input type="text" name="txtlogin" size="20" maxlength="13"/>
                         <input type="text" name="txtsenha" size="20" class="input_cad" maxlength="15"/>
                     </div>
-               </div>
-               <div class="main">
-                 <input type="submit" name="cadastrar" value="Alterar" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
-                 <input type="button" name="cancelar" value="Cancelar" onClick="window.location.href='home.jsp';" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
-               </div>
-             </form>
-
+                    <div class="main">
+                      <input type="submit" name="cadastrar" value="Alterar" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
+                      <input type="button" name="cancelar" value="Cancelar" onClick="window.location.href='home.jsp';" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
+                    </div>
+                  </form>
             </div>
+        </div>
        </div>
           <footer>
             <span class="logo_mini"></span>
