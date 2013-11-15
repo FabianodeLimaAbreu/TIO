@@ -79,7 +79,7 @@
                 <input name="txtestado" type="text" size="20" class="input_cad" /> <!--criar combo-->
               </div>
               <div class="main">
-                <input type="submit" name="cadastrar" value="Cadastrar" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
+                <input type="submit" name="cadastrar" value="Alterar" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
                 <input type="button" name="cancelar" value="Cancelar" onClick="window.location.href='home.jsp';" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
               </div>
             </form>
