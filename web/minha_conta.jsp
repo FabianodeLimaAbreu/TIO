@@ -56,47 +56,49 @@
               </ul>
             </div>
             <div class="divdebaixo">
-              <div class="title">
-                <p>Alterar Endereço</p>
-              </div>
-              <form name="frmcadastrar" id="id_alt_end" action="bd_cadastro">
-              <div class="label">
-                <label>Rua</label>
-                <label class="label_num">Número</label>
-              </div>
-              <div class="label_input">
-                 <input type="text" name="txtrua" size="54px" maxlength="50"/>
-                 <input name="txtnumero" type="text" size="3px" class="input_num" maxlength="5"/>
-              </div>
-              <div class="label">
-                <label>CEP</label>
-                <div class="label_aux1">
-                  <label>Complemento</label>
-                </div>
-              </div>
-              <div class="label_input">
-                <input type="text" name="txtcep" id="campoCep"/>
-                <input name="txtcomplemento" type="text" class="input_cad" maxlength="20" />
-              </div>
-              <div class="label">
-                <label>Bairro</label>
-                <div class="label_aux1">
-                  <label>Cidade</label>
-                </div>
-                <div class="label_aux2">
-                  <label>Estado</label>
-                </div>
-              </div>
-              <div class="label_input">
-                <input name="txtbairro" type="text" size="20" maxlength="21" />
-                <input name="txtcidade" type="text" size="20" class="input_cad" maxlength="30" />
-                <input name="txtestado" type="text" size="20" class="input_cad" /> <!--criar combo-->
-              </div>
-              <div class="main">
-                <input type="submit" name="cadastrar" value="Alterar" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
-                <input type="button" name="cancelar" value="Cancelar" onClick="window.location.href='home.jsp';" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
-              </div>
-            </form>
+              <div class="alt_end">
+                  <div class="title">
+                    <p>Alterar Endereço</p>
+                  </div>
+                  <form name="frmcadastrar" id="id_alt_end" action="bd_cadastro">
+                  <div class="label">
+                    <label>Rua</label>
+                    <label class="label_num">Número</label>
+                  </div>
+                  <div class="label_input">
+                     <input type="text" name="txtrua" size="54px" maxlength="50"/>
+                     <input name="txtnumero" type="text" size="3px" class="input_num" maxlength="5"/>
+                  </div>
+                  <div class="label">
+                    <label>CEP</label>
+                    <div class="label_aux1">
+                      <label>Complemento</label>
+                    </div>
+                  </div>
+                  <div class="label_input">
+                    <input type="text" name="txtcep" id="campoCep"/>
+                    <input name="txtcomplemento" type="text" class="input_cad" maxlength="20" />
+                  </div>
+                  <div class="label">
+                    <label>Bairro</label>
+                    <div class="label_aux1">
+                      <label>Cidade</label>
+                    </div>
+                    <div class="label_aux2">
+                      <label>Estado</label>
+                    </div>
+                  </div>
+                  <div class="label_input">
+                    <input name="txtbairro" type="text" size="20" maxlength="21" />
+                    <input name="txtcidade" type="text" size="20" class="input_cad" maxlength="30" />
+                    <input name="txtestado" type="text" size="20" class="input_cad" /> <!--criar combo-->
+                  </div>
+                  <div class="main">
+                    <input type="submit" name="cadastrar" value="Alterar" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
+                    <input type="button" name="cancelar" value="Cancelar" onClick="window.location.href='home.jsp';" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
+                 </div>
+              </form>
+            </div>
           </div>
         </div>
           <footer>
