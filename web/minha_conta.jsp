@@ -43,9 +43,17 @@
               <p>Minha conta</p>
             </div>
             <div class="minha_conta">
-              <input type="button" class="button_end" name="alt_end" value="Alterar Endereço">
-              <input type="button" class="button_dados" name="dados_pessoais" value="Alterar Dados Pessoais">
-              <input type="button" class="button_senha" name="alt_senha" value="Alterar Senha">
+              <ul class="ul_conta">
+                  <li class="li_conta">
+                  <a href="#alt_end" class="button-conta">Alterar Endereço</a>
+                </li>
+                <li>
+                  <a href="#dados_pessoais" class="button-conta">Alterar Dados Pessoais</a>
+                </li>
+                <li>
+                  <a href="#alt_senha" class="button-conta">Alterar Senha</a>
+                </li>
+              </ul>
             </div>
           </div>
           <footer>
