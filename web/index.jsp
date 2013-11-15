@@ -32,7 +32,7 @@
     <body>
         <div id="wrap" class="hide">
             <div class="mask_default mask">
-                <img src="images/loader.gif" class="loader">
+                <img src="images/loader.GIF" class="loader">
             </div>
             <!--Wrap de todo o conteudo-->
             <header>
@@ -190,7 +190,6 @@
                     <p>Copyright © 2013 - Drummond Games - Todos os direitos reservados</p>
                 </footer>
             </div>
-            <input type="hidden" name="cart" value="" class="itens"/><!--Itens adicionados ao carrinho sao inseridos aqui-->
         </div>
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/methods.js"></script>
