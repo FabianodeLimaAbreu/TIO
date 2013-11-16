@@ -13,6 +13,7 @@ var Element={
     loading:!1,
     modalPage:$("#cart"),
     mask:$(".mask"),
+    itens_venda:[],
     change:function(hash,json){
     //Metodo executado a cada mudança de hash
         $(".label label").click(function(a){
@@ -35,9 +36,13 @@ var Element={
         if(!hash || hash==="games"){
             this.breadBox("Games");
             games=new Games();
+            /*if($("#search").hasClass("hide")){
+                $("#search").removeClass("hide");
+            }*/
             games.load();
         }
         else{
+            //$("#search").addClass("hide");
             switch(hash){
                 case "sobre":
                     sobre=new Sobre();
@@ -101,7 +106,6 @@ var Element={
                 $(".mask").fadeOut().find(".loader").fadeOut();
                 $("body").removeClass("noscroll");
                 Element.loading=!1;
-                console.log(Element.loading);
             },1500);
         }
         else{
@@ -146,7 +150,11 @@ var Menu=function(){
 var Cart=function(){
    this.el=$("#cart");
    this.bcart=$("a.bcart");
+<<<<<<< HEAD
    this.itens_venda=[];
+=======
+   this.valorTotal=0;
+>>>>>>> origin/Cart
    this.load=function(){
        //Da inicio ao load do cart
         $("a.bcart").click(function(a){
@@ -181,6 +189,7 @@ var Cart=function(){
     });
    this.add=function(id){
        //Ao adicionar itens ao carrinho
+<<<<<<< HEAD
         var id=parseInt(id);
         console.log("add: "+(id-1));
         this.itens_venda.push(Element.json[0]);
@@ -190,58 +199,92 @@ var Cart=function(){
             console.log("Itens: "+this.itens_venda[i].name);  
         };
         //$(this.bcart).find("span").text(temp); //Coloca o valor no span do contador
+=======
+        var id,indice;
+        id=parseInt(id)-1;
+        this.itens_venda.push(Element.json[id]); //Adicionada objeto do json ao itens da venda
+        Element.json[id].incart=true;
+        indice=this.indice(id+1);
+        this.itens_venda[indice].qtd=1;
+        this.itens_venda[indice].total=0;
+        $(this.bcart).find("span").text(this.itens_venda.length); //Atualiza contador
+   };
+   this.indice=function(id){
+       //Pega o indice do produto no itens da venda usando o seu codigo como referencia
+       var length,i;
+       length=this.itens_venda.length;
+       for(i=0;i<length;i++){
+            if(this.itens_venda[i].cod===id){
+                return i;
+            }
+        }
+>>>>>>> origin/Cart
    };
     this.render=function(){
         //Abre o carrinho
-        var length,car,i,html="",json,item,select,id,preco,total=0;
+        var length,i,select,id,html="",index,less,more;
+        this.valorTotal=0; //Reseta o valor total
         select="<select name='unidade' class='button'><option value='1' name='quantidade'>1 Unidade</option><option value='2' name='quantidade'>2 Unidade</option><option value='3' name='quantidade'>3 Unidade</option><option value='4' name='quantidade'>4 Unidade</option><option value='5' name='quantidade'>5 Unidade</option><option value='6' name='quantidade'>6 Unidade</option><option value='7' name='quantidade'>7 Unidade</option><option value='8' name='quantidade'>8 Unidade</option><option value='9' name='quantidade'>9 Unidade</option></select>";
-        json=Element.json;
-        car=this.input.val().replace(" ","");
-        length=car.length;
+        length=this.itens_venda.length;
         for(i=0;i<length;i++){
         	//Criar as linhas da tabela carrinho com os itens adicionados ao mesmo
-        	item=parseInt(car[i])-1;
-        	if(!isNaN(item)){
-        		if(i%2){
-        			html+="<tr class='"+json[item].cod+" odd'>";
-	        	}
-	        	else{
-	        		html+="<tr class='"+json[item].cod+"'>";
-	        	}
-	        	html+="<td><img src='./images/games/cart/"+json[item].cod+".jpg'/>"+json[item].name+"</td>";
-	        	html+="<td class='val'>"+json[item].preco.replace(".",",")+"</td>";
-	        	html+="<td>"+select+"</td>";
-	        	html+="<td><input type='text' value='' disabled='disable' class='disabled'/></td>";
-	        	html+="<td><a href='#"+json[item].cod+"' class='button'></a></td></tr>";
-        	}
+                html+="<tr class='"+this.itens_venda[i].cod+"'>";
+                html+="<td><img src='./images/games/cart/"+this.itens_venda[i].cod+".jpg'/>"+this.itens_venda[i].name+"</td>";
+                html+="<td class='val'>"+this.itens_venda[i].preco.replace(".",",")+"</td>";
+                html+="<td>"+select+"</td>";
+                html+="<td><input type='text' value='' disabled='disable' class='disabled'/></td>";
+                html+="<td><a href='#"+this.itens_venda[i].cod+"' class='button'></a></td></tr>";
         }
-        $("#cart tbody.scrollContent").html(html);        
+        $("#cart tbody.scrollContent").html(html);
+        for(i=0;i<length;i++){
+            //Calculo de valor total de cada produto add ao carrinho
+            this.valorTotal+=this.itens_venda[i].qtd*parseFloat(this.itens_venda[i].preco);
+            $("tr."+this.itens_venda[i].cod+" select option:contains('"+this.itens_venda[i].qtd+"')").prop('selected', true);
+            this.total(this.itens_venda[i].qtd,this.itens_venda[i].cod);
+        }
+        this.el.find(".button-box").find("div").html("<span>R$ </span>"+String(this.valorTotal.toFixed(2)).replace(".",","));
+        
         $("#cart tr a").click(function(a){
-        	//Ao clicar no botão remover do carrinho da tabela carrinho
-            id=$(this).attr("href").replace("#","");
-        	a.preventDefault();
+            //Ao clicar no botão remover do carrinho da tabela carrinho
+            a.preventDefault();
+            id=parseInt($(this).attr("href").replace("#",""));   
             $("a[href='#"+id+"']").removeClass("remove-cart");
-        	cart.remove(id);
-        	$(this).closest("tr").remove();
-                
+            index=cart.indice(id); //Pega o indice daquele produto no itens do carrinho
+            less=Element.itens_venda[index].total; //Valor antigo que sera subtraido para adicionar o novo valor
+            cart.refreshTotal(less,0); //Como foi removido nao tera novo valor
+            cart.remove(id);
+            $(this).closest("tr").remove(); //Remove linha          
         });
+        
         this.el.find("select").change(function(){
-        	//Ao alterar a quantidade de itens na compra
-            preco=parseFloat($(this).closest("tr").find(".val").text().replace(",","."));
-            $(this).closest("tr").find("td input").val($(this).val()*preco);
-            total+=preco;
-            cart.price(total);
-        }).trigger("change");
+            //Ao alterar a quantidade de itens na compra
+            index=cart.indice(parseInt($(this).closest("tr").attr("class")));//Pega o indice daquele produto no itens do carrinho
+            Element.itens_venda[index].qtd=parseInt($(this).val()); //Atualiza a quantidade de itens no carrinho
+            id=$(this).closest("tr").attr("class"); //pega a classe da linha dona do select
+            less=Element.itens_venda[index].total; //Valor antigo
+            cart.total($(this).val(),id); 
+            more=Element.itens_venda[index].total; //Novo valor, agora que o valor total do objeto ja foi atualizado
+            cart.refreshTotal(less,more);
+        });
         Element.open();
+        
         $("#cart .send").click(function(a){
             a.preventDefault();
-            alert("ok");
+            alert("enviar");
         });
     };
-    this.price=function(total){
-    	//Atualizando o preco total da compra
-        this.el.find(".button-box").find("div").html("<span>R$ </span>"+String(total).replace(".",","));
+    
+    this.total=function(qtd,id){
+        //Valor total do produto
+        var id,tr;
+        tr=id;
+        id=parseInt(id);
+        id=this.indice(id);
+        this.itens_venda[id].qtd=parseInt(qtd);
+        this.itens_venda[id].total=parseFloat(this.itens_venda[id].preco)*this.itens_venda[id].qtd; //Atualiza o valor total do objeto modificado
+        $("#cart tbody.scrollContent tr."+tr).find("td .disabled").val(String(this.itens_venda[id].total.toFixed(2)).replace(".",","));
     };
+<<<<<<< HEAD
     
     this.remove=function(id){
         //Remove itens do carrinho
@@ -254,6 +297,22 @@ var Cart=function(){
         this.itens_venda.splice(id-1,1);
         console.log("quantidade: (remo)"+this.itens_venda.length);
         //$(this.bcart).find("span").text(temp);
+=======
+    this.refreshTotal=function(less,more){
+    	//Atualizando o preco total da compra
+        this.valorTotal=(this.valorTotal-less)+more;
+        this.el.find(".button-box").find("div").html("<span>R$ </span>"+String(this.valorTotal.toFixed(2)).replace(".",","));
+    };
+    
+    this.remove=function(id){
+        //Remove itens do carrinho
+        var id;
+        var id=id-1;
+        Element.json[id].incart=false;
+        id=this.indice(id+1);
+        this.itens_venda.splice(id,1);
+        $(this.bcart).find("span").text(this.itens_venda.length); //Atualiza contador
+>>>>>>> origin/Cart
     };
 };
 
@@ -298,7 +357,10 @@ var Games=function(){
                 html+="<a href='#"+filtro[i].cod+"' class='button add-cart'></a></div></div>";
             }
             else{
+<<<<<<< HEAD
                 alert(filtro[i].cod);
+=======
+>>>>>>> origin/Cart
                 html+="<a href='#"+filtro[i].cod+"' class='button add-cart remove-cart'></a></div></div>";
             }
             html+="</div>";
