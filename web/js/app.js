@@ -150,11 +150,7 @@ var Menu=function(){
 var Cart=function(){
    this.el=$("#cart");
    this.bcart=$("a.bcart");
-<<<<<<< HEAD
-   this.itens_venda=[];
-=======
    this.valorTotal=0;
->>>>>>> origin/Cart
    this.load=function(){
        //Da inicio ao load do cart
         $("a.bcart").click(function(a){
@@ -189,17 +185,6 @@ var Cart=function(){
     });
    this.add=function(id){
        //Ao adicionar itens ao carrinho
-<<<<<<< HEAD
-        var id=parseInt(id);
-        console.log("add: "+(id-1));
-        this.itens_venda.push(Element.json[0]);
-        Element.json[id].incart=true;
-        console.log("quantidade: "+this.itens_venda.length);
-        for(var i=0;i<this.itens_venda.length;i++){
-            console.log("Itens: "+this.itens_venda[i].name);  
-        };
-        //$(this.bcart).find("span").text(temp); //Coloca o valor no span do contador
-=======
         var id,indice;
         id=parseInt(id)-1;
         this.itens_venda.push(Element.json[id]); //Adicionada objeto do json ao itens da venda
@@ -218,7 +203,6 @@ var Cart=function(){
                 return i;
             }
         }
->>>>>>> origin/Cart
    };
     this.render=function(){
         //Abre o carrinho
@@ -268,12 +252,52 @@ var Cart=function(){
         });
         Element.open();
         
-        $("#cart .send").click(function(a){
+        $("#cart .send").unbind("click").bind("click",function(a){
+            //Ao clicar em enviar pedido
             a.preventDefault();
-            alert("enviar");
+            cart.pedido();
         });
     };
-    
+    this.pedido=function(){
+        var v,i,length,cod;
+        length=this.itens_venda.length;
+        if(this.itens_venda.length>0){
+            v = new  XMLWriter(); 
+            v.writeStartDocument(false); //Inicia o xml
+            v.writeStartElement("carrinho");
+            v.writeStartElement('Games');
+            this.el.find("tbody.scrollContent tr").each(function(a){
+                //Passa por cada linha do carrinho
+                v.writeStartElement('Game');
+                v.writeAttributeString('cod',Element.itens_venda[a].cod);
+                v.writeAttributeString('name',Element.itens_venda[a].name);
+                v.writeAttributeString('preco',Element.itens_venda[a].preco);
+                v.writeAttributeString('qtd',Element.itens_venda[a].qtd);
+                v.writeAttributeString('res',Element.itens_venda[a].total.toFixed(2));
+                v.writeEndElement();
+            });
+            v.writeEndElement();
+            v.writeStartElement('total');
+            v.writeString(""+this.valorTotal.toFixed(2));
+            v.writeEndElement();
+            v.writeEndDocument();//Fecha xml
+            var n_valor=v.flush(); /*Grava a xml do xml na variavel n_valor*/
+            alert(n_valor); //Depois daqui é soh dar submit no formulario para enviar o valor
+            for(i=0;i<length;i++){
+                //Removendo as propriedades dos elementos adicionados ao carrinho
+                cod=this.itens_venda[[i]].cod-1;
+                this.json[cod].incart=false;
+                $("a[href='#"+(cod+1)+"']").removeClass("remove-cart");
+            }
+            this.itens_venda.length=0; //Resetando o carrinho
+            this.render(); //Renderizando o carrinho atualizado
+            $(this.bcart).find("span").text(this.itens_venda.length); //Atualiza contador
+            alert("Carrinho enviado com sucesso!!!");
+        }
+        else{
+            alert("Carrinho vazio!\nAdicione itens ao carrinho");
+        }
+    };
     this.total=function(qtd,id){
         //Valor total do produto
         var id,tr;
@@ -284,20 +308,6 @@ var Cart=function(){
         this.itens_venda[id].total=parseFloat(this.itens_venda[id].preco)*this.itens_venda[id].qtd; //Atualiza o valor total do objeto modificado
         $("#cart tbody.scrollContent tr."+tr).find("td .disabled").val(String(this.itens_venda[id].total.toFixed(2)).replace(".",","));
     };
-<<<<<<< HEAD
-    
-    this.remove=function(id){
-        //Remove itens do carrinho
-        var id,length;
-        id=parseInt(id);
-        Element.json[id-1].incart=false;
-        length=this.itens_venda.length;
-        console.log("**************remove: "+(id-1));
-        console.log("Removido: (remo)"+this.itens_venda[id-1].name);
-        this.itens_venda.splice(id-1,1);
-        console.log("quantidade: (remo)"+this.itens_venda.length);
-        //$(this.bcart).find("span").text(temp);
-=======
     this.refreshTotal=function(less,more){
     	//Atualizando o preco total da compra
         this.valorTotal=(this.valorTotal-less)+more;
@@ -312,7 +322,6 @@ var Cart=function(){
         id=this.indice(id+1);
         this.itens_venda.splice(id,1);
         $(this.bcart).find("span").text(this.itens_venda.length); //Atualiza contador
->>>>>>> origin/Cart
     };
 };
 
@@ -357,10 +366,6 @@ var Games=function(){
                 html+="<a href='#"+filtro[i].cod+"' class='button add-cart'></a></div></div>";
             }
             else{
-<<<<<<< HEAD
-                alert(filtro[i].cod);
-=======
->>>>>>> origin/Cart
                 html+="<a href='#"+filtro[i].cod+"' class='button add-cart remove-cart'></a></div></div>";
             }
             html+="</div>";

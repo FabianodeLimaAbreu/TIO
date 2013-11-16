@@ -191,8 +191,10 @@
                 </footer>
             </div>
         </div>
+        <iframe name="iframeTeste" id="iframeCart" src="form.jsp"></iframe> <!--Abre a tela que possui o formulario-->
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/methods.js"></script>
+        <script type="text/javascript" src="js/xmlwriter.js"></script>
         <script type="text/javascript" src="js/app.js"></script>
     </body>
 </html>

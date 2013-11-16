@@ -50,6 +50,7 @@ nav .holder a.sel{background: url(../images/gui.png) no-repeat;background-positi
 #container .content{position: relative;float:left;width: 960px;height: auto;min-height: 600px;padding:10px;background:url(../images/content_bkg.png) repeat;}
 .home #container .content{width: 960px;height: auto;}
 #tabs{position: relative;float:left; margin: 0;}
+iframe{position:relative;float: right;width: 100px;height:100px;display:none;border:1px solid red;}
 
 /*Sidebar*/
 .sidebar{position:relative;float: left;width: 228px;height:300px;color:#f5f5f5;}
@@ -340,8 +341,7 @@ ul.ul_conta li {margin-top: 10px; float: left; margin-left: 30px;}
 .button-conta {font-size: 10pt; font-weight: bold; height:30px;padding: 5px;width:auto;  background-color: #575756; color: #fff; text-decoration: none;} 
 .button-conta:link, 
 .button-conta:visited {border-top: 1px solid #cccccc; border-bottom: 2px solid #666666; border-left: 1px solid #cccccc; border-right: 2px solid #666666;} 
-.button-conta:hover { border-bottom: 1px solid #cccccc; border-top: 2px solid #666666; border-right: 1px solid #cccccc; border-left: 2px solid #666666;} 
-<<<<<<< HEAD
+.button-conta:hover { border-bottom: 1px solid #cccccc; border-top: 2px solid #666666; border-right: 1px solid #cccccc; border-left: 2px solid #666666;}
 /*Div de baixo*/
 .divdebaixo{position: relative; float: left ;width: 960px;height: auto;margin-top: 30px;}
 .divdebaixo form{margin-left: 15px;width: 600px;;border:1px solid red} /*Mude o tamanho do formulario se a sua linha nao estiver cabendo*/
@@ -362,5 +362,3 @@ ul.ul_conta li {margin-top: 10px; float: left; margin-left: 30px;}
 .label_input .input_cad{margin-left: 50px;}
 .label_input .sexo_mf{float: right; margin-right: 175px; }
 .label_input .input_num{margin-left: 20px;}
-=======
->>>>>>> origin/Cart
