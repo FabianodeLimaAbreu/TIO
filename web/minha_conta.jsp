@@ -56,103 +56,101 @@
               </ul>
             </div>
             <div class="divdebaixo">
+
+                  <form name="frmcadastrar" action="bd_cadastro">
               <div class="alt_end">
-                  <!--Você não esta usando o id dos input pra nada então você pode remove-los-->
-                  <form name="frmcadastrar" id="id_alt_end" action="bd_cadastro">
-                  <label for="txtrua">
-                      <span>Rua: </span>
-                      <input type="text" name="txtrua" size="54px" maxlength="50"/>
+                      <label for="txtrua">
+                      <span>Rua </span>
+                      <div><input type="text" name="txtrua" size="54px" maxlength="50"/></div>
                   </label>
                   <label for="txtnumero">
-                      <span>Número: </span>
-                      <input name="txtnumero" type="text" size="3px" class="input_num" maxlength="5"/>
+                      <span>Número </span>
+                      <div><input name="txtnumero" type="text" size="3px" class="input_num" maxlength="5"/></div>
                   </label>
                   <label for="txtcep">
-                      <span>CEP: </span>
-                      <input type="text" name="txtcep" id="campoCep"/>
+                      <span>CEP </span>
+                      <div><input type="text" name="txtcep" id="campoCep"/></div>
                   </label>
                   <label for="txtcomplemento">
-                      <span>Complemento: </span>
-                      <input name="txtcomplemento" type="text" class="input_cad" maxlength="20" />
+                      <span>Complemento </span>
+                      <div><input name="txtcomplemento" type="text" class="input_cad" maxlength="20" /></div>
                   </label>
-                  
-                  <!--<div class="label">
-                    <label>Bairro</label>
-                    <div class="label_aux1">
-                      <label>Cidade</label>
-                    </div>
-                    <div class="label_aux2">
-                      <label>Estado</label>
-                    </div>
-                  </div>
-                  <div class="label_input">
-                    <input name="txtbairro" type="text" size="20" maxlength="21" />
-                    <input name="txtcidade" type="text" size="20" class="input_cad" maxlength="30" />
-                    <input name="txtestado" type="text" size="20" class="input_cad" /> <!--criar combo-->
-                        <div class="main">
-                            <input type="submit" name="cadastrar" value="Alterar" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
-                            <input type="button" name="cancelar" value="Cancelar" onClick="window.location.href='home.jsp';" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
-                         </div>
-                      </form>
-                  </div>
+                  <label for="txtbairro">
+                      <span>Bairro </span>
+                      <div><input type="text" name="txtbairro"/></div>
+                  </label>
+                  <label for="txtcidade">
+                    <span>Cidade</span>
+                    <div><input name="txtcidade" type="text" size="20" class="input_cad" maxlength="30" /></div>
+                  </label>
+                  <label for="txtestado">
+                    <span>Estado</span>
+                    <div><input name="txtestado" type="text" size="20" class="input_cad" /> <!--criar combo--></div>
+                  </label>
+           </div>
            <div class="alt_dados">
-                    <div class="label">
-                      <p>Dados Pessoais</p>
-                    </div>
-                    <div class="label">
-                      <label>Nome completo</label>
-                      <div class="label_sexo">
-                        <label>Sexo</label>
-                      </div>
-                    </div>
-                    <div class="label_input">
-                        <input type="text" size="54px" name="txtnome" maxlength="45"/>
-                      <div class="sexo_mf">
-                        <label>M</label><input type="radio" name="txtsexo" />
-                        <label>F</label><input type="radio" name="txtsexo" />
-                      </div>
-                    </div>
-                    <div class="label">
-                      <label>RG</label>
-                      <div class="label_aux1">
-                        <label>CPF</label>
-                      </div>
-                      <div class="label_aux2">
-                        <label>Data de Nascimento</label>
-                      </div>
-                    </div>
-                    <div class="label_input">
-                      <input type="text" name="txtrg" id="campoRg" size="20px"/>
-                      <input type="text" name="txtcpf" id="campoCpf" size="20px" class="input_cad" />
-                      <input type="text" name="txtdata" size="20px" id="campoData" class="input_cad" /> 
-                    </div>
-                    <div class="label">
-                      <label>Telefone</label>
-                      <div class="label_aux1">
-                        <label>E-mail</label>
-                      </div>
-                    </div>
-                    <div class="label_input">
-                      <input type="text" id="campoTelefone" name="txttelefone" size="20" />
-                      <input type="text" name="txtemail" size="35" class="input_cad" maxlength="40"/>
-                    </div>
-                    <div class="label">
-                      <label>Login</label>
-                      <div class="label_aux1">
-                        <label>Senha</label>
-                      </div>
-                    </div>
-                    <div class="label_input">
-                        <input type="text" name="txtlogin" size="20" maxlength="13"/>
-                        <input type="text" name="txtsenha" size="20" class="input_cad" maxlength="15"/>
-                    </div>
-                    <div class="main">
-                      <input type="submit" name="cadastrar" value="Alterar" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
-                      <input type="button" name="cancelar" value="Cancelar" onClick="window.location.href='home.jsp';" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
-                    </div>
-                  </form>
-            </div>
-        </div>
+             <label for="txtnome">
+               <span>Nome completo</span>
+               <div><input type="text" size="54px" name="txtnome" maxlength="45"/></div>
+             </label>
+             <label for="txtsexo">
+             <span class="ajust_sexo">Sexo</span>
+               <div class="op_sexo">
+                   <span>M</span><input type="radio" name="txtsexo" />
+                   <span>F</span><input type="radio" name="txtsexo" />
+               </div>
+             </label>
+             <label for="txtrg">
+               <span>RG</span>
+               <div> <input type="text" name="txtrg" id="campoRg" size="20px"/></div>
+             </label>
+             <label for="txtcpf">
+               <span>CPF</span>
+               <div> <input type="text" name="txtcpf" id="campoCpf" size="20px" class="input_cad" /></div>
+             </label>
+             <label for="txtdata">
+               <span>Data de Nascimento</span>
+               <div><input type="text" name="txtdata" size="20px" id="campoData" class="input_cad" /> </div>
+             </label>
+             <label for="txttel">
+               <span>Telefone</span>
+               <div><input type="text" id="campoTelefone" name="txttelefone" size="20" /></div>
+             </label>
+             <label for="txtemail">
+               <span>E-mail</span>
+               <div><input type="text" name="txtemail" size="35" maxlength="40" /></div>
+             </label>
+             <label for="txtemail">
+               <span>Login</span>
+               <div><input type="text" name="txtlogin" size="20" maxlength="13"/></div>
+             </label>
+             <label for="txtsenha">
+               <span>Senha</span>
+               <div><input type="text" name="txtsenha" size="20" maxlength="15"/></div>
+             </label>
+           </div>
+           <div class="alt_senha">
+             <label for="txtnovasenha">
+               <span>Nova Senha:</span>
+               <div><input type="text" name="txtnovasenha" size="20"></div>
+             </label>
+             <label for="txtsenhalogin">
+               <span>Login:</span>
+               <div><input type="text" name="txtsenhalogin" size="20" maxlength="13"/></div>
+             </label>
+               <label for="txtsenhaemail">
+               <span>E-mail:</span>
+               <div><input type="text" name="txtsenhaemail" size="35" maxlength="40" /></div>
+             </label>
+
+           
+           </div>
+             <div class="button_alt">
+               <input type="submit" name="cadastrar" value="Alterar" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
+               <input type="button" name="cancelar" value="Cancelar" onClick="window.location.href='home.jsp';" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
+             </div>
+           </form>
+         </div>
        </div>
           <footer>
             <span class="logo_mini"></span>
