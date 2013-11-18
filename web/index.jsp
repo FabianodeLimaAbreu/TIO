@@ -32,7 +32,7 @@
     <body>
         <div id="wrap" class="hide">
             <div class="mask_default mask">
-                <img src="images/loader.gif" class="loader">
+                <img src="images/loader.GIF" class="loader">
             </div>
             <!--Wrap de todo o conteudo-->
             <header>
@@ -44,7 +44,7 @@
                             <li><a href="#meuspedidos">MEUS PEDIDOS</a></li> 
                         </ul>
                     </div>     
-                    <a href="home.jsp" class="logout">Sair</a>
+                    <a href="#logout" class="logout">Sair</a>
                     <a href="#" class="logo"></a>
                     <form id="search">
                         <div class="label">
@@ -189,6 +189,22 @@
                     <span class="lock"></span>
                     <p>Copyright © 2013 - Drummond Games - Todos os direitos reservados</p>
                 </footer>
+            </div>
+            <div id="modal" class="hide">
+                <div class="modal-content">
+                    <a href="#close" class="button s-third"></a>
+                    <div class="modal-text">
+                        <span class="big-icon"></span>
+                        <div class="aviso">
+                            <h2></h2>
+                            <p></p>
+                            <div class="dialog">
+                                <a href="home.jsp">Sim</a>
+                                <a href="#no">Não</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <iframe name="iframeTeste" id="iframeCart" src="form.jsp"></iframe> <!--Abre a tela que possui o formulario-->

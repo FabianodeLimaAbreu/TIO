@@ -122,13 +122,13 @@ var Home=function(){
             };
 	};
 	
-	var Modal=function(){
-	    //Classe modal
-	    this.load=function(){
+        var Modal=function(){
+            //Classe modal
+            this.load=function(){
              $("#modal").fadeIn();
-	        this.render();
-	    };
-	    this.render=function(){
+                this.render();
+            };
+            this.render=function(){
                 if($("form.sign").hasClass("hide")){
                     /*Caso a tela de login esteja oculta ao clicar no link cadastro ou login na parte superior da app*/
                     this.inicial();
@@ -147,18 +147,18 @@ var Home=function(){
                     $(".cadastro").addClass("hide");
                     $(".pass").removeClass("hide");
                 });
-                
+
                 $("label span").click(function(a){
-                	//Ao clicar sobre o span do label de logins
+                        //Ao clicar sobre o span do label de logins
                     $(a.target).parent().find("input").focus();
                 });
                 $("input").focus(function(){
-                	//Ao dar foco no input do modal de login
+                        //Ao dar foco no input do modal de login
                     $(this).parent().find("span").fadeOut();
                 }).blur(function(){
                     if(!$(this).val()) $(this).parent().find("span").fadeIn();
                 });
-                
+
                 $("input.back").click(function(){
                     /*Ao clicar em voltar*/
                     modal.inicial();
@@ -167,16 +167,16 @@ var Home=function(){
                     /*Ao submitar o formulario*/
                     $("#modal form").submit();
                 });
-	    };
-        this.inicial=function(){
-        	//O padrao inicial do modal
-            $(".changepass").addClass("hide");
-            $("form.sign").removeClass("hide");
-            $(".login").find("h2").text("Já tenho cadastro");
-            $(".pass").addClass("hide");
-            $(".default").removeClass("hide");
+            };
+            this.inicial=function(){
+                    //O padrao inicial do modal
+                $(".changepass").addClass("hide");
+                $("form.sign").removeClass("hide");
+                $(".login").find("h2").text("Já tenho cadastro");
+                $(".pass").addClass("hide");
+                $(".default").removeClass("hide");
+            };
         };
-	};
 };
 
 

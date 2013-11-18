@@ -26,23 +26,32 @@ var Element={
         }).blur(function(){
             if(!$(this).val()) $(this).parent().find("label").fadeIn();
         });
-        
         menu=new Menu();
+        modal=new Modal($("#modal"));
         cart=new Cart();
         cart.load();
+        $(".logout").bind("click",function(a){
+            a.preventDefault();
+            if(Element.itens_venda.length){
+                modal.load("logout");
+            }
+            else{
+                window.location.href="home.jsp";
+            }
+        });
         $(".bcart").removeClass("sel"); //Ao trocar de tela o botão do carrinho precisa voltar ao normal
         this.json=json;
         Element.close();
         if(!hash || hash==="games"){
             this.breadBox("Games");
             games=new Games();
-            /*if($("#search").hasClass("hide")){
+            if($("#search").hasClass("hide")){
                 $("#search").removeClass("hide");
-            }*/
+            }
             games.load();
         }
         else{
-            //$("#search").addClass("hide");
+            $("#search").addClass("hide");
             switch(hash){
                 case "sobre":
                     sobre=new Sobre();
@@ -112,8 +121,7 @@ var Element={
             $(".mask").fadeOut();
             $("body").removeClass("noscroll");
         }
-    }
-    
+    }    
 };
 
 var Menu=function(){
@@ -146,6 +154,55 @@ var Menu=function(){
     };
 };
 
+var Modal=function(el){
+    //Classe modal
+    this.el=el;
+    this.text=this.el.find(".modal-text");
+    this.aviso=this.text.find(".aviso");
+    this.load=function(select){
+        this.text.find(".dialog").hide();
+        this.el.find("a[href='#close']").show();
+        switch (select){
+            case "games":
+                this.text.addClass("bad");
+                this.aviso.find("h2").text("Nenhum resultado encontrado!");
+                this.aviso.find("p").text("Nenhum resultado foi encontrado para sua busca!");
+                break;
+             case "cart":
+                this.text.removeClass("bad");
+                this.aviso.find("h2").text("Pedido realizado com sucesso!");
+                this.aviso.find("p").text("Sua compra foi realizada com sucesso!");
+                break;
+             case "cartEmpty":
+                this.text.addClass("bad");
+                this.aviso.find("h2").text("Carrinho vazio!");
+                this.aviso.find("p").text("Adicione itens ao carrinho para realizar a compra!");
+                break;
+             case "logout":
+                this.el.find("a[href='#close']").hide();
+                this.text.addClass("bad");
+                this.aviso.find("h2").text("Deseja sair?");
+                this.aviso.find("p").text("Ao sair sem finalizar o pedido sua compra será cancelada!");
+                this.text.find("div").show();
+                $("a[href='#no']").click(function(a){
+                    a.preventDefault();
+                    modal.el.fadeOut();
+                });
+                break;
+             default:
+                 console.log("erro");
+        }
+        this.render();
+    };
+    this.render=function(){
+        this.el.fadeIn();
+        $(".modal-content a[href='#close']").click(function(a){
+            /*Ao clicar em fechar no modal*/
+            a.preventDefault();
+            modal.el.fadeOut();
+        });
+    };
+};
 
 var Cart=function(){
    this.el=$("#cart");
@@ -159,6 +216,7 @@ var Cart=function(){
             }
             else{
                 $(this).addClass("sel");
+                Element.elPageMenu.find("a").removeClass("sel");
                 a.preventDefault();
                 menu.disable();
                 Element.close(); //Fecha o modal que estiver aberto, caso esteja
@@ -282,7 +340,7 @@ var Cart=function(){
             v.writeEndElement();
             v.writeEndDocument();//Fecha xml
             var n_valor=v.flush(); /*Grava a xml do xml na variavel n_valor*/
-            alert(n_valor); //Depois daqui é soh dar submit no formulario para enviar o valor
+            console.log(n_valor); //Depois daqui é soh dar submit no formulario para enviar o valor
             for(i=0;i<length;i++){
                 //Removendo as propriedades dos elementos adicionados ao carrinho
                 cod=this.itens_venda[[i]].cod-1;
@@ -292,10 +350,10 @@ var Cart=function(){
             this.itens_venda.length=0; //Resetando o carrinho
             this.render(); //Renderizando o carrinho atualizado
             $(this.bcart).find("span").text(this.itens_venda.length); //Atualiza contador
-            alert("Carrinho enviado com sucesso!!!");
+            modal.load("cart");
         }
         else{
-            alert("Carrinho vazio!\nAdicione itens ao carrinho");
+            modal.load("cartEmpty");
         }
     };
     this.total=function(qtd,id){
@@ -392,8 +450,14 @@ var Games=function(){
                     Element.json[i].temp=Element.json[i].name.toLowerCase();
                 }
                 filtro=filterBy(Element.json,'temp',text);
-                games.creatBox(filtro,text.initialCaps());
-                $("input[name='search']").val("").blur();  //Retira o blur do input de busca
+                if(!filtro.length){
+                    modal.load("games");
+                }
+                else{
+                    games.creatBox(filtro,text.initialCaps());
+                    $("input[name='search']").val("");
+                    $("input[name='search']").blur();  //Retira o blur do input de busca 
+                }
                 for(var i=0;i<Element.json.length;i++){
                     delete Element.json[i].temp;
                     //Deleta o atributo temporario criado

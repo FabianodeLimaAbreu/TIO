@@ -91,7 +91,7 @@
                     </div>
                     <div class="label_input">
                         <input type="text" name="txtlogin" size="20" maxlength="13"/>
-                        <input type="text" name="txtsenha" size="20" class="input_cad" maxlength="15"/>
+                        <input type="password" name="txtsenha" size="20" class="input_cad" maxlength="15"/>
                     </div>
                       <div class="label">
                           <p>Endereço</p>
