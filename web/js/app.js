@@ -190,7 +190,7 @@ var Modal=function(el){
                 });
                 break;
              default:
-                 console.log("erro");
+                 console.log("erro de modal");
         }
         this.render();
     };
@@ -609,11 +609,16 @@ var MinhaConta=function(){
                 Element.elContent.html($(this).find("code").text());
              }
          });
-         this.render();
+         this.main=$(".minha_conta");
+    	 this.wraper=this.main.find(".divdebaixo");
+    	 this.main.find("a").bind("click",function(a){
+    	 	minhaConta.render($(this).attr("href").replace("#",""));
+    	 }).trigger("click").eq(0);
     };
-    this.render=function(){
-            menu.disable();
+    this.render=function(link){
+    		alert(link);
             this.elContainer.fadeIn();
+            this.wraper.find("div").fadeOut().find("div."+link).fadeIn();
     };
 };
 

@@ -87,7 +87,7 @@
                                   <a href="#alt_end" class="button-conta">Alterar Endereço</a>
                                 </li>
                                 <li>
-                                  <a href="#dados_pessoais" class="button-conta">Alterar Dados Pessoais</a>
+                                  <a href="#alt_dados" class="button-conta">Alterar Dados Pessoais</a>
                                 </li>
                                 <li>
                                   <a href="#alt_senha" class="button-conta">Alterar Senha</a>
@@ -129,6 +129,7 @@
                                   <div><input name="txtestado" type="text" size="20" class="input_cad" /> <!--criar combo--></div>
                                 </label>
                               </div>
+                              
                               <div class="alt_dados">
                                   <h3>Alterar Dados Pessoais</h3>
                                   <br /><br />
@@ -172,6 +173,7 @@
                                   <div><input type="text" name="txtsenha" size="20" maxlength="15"/></div>
                                 </label>
                               </div>
+                              
                               <div class="alt_senha">
                                 <h3>Alterar Senha</h3>
                                 <br /><br />
