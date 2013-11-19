@@ -623,9 +623,16 @@ var MinhaConta=function(){
     };
     this.render=function(link){
             this.elContainer.fadeIn();
-            this.wraper.find("div."+link).siblings().fadeOut();
+             jQuery(function($){
+                $("#campoData").mask("99/99/9999");
+                $("#campoTelefone").mask("(999) 9999-9999");
+                $("#campoCpf").mask("999.999.999 - 99");
+                $("#campoRg").mask("99.999.999 - 9");
+                $("#campoCep").mask("99999 - 999");
+                $("#campoTelefone").mask("(999) 999-9999");
+            });
+            this.wraper.find("div."+link).siblings().not(".button_alt").fadeOut();
             this.wraper.find("div."+link).fadeIn();
-            this.wraper.find(".button_alt").fadeIn();
     };
 };
 
