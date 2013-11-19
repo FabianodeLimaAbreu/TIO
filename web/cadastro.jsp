@@ -147,7 +147,7 @@
             </div>
         </div>
         <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/jquery.maskedinput.js"></script>
+        <script type="text/javascript" src="js/maskedinput.js"></script>
         <script type="text/javascript" src="js/methods.js"></script>
         <script>
           jQuery(function($){
@@ -156,8 +156,8 @@
               $("#campoCpf").mask("999.999.999 - 99");
               $("#campoRg").mask("99.999.999 - 9");
               $("#campoCep").mask("99999 - 999");
-    });
               $("#campoTelefone").mask("(999) 999-9999");
+            });
 	</script>
     </body>
 </html>

@@ -32,7 +32,7 @@
     <body>
         <div id="wrap" class="hide">
             <div class="mask_default mask">
-                <img src="images/loader.GIF" class="loader">
+                <img src="images/loader.gif" class="loader">
             </div>
             <!--Wrap de todo o conteudo-->
             <header>
@@ -209,8 +209,20 @@
         </div>
         <iframe name="iframeTeste" id="iframeCart" src="form.jsp"></iframe> <!--Abre a tela que possui o formulario-->
         <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/maskedinput.js"></script>
         <script type="text/javascript" src="js/methods.js"></script>
         <script type="text/javascript" src="js/xmlwriter.js"></script>
         <script type="text/javascript" src="js/app.js"></script>
+
+        <script>
+          jQuery(function($){
+              $("#campoData").mask("99/99/9999");
+              $("#campoTelefone").mask("(999) 9999-9999");
+              $("#campoCpf").mask("999.999.999 - 99");
+              $("#campoRg").mask("99.999.999 - 9");
+              $("#campoCep").mask("99999 - 999");
+              $("#campoTelefone").mask("(999) 999-9999");
+            });
+	</script>
     </body>
 </html>

@@ -164,7 +164,7 @@
                                   <span>E-mail</span>
                                   <div><input type="text" name="txtemail" size="35" maxlength="40" /></div>
                                 </label>
-                                <label for="txtemail">
+                                <label for="txtlogin">
                                   <span>Login</span>
                                   <div><input type="text" name="txtlogin" size="20" maxlength="13"/></div>
                                 </label>
