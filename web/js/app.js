@@ -165,7 +165,7 @@ var Modal=function(el){
         switch (select){
             case "games":
                 this.text.addClass("bad");
-                this.aviso.find("h2").text("Nenhum resultado encontrado!");
+                this.aviso.find("h2").text("Tente Novamente!");
                 this.aviso.find("p").text("Nenhum resultado foi encontrado para sua busca!");
                 break;
              case "cart":
@@ -270,7 +270,12 @@ var Cart=function(){
         length=this.itens_venda.length;
         for(i=0;i<length;i++){
         	//Criar as linhas da tabela carrinho com os itens adicionados ao mesmo
-                html+="<tr class='"+this.itens_venda[i].cod+"'>";
+                if(i%2===0){
+                    html+="<tr class='"+this.itens_venda[i].cod+"' id='odd'>";
+                }
+                else{
+                    html+="<tr class='"+this.itens_venda[i].cod+"'>";
+                }
                 html+="<td><img src='./images/games/cart/"+this.itens_venda[i].cod+".jpg'/>"+this.itens_venda[i].name+"</td>";
                 html+="<td class='val'>"+this.itens_venda[i].preco.replace(".",",")+"</td>";
                 html+="<td>"+select+"</td>";
@@ -610,15 +615,17 @@ var MinhaConta=function(){
              }
          });
          this.main=$(".minha_conta");
-    	 this.wraper=this.main.find(".divdebaixo");
+    	 this.wraper=$(".divdebaixo");
     	 this.main.find("a").bind("click",function(a){
+                a.preventDefault();
     	 	minhaConta.render($(this).attr("href").replace("#",""));
-    	 }).trigger("click").eq(0);
+    	 });
     };
     this.render=function(link){
-    		alert(link);
             this.elContainer.fadeIn();
-            this.wraper.find("div").fadeOut().find("div."+link).fadeIn();
+            this.wraper.find("div."+link).siblings().fadeOut();
+            this.wraper.find("div."+link).fadeIn();
+            this.wraper.find(".button_alt").fadeIn();
     };
 };
 
