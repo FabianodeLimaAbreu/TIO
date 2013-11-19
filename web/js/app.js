@@ -616,14 +616,17 @@ var MinhaConta=function(){
          });
          this.main=$(".minha_conta");
     	 this.wraper=$(".divdebaixo");
+    	 this.writer=$(".writer");
     	 this.main.find("a").bind("click",function(a){
-                a.preventDefault();
+            a.preventDefault();
     	 	minhaConta.render($(this).attr("href").replace("#",""));
     	 });
     };
     this.render=function(link){
             this.elContainer.fadeIn();
-             jQuery(function($){
+            this.writer.append(this.wraper.find("div."+link).html());
+            this.writer.find("div."+link).fadeIn();
+            jQuery(function($){
                 $("#campoData").mask("99/99/9999");
                 $("#campoTelefone").mask("(999) 9999-9999");
                 $("#campoCpf").mask("999.999.999 - 99");
@@ -631,8 +634,6 @@ var MinhaConta=function(){
                 $("#campoCep").mask("99999 - 999");
                 $("#campoTelefone").mask("(999) 999-9999");
             });
-            this.wraper.find("div."+link).siblings().not(".button_alt").fadeOut();
-            this.wraper.find("div."+link).fadeIn();
     };
 };
 

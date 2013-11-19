@@ -95,8 +95,18 @@
                               </ul>
                             </div>
                             <div class="divdebaixo">
-
+                            	
                              <form name="frmcadastrar" action="bd_cadastro">
+                             
+                             <div class="writer">
+                             	<!--Escreve a div aqui-->
+                             	<div class="button_alt">
+                                  <input type="submit" name="cadastrar" value="Alterar" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
+                                  <input type="button" name="cancelar" value="Cancelar" onClick="window.location.href='home.jsp';" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
+                                </div>
+                                </form>
+                             </div>	
+                             
                               <div class="alt_end">
                                   <h3>Alterar Endereço</h3>
                                   <br /><br />
@@ -189,12 +199,7 @@
                                   <span>E-mail</span>
                                   <div><input type="text" name="txtsenhaemail" size="35" maxlength="40" /></div>
                                 </label>
-                                </div>
-                                <div class="button_alt">
-                                  <input type="submit" name="cadastrar" value="Alterar" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
-                                  <input type="button" name="cancelar" value="Cancelar" onClick="window.location.href='home.jsp';" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
-                                </div>
-                              </form>
+                                </div>  
                             </div>
 
 			]]>
