@@ -612,20 +612,26 @@ var MinhaConta=function(){
         xml.each(function(){
              if($(this).attr("name")==="minhaconta"){
                 Element.elContent.html($(this).find("code").text());
+                minhaConta.element=$(this); //Grava este xml num atributo
              }
          });
          this.main=$(".minha_conta");
     	 this.wraper=$(".divdebaixo");
-    	 this.writer=$(".writer");
     	 this.main.find("a").bind("click",function(a){
-            a.preventDefault();
+                //Ao clicar em um dos três links 
+                a.preventDefault();
+                $(this).hasClass("sel") || minhaConta.main.find("a").removeClass("sel"),$(this).addClass("sel");
     	 	minhaConta.render($(this).attr("href").replace("#",""));
-    	 });
+    	 }).trigger("click").eq(0);
     };
     this.render=function(link){
             this.elContainer.fadeIn();
-            this.writer.append(this.wraper.find("div."+link).html());
-            this.writer.find("div."+link).fadeIn();
+            minhaConta.element.find("sub").find("subpage").each(function(){
+                //Pega subpagina do xml de acordo com o link clicado
+               if($(this).attr("name")===link){
+                   minhaConta.wraper.html($(this).text());
+               } 
+            });
             jQuery(function($){
                 $("#campoData").mask("99/99/9999");
                 $("#campoTelefone").mask("(999) 9999-9999");
