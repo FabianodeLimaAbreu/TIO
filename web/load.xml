@@ -107,7 +107,7 @@
                                   <h3>Alterar Endereço</h3>
                                   <br /><br />
                                   <label for="txtrua">
-                                  <span>Rua </span>
+                                    <span>Rua </span>
                                   <div><input type="text" name="txtrua" size="54px" maxlength="50"/></div>
                                 </label>
                                 <label for="txtnumero">
@@ -136,8 +136,8 @@
                                 </label>
                               </div>
                               <div class="button_alt">
-                                <input type="submit" name="cadastrar" value="Alterar" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
-                                <input type="button" name="cancelar" value="Cancelar" onClick="window.location.href='home.jsp';" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
+                                <input type="submit" name="cadastrar" value="Alterar">
+                                <input type="button" name="cancelar" value="Cancelar" onClick="window.location.href='home.jsp';">
                               </div>
                            </form>
                     ]]>

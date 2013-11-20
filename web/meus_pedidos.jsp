@@ -42,41 +42,38 @@
             <div class="title">
               <p>Meus Pedidos</p>
             </div>
-            <div class="minha_conta">
-              <ul class="ul_conta">
-                  <li class="li_conta">
-                  <a href="#ped_abertos" class="button-conta">Pedidos Abertos</a>
-                </li>
-                <li>
-                  <a href="#ped_ult" class="button-conta">Últimos Pedidos</a>
-                </li>
-                <li>
-                  <a href="#ped_todos" class="button-conta">Todos Pedidos</a>
-                </li>
-              </ul>
-            </div>
             <div class="divdebaixo">
-
              <form name="frmcadastrar" action="bd_cadastro">
-              <div class="ped_abertos">
-                  <h3>Pedidos Abertos</h3>
-                  <br /><br />
+              <div class="meus_pedidos">
 
+                <table>
+                  <tr class="HeaderTable">
+                    <td>Número do Pedido</td>
+                    <td>Valor Total</td>
+                    <td>Data do Pedido</td>
+                    <td>Situação</td>
+                  </tr>
+                  <tr>
+                    <td>123</td>
+                    <td>R$99,32</td>
+                    <td>19/11/2013</td>
+                    <td>Andamento</td>
+                  </tr>
+                  <tr>
+                    <td>5658</td>
+                    <td>R$129,32</td>
+                    <td>19/11/2013</td>
+                    <td>Finalizado</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>R$50,32</td>
+                    <td>01/09/2013</td>
+                    <td>Andamento</td>
+                  </tr>
+                 </table>
+               </form>
               </div>
-              <div class="ped_ult">
-                  <h3>Últimos Pedidos</h3>
-                  <br /><br />
-              </div>
-              <div class="alt_senha">
-                <h3>Alterar Senha</h3>
-                <br /><br />
-
-              </div>
-                <div class="button_alt">
-                  <input type="submit" name="cadastrar" value="Alterar" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
-                  <input type="button" name="cancelar" value="Cancelar" onClick="window.location.href='home.jsp';" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
-                </div>
-              </form>
             </div>
           </div>
           <footer>
