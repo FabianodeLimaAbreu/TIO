@@ -633,6 +633,7 @@ var MinhaConta=function(){
                } 
             });
             jQuery(function($){
+            	//Mascara de campo
                 $("#campoData").mask("99/99/9999");
                 $("#campoTelefone").mask("(999) 9999-9999");
                 $("#campoCpf").mask("999.999.999 - 99");

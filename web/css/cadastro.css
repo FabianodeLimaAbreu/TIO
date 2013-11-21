@@ -5,7 +5,7 @@ form{width: 100%; margin-left: 15px;}
 .cad_geral{position: relative; float: left; width: 65%;}
 .cad_geral label{position: relative; padding-right: 30px; width: -30%; float:left; font-size:11pt;}
 .cad_geral p{position: relative;float: left;font-size: 15pt;color:#0a80c1;height: 30px;}
-.coment{position: absolute; left: 65%;margin-top: 150px; border: 2px solid red;}
+.coment{position: absolute; left: 65%;margin-top: 150px; color:#CF1413}
 
 #wrap{position:absolute;left:0;top:0;width: 100%;height:100%;}
 #wrap header {position: relative;float: left;height: 105px;width: 100%;border-bottom: 1px solid #c6c6c6;background: url(../images/header_bkg.png) repeat;z-index: 100}

@@ -123,7 +123,7 @@
                       <input type="button" name="cancelar" value="Cancelar" onClick="window.location.href='home.jsp';">
                     </div>
                     <div class="coment">
-                      <p>Espaço reservado para o Fabiano colocar o erro.<br/>Não sei se era bem assim o espaço que vc queria.</p>
+                    	<!--Div de status-->
                     </div>
                   </form>
             </div>
@@ -142,6 +142,7 @@
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/maskedinput.js"></script>
         <script type="text/javascript" src="js/methods.js"></script>
+         <script type="text/javascript" src="js/validate.js"></script>
         <script>
           jQuery(function($){
               $("#campoData").mask("99/99/9999");
@@ -150,6 +151,87 @@
               $("#campoRg").mask("99.999.999 - 9");
               $("#campoCep").mask("99999 - 999");
               $("#campoTelefone").mask("(999) 999-9999");
+            });
+			
+            $("form").validate({
+                rules:{
+                    txtnome:{
+                        required:true,
+                        minlength:3
+                    },
+                    txtrg:{
+                             required:true,
+                            minlength:9
+                    },
+                                    txtcpf:{
+							required:true,
+                        minlength:11
+					},
+					txtemail:{
+						required:true,
+						minlength:7,
+						//valid_email
+					},
+					txtdata:{
+						required:true,
+                        minlength:8
+					},
+					txttelefone:{
+						required:true,
+                        minlength:8
+					},
+					txtlogin:{
+						required:true,
+                        minlength:3
+					},
+                    txtsenha:{
+                        required:true,
+                        minlength:6
+                    },
+                    txtrua:{
+						required:true,
+                        minlength:3
+					},
+					txtnumero:{
+						required:true,
+					},
+					txtcep:{
+						required:true,
+                        minlength:8
+					},
+					txtbairro:{
+						required:true,
+                        minlength:3
+					},
+					txtcidade:{
+						required:true,
+                        minlength:3
+					},
+					txtestado:{
+						required:true,
+                        minlength:2
+					}					
+                },
+                messages: {
+                    txtnome:"Preencha o campo Nome Completo.",
+					txtrg:"RG deve ser preenchido e ter mais que 9 digitos.",
+					txtcpf:"CPF deve ser preenchido e ter mais que 11 digitos.",
+					txtdata:"Data de nascimento deve ser preenchida e seguir o padrão: '99/99/9999'",
+					txttelefone:"Telefone deve ser preenchido e seguir o padrão: '(099) 9999-9999'",
+					txtlogin:"O campo login deve ser preenchido corretamente",
+                    txtsenha:"Preencha corretamente o campo senha.",
+                                        txtemail:"Email invalido",
+					txtrua:"Preencha corretamente o campo Rua",
+					txtnumero:"Preencha corretamente o campo Número",
+					txtcep:"Preencha corretamente o campo Cep seguindo o padrão 99999-999",
+					txtbairro:"Preencha corretamente o campo Bairro",
+					txtcidade:"Preencha corretamente o campo Cidade",
+					txtestado:"Preencha corretamente o campo Estado"
+					
+                },
+                errorElement:"div",errorPlacement: function(error,element) {
+                    $(".coment").html(error);
+                }
             });
 	</script>
     </body>
