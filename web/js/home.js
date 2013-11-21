@@ -146,26 +146,12 @@ var Home=function(){
                     $(".changepass").removeClass("hide");
                     $(".cadastro").addClass("hide");
                     $(".pass").removeClass("hide");
+                    $(".status").empty();
                 });
-
-                $("label span").click(function(a){
-                        //Ao clicar sobre o span do label de logins
-                    $(a.target).parent().find("input").focus();
-                });
-                $("input").focus(function(){
-                        //Ao dar foco no input do modal de login
-                    $(this).parent().find("span").fadeOut();
-                }).blur(function(){
-                    if(!$(this).val()) $(this).parent().find("span").fadeIn();
-                });
-
+                $("#modal").find("form").labelOver("over");
                 $("input.back").click(function(){
                     /*Ao clicar em voltar*/
                     modal.inicial();
-                });
-                $("#modal form.sign input[type='button']").click(function(){
-                    /*Ao submitar o formulario*/
-                    $("#modal form").submit();
                 });
             };
             this.inicial=function(){

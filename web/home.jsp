@@ -77,26 +77,31 @@
                         <div class="login">
                             <h2>Já tenho cadastro</h2>
                             <form action="index.jsp" method="post" class="sign">
-                                <label for="user">
-                                    <span>Login</span><input type="text" name="user" class="button" autocomplete="off"/>
-                                </label>
-                                <label for="senha" >
-                                    <span>Senha</span><input type="password" name="senha" class="button" autocomplete="off"/>
-                                </label>
+                                <div class="label">
+                                    <label for="userName" class="pre">Nome Completo</label>
+                                    <input type="text" name="userName" class="button" autocomplete="off"/>
+                                </div>
+                                <div class="label">
+                                    <label for="senha" class="pre">Senha</label>
+                                    <input type="password" name="senha" class="button" value="" autocomplete="off"/>
+                                </div>
                                 <a href="#forgot">Esqueceu sua senha?</a>
-                                <input type="button" value="" class="button blogin"/>
+                                <input type="submit" value="" class="button blogin"/>
                             </form>
-                            <form action="index.jsp" method="post" class="changepass hide">
-                                <label for="user">
-                                    <span>Login</span><input type="text" name="user" class="button" autocomplete="off"/>
-                                </label>
-                                <label for="senha">
-                                    <span>Nova Senha</span><input type="password" name="senha" class="button" autocomplete="off"/>
-                                </label>
-                                <label for="confsenha">
-                                    <span>Confirme a Nova senha</span><input type="password" name="confsenha" class="button" autocomplete="off"/>
-                                </label>
-                                <input type="button" value="" class="button forgot"/>
+                            <form action="changepass.jsp" method="post" class="changepass hide">
+                                <div class="label">
+                                    <label for="userName" class="pre">Nome Completo</label>
+                                    <input type="text" name="userName" class="button" autocomplete="off"/>
+                                </div>
+                                <div class="label">
+                                    <label for="senha" class="pre">Nova Senha</label>
+                                    <input type="password" name="senha" class="button" autocomplete="off" id="senha"/>
+                                </div>
+                                <div class="label">
+                                    <label for="confsenha" class="pre">Confirme a Nova senha</label>
+                                    <input type="password" name="confsenha" class="button" autocomplete="off"/>
+                                </div>
+                                <input type="submit" value="" class="button forgot"/>
                                 <input type="button" value="" class="button back"/>
                             </form>
                         </div>
@@ -117,9 +122,10 @@
                                 Drummond Games e a nova senha desejada, sua senha será alterada 
                                 e você poderá realizar seu login normalmente.
                             </p>
+                            <div class="status status_two">
+                            </div>
                         </div>
                         <div class="status">
-                            <!--<p>Usuário ou senha inválido(s)</p>-->
                         </div>
                     </div>
                 </div>
@@ -129,5 +135,61 @@
         <script type="text/javascript" src="js/slides.min.jquery.js"></script>
         <script type="text/javascript" src="js/methods.js"></script>
         <script type="text/javascript" src="js/home.js"></script>
+        <script type="text/javascript" src="js/validate.js"></script>
+        <script type="text/javascript">
+            $("form.sign").validate({
+                rules:{
+                    userName:{
+                        required:true,
+                        minlength:3
+                    },
+                    senha:{
+                        required:true,
+                        minlength:6
+                    },
+                    confsenha:{
+                        required:true,
+                        minlength:6
+                    }
+                },
+                messages: {
+                    userName:"Nome Completo e/ou Senha Inválido(s).",
+                    senha:"Nome Completo e/ou Senha Inválido(s)."
+                },
+                errorElement:"div",errorPlacement: function(error,element) {
+                    $(".status").html(error);
+                    error=element.parent().find("label").addClass("error");
+                }
+            });
+            
+            $("form.changepass").validate({
+                rules:{
+                    userName:{
+                        required:true,
+                        minlength:3
+                    },
+                    senha:{
+                        required:true,
+                        minlength:6
+                    },
+                    confsenha:{
+                         required:true,
+                         equalTo:"#senha"
+                    }
+                },
+                messages: {
+                    userName:"Nome Completo Inválido.",
+                    senha:"Nova senha deve ter no mínimo 6 digitos.",
+                    confsenha:{
+                        required: "O campo confirmação de senha é obrigatorio.",
+                        equalTo: "Senhas devem ser iguais."
+                    }
+                },
+                errorElement:"div",errorPlacement: function(error,element) {
+                    $(".status_two").html(error);
+                    error=element.parent().find("label").addClass("error");
+                }
+            });
+        </script>
     </body>
 </html>

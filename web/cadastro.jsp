@@ -42,12 +42,12 @@
                   <div class="title">
                       <p>Cadastro de Clientes</p>
                   </div>
-                  <form name="frmcadastrar" id="id_cadastrar" action="bd_cadastro">
+                  <form name="frmcadastrar" id="id_cadastrar" action="bd_cadastro.jsp">
                     <div class="label">
                       <p>Dados Pessoais</p>
                     </div>
                     <div class="label">
-                      <label>Nome completo</label>
+                        <label for="txtnome">Nome completo</label>
                       <div class="label_sexo">
                         <label>Sexo</label>
                       </div>
@@ -60,7 +60,7 @@
                       </div>
                     </div>
                     <div class="label">
-                      <label>RG</label>
+                      <label for="textrg">RG</label>
                       <div class="label_aux1">
                         <label>CPF</label>
                       </div>
@@ -149,6 +149,7 @@
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/maskedinput.js"></script>
         <script type="text/javascript" src="js/methods.js"></script>
+        <script type="text/javascript" src="js/validate.js"></script>
         <script>
           jQuery(function($){
               $("#campoData").mask("99/99/9999");
@@ -157,6 +158,18 @@
               $("#campoRg").mask("99.999.999 - 9");
               $("#campoCep").mask("99999 - 999");
               $("#campoTelefone").mask("(999) 999-9999");
+            });
+            
+          $("form#id_cadastrar").validate({
+                rules:{
+                    txtnome:{
+                        required:true,
+                        minlength:3
+                    }
+                },
+                messages: {
+                    txtnome:"Nome Completo deve ser preenchido."
+                }
             });
 	</script>
     </body>
