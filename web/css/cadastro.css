@@ -2,20 +2,10 @@ html, body{height:100%; overflow:hidden;background:url(../images/body_bkg.png);b
 body{position: fixed; overflow: hidden; width: 100%;;font:normal 400 10pt 'Arial', sans-serif; color:#b4b3b3;}
 form{width: 100%; margin-left: 15px;}
 
-
-.label p{position: relative;float: left;font-size: 15pt;color:#0a80c1;height: 30px;}
-.label {float:left; width:70%;font-size:11pt; border: 0px solid red;}
-.label_input{float: left; width: 70%; height:25px; border: 0px solid red;}
-
-.label .label_aux1{margin-left: 203px; margin-top: -16px;}
-.label .label_aux2{margin-left: 405px; margin-top: -16px;}
-.label .label_sexo{margin-left: 450px; margin-top: -16px;}
-.label .label_num{float: right; margin-right: 245px; }
-
-.label_input .input_cad{margin-left: 50px;}
-.label_input .sexo_mf{float: right; margin-right: 175px; }
-.label_input .input_num{margin-left: 20px;}
-
+.cad_geral{position: relative; float: left; width: 65%;}
+.cad_geral label{position: relative; padding-right: 30px; width: -30%; float:left; font-size:11pt;}
+.cad_geral p{position: relative;float: left;font-size: 15pt;color:#0a80c1;height: 30px;}
+.coment{position: absolute; left: 65%;margin-top: 150px; border: 2px solid red;}
 
 #wrap{position:absolute;left:0;top:0;width: 100%;height:100%;}
 #wrap header {position: relative;float: left;height: 105px;width: 100%;border-bottom: 1px solid #c6c6c6;background: url(../images/header_bkg.png) repeat;z-index: 100}

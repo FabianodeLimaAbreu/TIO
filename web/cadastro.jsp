@@ -1,7 +1,7 @@
 <%-- 
     Document   : index
     Created on : 19/09/2013, 13:34:50
-    Author     : Fabiano de Lima
+    Author     : Gabriiel
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -42,95 +42,88 @@
                   <div class="title">
                       <p>Cadastro de Clientes</p>
                   </div>
-                  <form name="frmcadastrar" id="id_cadastrar" action="bd_cadastro.jsp">
-                    <div class="label">
+
+                  <form name="frmcadastrar" id="id_cadastrar" action="bd_cadastro">
+                    <div class="cad_geral">
                       <p>Dados Pessoais</p>
                     </div>
-                    <div class="label">
-                        <label for="txtnome">Nome completo</label>
-                      <div class="label_sexo">
-                        <label>Sexo</label>
-                      </div>
-                    </div>
-                    <div class="label_input">
-                        <input type="text" size="54px" name="txtnome" maxlength="45"/>
-                      <div class="sexo_mf">
-                        <label>M</label><input type="radio" name="txtsexo" />
-                        <label>F</label><input type="radio" name="txtsexo" />
-                      </div>
-                    </div>
-                    <div class="label">
-                      <label for="textrg">RG</label>
-                      <div class="label_aux1">
-                        <label>CPF</label>
-                      </div>
-                      <div class="label_aux2">
-                        <label>Data de Nascimento</label>
-                      </div>
-                    </div>
-                    <div class="label_input">
-                      <input type="text" name="txtrg" id="campoRg" size="20px"/>
-                      <input type="text" name="txtcpf" id="campoCpf" size="20px" class="input_cad" />
-                      <input type="text" name="txtdata" size="20px" id="campoData" class="input_cad" /> <!--colocar mascara no campo-->
-                    </div>
-                    <div class="label">
-                      <label>Telefone</label>
-                      <div class="label_aux1">
-                        <label>E-mail</label>
-                      </div>
-                    </div>
-                    <div class="label_input">
-                      <input type="text" id="campoTelefone" name="txttelefone" size="20" /><!--colocar mascara no campo-->
-                      <input type="text" name="txtemail" size="35" class="input_cad" maxlength="40"/>
-                    </div>
-                    <div class="label">
-                      <label>Login</label>
-                      <div class="label_aux1">
-                        <label>Senha</label>
-                      </div>
-                    </div>
-                    <div class="label_input">
-                        <input type="text" name="txtlogin" size="20" maxlength="13"/>
-                        <input type="password" name="txtsenha" size="20" class="input_cad" maxlength="15"/>
-                    </div>
-                      <div class="label">
-                          <p>Endereço</p>
-                      </div>
-                    <div class="label">
-                      <label>Rua</label>
-                      <label class="label_num">Número</label>
-                    </div>
-                    <div class="label_input">
-                      <input type="text" name="txtrua" size="54px" maxlength="50"/>
-                      <input name="txtnumero" type="text" size="3px" class="input_num" maxlength="5"/>
-                    </div>
-                    <div class="label">
-                      <label>CEP</label>
-                      <div class="label_aux1">
-                        <label>Complemento</label>
-                      </div>
-                    </div>
-                    <div class="label_input">
-                      <input type="text" name="txtcep" id="campoCep"/>
-                      <input name="txtcomplemento" type="text" class="input_cad" maxlength="20" />
-                    </div>
-                    <div class="label">
-                      <label>Bairro</label>
-                      <div class="label_aux1">
-                        <label>Cidade</label>
-                      </div>
-                      <div class="label_aux2">
-                        <label>Estado</label>
-                      </div>
-                    </div>
-                      <div class="label_input">
-                      <input name="txtbairro" type="text" size="20" maxlength="21" />
-                      <input name="txtcidade" type="text" size="20" class="input_cad" maxlength="30" />
-                      <input name="txtestado" type="text" size="20" class="input_cad" /> <!--criar combo-->
-                    </div>
+                  <div class="cad_geral">
+                    <label for="txtnome">
+                      <span>Nome Completo</span>
+                      <br /><input type="text" size="54px" name="txtnome" maxlength="45"/>
+                    </label>
+                    <label for="txtsexo">
+                      <span class="position_aux1">Sexo</span>
+                      <br />M<input type="radio" name="txtsexo" />
+                            F<input type="radio" name="txtsexo" /><br />
+                    </label>
+                    <label for="txtrg">
+                      <span>RG</span>
+                      <br/><input type="text" name="txtrg" id="campoRg" size="20px"/>
+                    </label>
+                    <label for="txtcpf">
+                      <span>CPF</span>
+                      <br/><input type="text" name="txtcpf" id="campoCpf" size="20px" />
+                    </label>
+                    <label for="txtdata">
+                      <span>Data de Nascimento</span>
+                      <br/><input type="text" name="txtdata" size="15px" id="campoData" /> 
+                    </label>
+                    <label for="txttelefone">
+                      <span>Telefone</span>
+                      <br /><input type="text" id="campoTelefone" name="txttelefone" size="20" />
+                    </label>
+                    <label for="txtemail">
+                      <span>Email</span>
+                      <br /><input type="text" name="txtemail" size="35" maxlength="40"/>
+                    </label>
+                    <label for="txtlogin">
+                      <span>Login</span>
+                      <br /><input type="text" name="txtlogin" size="20" maxlength="13"/>
+                    </label>
+                    <label for="txtsenha">
+                      <span>Senha</span>
+                      <br /><input type="password" name="txtsenha" size="20" maxlength="15"/>
+                    </label>
+                  <div class="cad_geral">
+                     <br /><p>Endereço</p>
+                  </div>
+                  <label for="txtrua">
+                    <span>Rua</span>
+                    <br /><input type="text" name="txtrua" size="54px" maxlength="50"/>
+                  </label>
+                  <label for="txtnumero">
+                    <span>Número</span>
+                    <br /><input name="txtnumero" type="text" size="3px" class="input_num" maxlength="5"/>
+                  </label>
+                  <label for="txtcep">
+                    <span>CEP</span>
+                    <br /><input type="text" name="txtcep" id="campoCep"/>
+                  </label>
+                  <label for="txtcompl">
+                    <span>Complemento</span>
+                    <br /><input name="txtcompl" type="text" class="input_cad" maxlength="20" />
+                  </label>
+                  <label for="txtbairro">
+                    <span>Bairro</span>
+                    <br /><input name="txtbairro" type="text" size="20" maxlength="21" />
+                  </label>
+                  <label for="txtcidade">
+                    <span>Cidade</span>
+                    <br /><input name="txtcidade" type="text" size="20" class="input_cad" maxlength="30" />
+                  </label>
+                  <label for="txtestado">
+                    <span>Estado</span>
+                    <br /><input name="txtestado" type="text" size="20" class="input_cad" />
+                  </label>
+                </div>
                     <div class="main">
-                      <input type="submit" name="cadastrar" value="Cadastrar" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
-                      <input type="button" name="cancelar" value="Cancelar" onClick="window.location.href='home.jsp';" onMouseOver="style.cursor='pointer'; style.cursor='hand'";>
+                      <br />
+                      <input type="submit" name="cadastrar" value="Cadastrar">
+                      <input type="button" name="cancelar" value="Cancelar" onClick="window.location.href='home.jsp';">
+                    </div>
+                    <div class="coment">
+                      <p>Espaço reservado para o Fabiano colocar o erro.<br/>Não sei se era bem assim o espaço que vc queria.</p>
                     </div>
                   </form>
             </div>
@@ -149,7 +142,6 @@
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/maskedinput.js"></script>
         <script type="text/javascript" src="js/methods.js"></script>
-        <script type="text/javascript" src="js/validate.js"></script>
         <script>
           jQuery(function($){
               $("#campoData").mask("99/99/9999");
@@ -158,18 +150,6 @@
               $("#campoRg").mask("99.999.999 - 9");
               $("#campoCep").mask("99999 - 999");
               $("#campoTelefone").mask("(999) 999-9999");
-            });
-            
-          $("form#id_cadastrar").validate({
-                rules:{
-                    txtnome:{
-                        required:true,
-                        minlength:3
-                    }
-                },
-                messages: {
-                    txtnome:"Nome Completo deve ser preenchido."
-                }
             });
 	</script>
     </body>
