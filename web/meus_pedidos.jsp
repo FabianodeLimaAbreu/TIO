@@ -42,7 +42,7 @@
             <div class="title">
               <p>Meus Pedidos</p>
             </div>
-            <div class="divdebaixo">
+
              <form name="frmcadastrar" action="bd_cadastro">
               <div class="meus_pedidos">
 
@@ -74,7 +74,7 @@
                  </table>
                </form>
               </div>
-            </div>
+
           </div>
           <footer>
             <span class="logo_mini"></span>
