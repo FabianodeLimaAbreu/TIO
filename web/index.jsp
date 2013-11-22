@@ -207,7 +207,7 @@
                 </div>
             </div>
         </div>
-        <iframe name="iframeTeste" id="iframeCart" src="form.jsp"></iframe> <!--Abre a tela que possui o formulario-->
+        <iframe name="iframeCart" id="iframeCart" src="form.jsp"></iframe> <!--Abre a tela que possui o formulario-->
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/maskedinput.js"></script>
         <script type="text/javascript" src="js/methods.js"></script>

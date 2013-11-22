@@ -43,7 +43,7 @@
                       <p>Cadastro de Clientes</p>
                   </div>
 
-                  <form name="frmcadastrar" id="id_cadastrar" action="bd_cadastro">
+                  <form name="frmcadastrar" id="id_cadastrar" action="bd_cadastro" method="post">
                     <div class="cad_geral">
                       <p>Dados Pessoais</p>
                     </div>

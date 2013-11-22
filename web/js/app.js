@@ -346,6 +346,9 @@ var Cart=function(){
             v.writeEndDocument();//Fecha xml
             var n_valor=v.flush(); /*Grava a xml do xml na variavel n_valor*/
             console.log(n_valor); //Depois daqui é soh dar submit no formulario para enviar o valor
+            $('#iframeCart').contents().find('#pedido').val(n_valor); /*Passa o valor da variavel para o input do form*/
+            console.log("segundo: "+$('#iframeCart').contents().find('#pedido').val());
+            $('#iframeCart').contents().find('form').submit(); /*Submit no form do iframe*/
             for(i=0;i<length;i++){
                 //Removendo as propriedades dos elementos adicionados ao carrinho
                 cod=this.itens_venda[[i]].cod-1;
