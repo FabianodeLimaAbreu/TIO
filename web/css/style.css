@@ -383,3 +383,7 @@ ul.ul_conta li {margin-top: 10px; float: left; margin-left: 30px;}
 .meus_pedidos table{position: absolute; width: 920px; left: 50%; margin-left: -285px; }
 .meus_pedidos td{border: 2px solid gray; padding: 10px 0px; height: 30px; width: 70px; text-align: center;}
 .meus_pedidos .HeaderTable{font-weight: bold; color: #dd3200}
+
+.slide{position: relative; float: left; width: 600px;}
+.slide td{border: 2px solid blue; padding: 10px 0px; height: 30px; width: 70px; text-align: center;}
+.slide table{position: relative; width: 920px; left: 50%; margin-left: -285px; }

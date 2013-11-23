@@ -71,6 +71,18 @@
                     <td>01/09/2013</td>
                     <td>Andamento</td>
                   </tr>
+                  <tr>
+                  <!--AVISAR FABIANO SOBRE O PROBLEMA DO SOBRE-->
+                    <td colspan= "4">
+                      <div class="slide">
+                      <table><tr>
+                        <td>
+                          xxxxxxxxxxxx
+                        </td>
+                      </tr></table>
+                      </div>
+                    </td>
+                  </tr>
                  </table>
                </form>
               </div>
