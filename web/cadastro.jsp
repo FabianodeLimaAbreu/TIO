@@ -63,8 +63,8 @@
                     </label>
                     <label for="txtsexo">
                       <span class="position_aux1">Sexo</span>
-                      <br />M<input type="radio" name="txtsexo" />
-                            F<input type="radio" name="txtsexo" /><br />
+                      <br />M<input type="radio" name="txtsexo" value="masc"/>
+                            F<input type="radio" name="txtsexo" value="fem"br />
                     </label>
                     <label for="txtrg">
                       <span>RG</span>
@@ -267,7 +267,7 @@
          + "values ('"+request.getParameter("txtnome")+"','"+request.getParameter("txtsexo")+"','"+request.getParameter("txtrg")+"','"+request.getParameter("txtcpf")+"',"
          + "'"+request.getParameter("txtdata")+"','"+request.getParameter("txttelefone")+"','"+request.getParameter("txtemail")+"','"+request.getParameter("txtlogin")+"',"
          + "'"+request.getParameter("txtsenha")+"','"+request.getParameter("txtrua")+"','"+request.getParameter("txtnumero")+"','"+request.getParameter("txtcep")+"',"
-         + "'"+request.getParameter("txtcomplemento")+"','"+request.getParameter("txtbairro")+"','"+request.getParameter("txtcidade")+"','"+request.getParameter("txtestado")+"')");
+         + "'"+request.getParameter("txtcompl")+"','"+request.getParameter("txtbairro")+"','"+request.getParameter("txtcidade")+"','"+request.getParameter("txtestado")+"')");
 
          JOptionPane.showMessageDialog(null,"Dados Gravado com Sucesso");
          con.close();
