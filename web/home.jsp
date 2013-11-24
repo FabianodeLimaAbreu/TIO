@@ -142,7 +142,6 @@
         <script type="text/javascript" src="js/home.js"></script>
         <script type="text/javascript" src="js/validate.js"></script>
         <script type="text/javascript">
-            /*Teste*/
             $("form.sign").validate({
                 rules:{
                     userName:{
