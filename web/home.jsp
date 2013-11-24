@@ -34,7 +34,7 @@
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     </head>
-    <body> 
+    <body>  
         <div id="wrap" class="home hide">
             <!--Wrap de todo o conteudo-->
             <header>
@@ -51,7 +51,7 @@
                         <li><span class="logout"></span><a href="index.jsp">Login</a></li>
                     </ul> 
                     <a href="#" class="logo"></a>
-                </div>
+                </div
                 <!--<div align=center>
                     <a href='http://contador.s12.com.br'>
                         <img src='http://contador.s12.com.br/img-5A8bCy7b-23.gif' border='0' alt='contador de visitantes'>
@@ -81,7 +81,11 @@
                     <div class="modal-text">
                         <div class="login">
                             <h2>Já tenho cadastro</h2>
-                            <form action="index.jsp" method="post" class="sign">
+                            <form action="index.jsp?acao=button blogin" method="post" class="sign">
+<% if (request.getParameter("acao") == null)
+{ 
+	//JOptionPane.showMessageDialog(null,"Não houve nenhuma tentativa de conexão");
+%>             
                                 <div class="label">
                                     <label for="userName" class="pre">Nome Completo</label>
                                     <input type="text" name="userName" class="button" autocomplete="off"/>
@@ -92,6 +96,55 @@
                                 </div>
                                 <a href="#forgot">Esqueceu sua senha?</a>
                                 <input type="submit" value="" class="button blogin"/>
+<% } 
+    else					      
+       {
+           // JOptionPane.showMessageDialog(null,"Houve Uma tentativa de conexão");
+     
+      try
+           {
+               //Carregar o Driver do Postgresql
+               Class.forName("org.postgresql.Driver");
+               //JOptionPane.showMessageDialog(null,"Driver Carregado");
+               
+               // Conexão com o banco
+               Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/Game","postgres","crla010773");
+               //JOptionPane.showMessageDialog(null,"Conexão Realizada com Sucesso");
+               
+               //if (request.getParameter("user")!=null)
+                 //{ 
+               Statement st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, 
+               ResultSet.CONCUR_READ_ONLY);
+               //JOptionPane.showMessageDialog(null,"Passou pelo Statement");
+               ResultSet rs = st.executeQuery("select * from cadastro where login = '"+
+               request.getParameter("userName")+"' and senha = '"+ 
+               request.getParameter("senha")+"'");
+               //JOptionPane.showMessageDialog(null,"Passou pelo Statement e pelo ResultSet");              
+               con.close();
+                if (rs.next())
+                {
+                 //JOptionPane.showMessageDialog(null,"Chamando a página Index");
+                 response.sendRedirect("index.jsp");                  
+                }
+                 
+                else 
+                 {  
+                 JOptionPane.showMessageDialog(null,"Usuário ou Senha Inválido");
+                 }  
+            //}
+            }   
+           
+           catch(ClassNotFoundException erroClass)
+            {
+            JOptionPane.showMessageDialog(null,"Classe Driver JDBC não foi Localizado, erro = "+erroClass);
+            } 
+           
+           catch(SQLException erroSQL)
+            {
+            JOptionPane.showMessageDialog(null,"Erro de conexão com o Banco de Dados, erro = "+erroSQL);
+            } 
+         }
+        %>                                
                             </form>
                             <form action="changepass.jsp" method="post" class="changepass hide">
                                 <div class="label">
@@ -142,7 +195,7 @@
         <script type="text/javascript" src="js/home.js"></script>
         <script type="text/javascript" src="js/validate.js"></script>
         <script type="text/javascript">
-            $("form.sign").validate({
+    /*    $("form.sign").validate({
                 rules:{
                     userName:{
                         required:true,
@@ -165,7 +218,7 @@
                     $(".status").html(error);
                     error=element.parent().find("label").addClass("error");
                 }
-            });
+            }); */
             
             $("form.changepass").validate({
                 rules:{
@@ -195,6 +248,6 @@
                     error=element.parent().find("label").addClass("error");
                 }
             });
-        </script> 
+        </script>         
     </body>
 </html>
