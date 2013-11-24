@@ -12,7 +12,7 @@
         <title>Esta tela da o submit do form</title>
     </head>
     <body>
-        <form action="post.jsp">
+        <form action="post.jsp" method="get">
             Campo de envio do xml: <input type="text" id="pedido" value="" name="pedido"/>
             Campo de envio do codigo do cliente: <input type="text" id="codCad" value="" name="codCad"/>
         </form>

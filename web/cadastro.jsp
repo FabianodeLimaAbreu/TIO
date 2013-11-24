@@ -155,7 +155,7 @@
         <script>
           jQuery(function($){
               $("#campoData").mask("99/99/9999");
-              $("#campoTelefone").mask("(999) 9999-9999");
+              $("#campoTelefone").mask("(99) 9999-9999");
               $("#campoCpf").mask("999.999.999 - 99");
               $("#campoRg").mask("99.999.999 - 9");
               $("#campoCep").mask("99999 - 999");
@@ -258,7 +258,7 @@
            // Conexão com o banco PostGreSql
                                       //Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/Game","postgres","crla010773");
            //Conexão com o Banco SQL.
-           Connection con = DriverManager.getConnection("jdbc:jtds:sqlserver://localhost:8084;Drummond", "sql", "sql"); 
+           Connection con = DriverManager.getConnection("jdbc:jtds:sqlserver://localhost:8084/Drummond;instance=SQLEXPRESS", "sql", "sql"); 
            //JOptionPane.showMessageDialog(null,"Conexão Realizada com Sucesso");
            
          Statement st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
