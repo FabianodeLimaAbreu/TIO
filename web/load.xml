@@ -51,12 +51,12 @@
                         <div class="title">
                           <h2>Missão</h2>
                         </div>
-                        <p>Missão: Nossa razão de ser é comercializar e distribuir jogos, com a finalidade de oferecer os melhores jogos (duas vezes a mesma palavra) para a plataforma PC para o entretenimento de nossos clientes.</p>
+                        <p>Nossa razão de ser é comercializar e distribuir jogos, com a finalidade de oferecer os melhores jogos para a plataforma PC para o entretenimento de nossos clientes.</p>
 
                         <div class="title">
                           <h2>Visão</h2>
                         </div>
-                        <p>Visão: Estar entre os principais do mercado e ser referência emcomercialização de jogos no Brasil.</p>
+                        <p>Estar entre os principais do mercado e ser referência emcomercialização de jogos no Brasil.</p>
 
                         <div class="title">
                           <h2>Valores</h2>
@@ -226,7 +226,63 @@
     <entry name="meuspedidos">
         <code>
                 <![CDATA[
-                        pedidos
+            <div class="title">
+              <p>Meus Pedidos</p>
+            </div>
+             <form name="frmcadastrar" action="bd_cadastro">
+              <div class="meus_pedidos">
+                <table>
+                  <tr class="HeaderTable">
+                    <td>Número do Pedido</td>
+                    <td>Valor Total (R$)</td>
+                    <td>Data do Pedido</td>
+                    <td>Situação</td>
+                  </tr>
+                  <tr>
+                    <td>123</td>
+                    <td>99,32</td>
+                    <td>19/11/2013</td>
+                    <td>Andamento</td>
+                  </tr>
+                  <tr class="describe">
+                    <td colspan= "4">
+                      <div class="slide">
+                      <table>
+                        <tr class="HeaderSlide">
+                          <td>Jogo</td>
+                          <td>Valor Unidade (R$)</td>
+                          <td>Quantidade</td>
+                        </tr>
+                        <tr>
+                          <td>Diablo</td>
+                          <td>50,00</td>
+                          <td>2</td>
+                        </tr>
+                        <tr>
+                          <td>Sonic</td>
+                          <td>83</td>
+                          <td>1</td>
+                        </tr>
+                      </table>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>50,32</td>
+                    <td>01/09/2013</td>
+                    <td>Andamento</td>
+                  </tr>
+                  <tr>
+                    <td>5658</td>
+                    <td>129,32</td>
+                    <td>19/11/2013</td>
+                    <td>Finalizado</td>
+                  </tr>
+                 </table>
+                </div>
+             </form>
+
                 ]]>
         </code>
     </entry>

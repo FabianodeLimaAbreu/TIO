@@ -59,7 +59,6 @@ public class cart {
     }
     
     public void saveCart() throws ClassNotFoundException, SQLException{
-        JOptionPane.showMessageDialog(null, "null");
         List relatorio_compra = new ArrayList();
         
         try {

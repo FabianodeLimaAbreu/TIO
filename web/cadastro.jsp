@@ -63,8 +63,8 @@
                     </label>
                     <label for="txtsexo">
                       <span class="position_aux1">Sexo</span>
-                      <br />M<input type="radio" name="txtsexo" />
-                            F<input type="radio" name="txtsexo" /><br />
+                      <br />M<input type="radio" name="txtsexo" value="masc"/>
+                            F<input type="radio" name="txtsexo" value="fem"br />
                     </label>
                     <label for="txtrg">
                       <span>RG</span>
@@ -169,73 +169,72 @@
                         minlength:3
                     },
                     txtrg:{
-                             required:true,
+                            required:true,
                             minlength:9
                     },
-                                    txtcpf:{
-							required:true,
+                    txtcpf:{
+                        required:true,
                         minlength:11
-					},
-					txtemail:{
-						required:true,
-						minlength:7,
-						//valid_email
-					},
-					txtdata:{
-						required:true,
+                    },
+                    txtemail:{
+                        required:true,
+                        minlength:7
+                    },
+                    txtdata:{
+                        required:true,
                         minlength:8
-					},
-					txttelefone:{
-						required:true,
+                    },
+                    txttelefone:{
+                        required:true,
                         minlength:8
-					},
-					txtlogin:{
-						required:true,
+                    },
+                    txtlogin:{
+                        required:true,
                         minlength:3
-					},
+                    },
                     txtsenha:{
                         required:true,
                         minlength:6
                     },
                     txtrua:{
-						required:true,
+                        required:true,
                         minlength:3
-					},
-					txtnumero:{
-						required:true,
-					},
-					txtcep:{
-						required:true,
+                    },
+                    txtnumero:{
+                            required:true
+                    },
+                    txtcep:{
+                        required:true,
                         minlength:8
-					},
-					txtbairro:{
-						required:true,
+                    },
+                    txtbairro:{
+                        required:true,
                         minlength:3
-					},
-					txtcidade:{
-						required:true,
+                    },
+                    txtcidade:{
+                        required:true,
                         minlength:3
-					},
-					txtestado:{
-						required:true,
+                    },
+                    txtestado:{
+                        required:true,
                         minlength:2
-					}					
+                    }					
                 },
                 messages: {
                     txtnome:"Preencha o campo Nome Completo.",
-					txtrg:"RG deve ser preenchido e ter mais que 9 digitos.",
-					txtcpf:"CPF deve ser preenchido e ter mais que 11 digitos.",
-					txtdata:"Data de nascimento deve ser preenchida e seguir o padrão: '99/99/9999'",
-					txttelefone:"Telefone deve ser preenchido e seguir o padrão: '(099) 9999-9999'",
-					txtlogin:"O campo login deve ser preenchido corretamente",
+                    txtrg:"RG deve ser preenchido e ter mais que 9 digitos.",
+                    txtcpf:"CPF deve ser preenchido e ter mais que 11 digitos.",
+                    txtdata:"Data de nascimento deve ser preenchida e seguir o padrão: '99/99/9999'",
+                    txttelefone:"Telefone deve ser preenchido e seguir o padrão: '(099) 9999-9999'",
+                    txtlogin:"O campo login deve ser preenchido corretamente",
                     txtsenha:"Preencha corretamente o campo senha.",
-                                        txtemail:"Email invalido",
-					txtrua:"Preencha corretamente o campo Rua",
-					txtnumero:"Preencha corretamente o campo Número",
-					txtcep:"Preencha corretamente o campo Cep seguindo o padrão 99999-999",
-					txtbairro:"Preencha corretamente o campo Bairro",
-					txtcidade:"Preencha corretamente o campo Cidade",
-					txtestado:"Preencha corretamente o campo Estado"
+                    txtemail:"Email invalido",
+                    txtrua:"Preencha corretamente o campo Rua",
+                    txtnumero:"Preencha corretamente o campo Número",
+                    txtcep:"Preencha corretamente o campo Cep seguindo o padrão 99999-999",
+                    txtbairro:"Preencha corretamente o campo Bairro",
+                    txtcidade:"Preencha corretamente o campo Cidade",
+                    txtestado:"Preencha corretamente o campo Estado"
 					
                 },
                 errorElement:"div",errorPlacement: function(error,element) {
@@ -251,15 +250,15 @@
         try						
          {					  						   
          //Carregar o Driver do Postgresql
-           Class.forName("org.postgresql.Driver");
+                              //Class.forName("org.postgresql.Driver");
            //Classe para o Banco SQL.
-           //Class.forName("net.sourceforge.jtds.jdbc.Driver"); 
+           Class.forName("net.sourceforge.jtds.jdbc.Driver"); 
            //JOptionPane.showMessageDialog(null,"Driver Carregado");
 
            // Conexão com o banco PostGreSql
-           Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/Game","postgres","crla010773");
+                                      //Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/Game","postgres","crla010773");
            //Conexão com o Banco SQL.
-           //Connection con = DriverManager.getConnection("jdbc:jtds:sqlserver://localhost:8084;Game", "usuario", "senha"); 
+           Connection con = DriverManager.getConnection("jdbc:jtds:sqlserver://localhost:8084;Drummond", "sql", "sql"); 
            //JOptionPane.showMessageDialog(null,"Conexão Realizada com Sucesso");
            
          Statement st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
@@ -268,7 +267,7 @@
          + "values ('"+request.getParameter("txtnome")+"','"+request.getParameter("txtsexo")+"','"+request.getParameter("txtrg")+"','"+request.getParameter("txtcpf")+"',"
          + "'"+request.getParameter("txtdata")+"','"+request.getParameter("txttelefone")+"','"+request.getParameter("txtemail")+"','"+request.getParameter("txtlogin")+"',"
          + "'"+request.getParameter("txtsenha")+"','"+request.getParameter("txtrua")+"','"+request.getParameter("txtnumero")+"','"+request.getParameter("txtcep")+"',"
-         + "'"+request.getParameter("txtcomplemento")+"','"+request.getParameter("txtbairro")+"','"+request.getParameter("txtcidade")+"','"+request.getParameter("txtestado")+"')");
+         + "'"+request.getParameter("txtcompl")+"','"+request.getParameter("txtbairro")+"','"+request.getParameter("txtcidade")+"','"+request.getParameter("txtestado")+"')");
 
          JOptionPane.showMessageDialog(null,"Dados Gravado com Sucesso");
          con.close();
@@ -288,4 +287,3 @@
         
     </body>
 </html>
-/*Teste*/

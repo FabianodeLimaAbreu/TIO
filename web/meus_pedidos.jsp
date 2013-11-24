@@ -42,39 +42,59 @@
             <div class="title">
               <p>Meus Pedidos</p>
             </div>
-
              <form name="frmcadastrar" action="bd_cadastro">
               <div class="meus_pedidos">
-
                 <table>
                   <tr class="HeaderTable">
                     <td>Número do Pedido</td>
-                    <td>Valor Total</td>
+                    <td>Valor Total (R$)</td>
                     <td>Data do Pedido</td>
                     <td>Situação</td>
                   </tr>
                   <tr>
                     <td>123</td>
-                    <td>R$99,32</td>
+                    <td>99,32</td>
                     <td>19/11/2013</td>
+                    <td>Andamento</td>
+                  </tr>
+                  <tr class="describe">
+                    <td colspan= "4">
+                      <div class="slide">
+                      <table>
+                        <tr class="HeaderSlide">
+                          <td>Jogo</td>
+                          <td>Valor Unidade (R$)</td>
+                          <td>Quantidade</td>
+                        </tr>
+                        <tr>
+                          <td>Diablo</td>
+                          <td>50,00</td>
+                          <td>2</td>
+                        </tr>
+                        <tr>
+                          <td>Sonic</td>
+                          <td>83</td>
+                          <td>1</td>
+                        </tr>
+                      </table>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>50,32</td>
+                    <td>01/09/2013</td>
                     <td>Andamento</td>
                   </tr>
                   <tr>
                     <td>5658</td>
-                    <td>R$129,32</td>
+                    <td>129,32</td>
                     <td>19/11/2013</td>
                     <td>Finalizado</td>
                   </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>R$50,32</td>
-                    <td>01/09/2013</td>
-                    <td>Andamento</td>
-                  </tr>
                  </table>
-               </form>
-              </div>
-
+                </div>
+             </form>
           </div>
           <footer>
             <span class="logo_mini"></span>
