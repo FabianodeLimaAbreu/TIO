@@ -12,7 +12,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" import="carrinho.*;"%>
 <%
     String valor = request.getParameter("pedido"); /*Recebe o valor do input no post*/
-    int codCad = Integer.parseInt(request.getParameter("codCad")); //Esta linha recebe o código do cliente passado pela URL
+    /*int codCad = Integer.parseInt(request.getParameter("codCad")); //Esta linha recebe o código do cliente passado pela URL*/
     cart c = new cart(1, valor); /*Cria o objeto. Nesta linha o valor 1 será substituído pela variável codCad*/
     c.saveCart(); /*Chamada do metodo*/
     List relatorio;
