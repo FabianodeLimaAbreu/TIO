@@ -3,12 +3,7 @@
     Created on : 19/09/2013, 13:34:50
     Author     : Fabiano de Lima
 --%>
-<%@page import="javax.swing.JOptionPane"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.SQLException"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="java.sql.DriverManager"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +29,7 @@
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     </head>
-    <body> 
+    <body>
         <div id="wrap" class="home hide">
             <!--Wrap de todo o conteudo-->
             <header>
@@ -195,6 +190,6 @@
                     error=element.parent().find("label").addClass("error");
                 }
             });
-        </script> 
+        </script>
     </body>
 </html>
