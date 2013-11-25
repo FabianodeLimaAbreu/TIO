@@ -108,31 +108,31 @@
                                   <br /><br />
                                   <label for="txtrua">
                                     <span>Rua </span>
-                                  <div><input type="text" name="txtrua" size="54px" maxlength="50"/></div>
+                                  <div><input type="text" name="txtrua" size="54px" maxlength="50" value="Joaquim Luz" /></div>
                                 </label>
                                 <label for="txtnumero">
                                   <span>Número </span>
-                                  <div><input name="txtnumero" type="text" size="3px" class="input_num" maxlength="5"/></div>
+                                  <div><input name="txtnumero" type="text" size="3px" class="input_num" maxlength="5" value="28"/></div>
                                 </label>
                                 <label for="txtcep">
                                   <span>CEP </span>
-                                  <div><input type="text" name="txtcep" id="campoCep"/></div>
+                                  <div><input type="text" name="txtcep" id="campoCep" value="03569-020"/></div>
                                 </label>
                                 <label for="txtcomplemento">
                                   <span>Complemento </span>
-                                  <div><input name="txtcomplemento" type="text" class="input_cad" maxlength="20" /></div>
+                                  <div><input name="txtcomplemento" type="text" class="input_cad" maxlength="20" value="Casa"/></div>
                                 </label>
                                 <label for="txtbairro">
                                   <span>Bairro </span>
-                                  <div><input type="text" name="txtbairro"/></div>
+                                  <div><input type="text" name="txtbairro" value="Jardim Paulista"/></div>
                                 </label>
                                 <label for="txtcidade">
                                   <span>Cidade</span>
-                                  <div><input name="txtcidade" type="text" size="20" class="input_cad" maxlength="30" /></div>
+                                  <div><input name="txtcidade" type="text" size="20" class="input_cad" maxlength="30" value="São Paulo"/></div>
                                 </label>
                                 <label for="txtestado">
                                   <span>Estado</span>
-                                  <div><input name="txtestado" type="text" size="20" class="input_cad" /> <!--criar combo--></div>
+                                  <div><input name="txtestado" type="text" size="20" class="input_cad" value="SP"/> <!--criar combo--></div>
                                 </label>
                               </div>
                               <div class="button_alt">
@@ -150,42 +150,42 @@
                               <br /><br />
                             <label for="txtnome">
                               <span>Nome completo</span>
-                              <div><input type="text" size="54px" name="txtnome" maxlength="45"/></div>
+                              <div><input type="text" size="54px" name="txtnome" maxlength="45" value="Etevaldo Silva Santos"/></div>
                             </label>
                             <label for="txtsexo">
                               <span class="ajust_sexo">Sexo</span>
                               <div class="op_sexo">
-                                <span>M</span><input type="radio" name="txtsexo" />
+                                <span>M</span><input type="radio" name="txtsexo" checked="TRUE";/>
                                 <span>F</span><input type="radio" name="txtsexo" />
                               </div>
                             </label>
                             <label for="txtrg">
                               <span>RG</span>
-                              <div> <input type="text" name="txtrg" id="campoRg" size="20px"/></div>
+                              <div> <input type="text" name="txtrg" id="campoRg" size="20px" value="33.081.492-8"/></div>
                             </label>
                             <label for="txtcpf">
                               <span>CPF</span>
-                              <div> <input type="text" name="txtcpf" id="campoCpf" size="20px" class="input_cad" /></div>
+                              <div> <input type="text" name="txtcpf" id="campoCpf" size="20px" class="input_cad" value="658.956.001-02"/></div>
                             </label>
                             <label for="txtdata">
                               <span>Data de Nascimento</span>
-                              <div><input type="text" name="txtdata" size="20px" id="campoData" class="input_cad" /> </div>
+                              <div><input type="text" name="txtdata" size="20px" id="campoData" class="input_cad" value="12/06/1992" /> </div>
                             </label>
                             <label for="txttel">
                               <span>Telefone</span>
-                              <div><input type="text" id="campoTelefone" name="txttelefone" size="20" /></div>
+                              <div><input type="text" id="campoTelefone" name="txttelefone" size="20" value="(011)2785-6985"/></div>
                             </label>
                             <label for="txtemail">
                               <span>E-mail</span>
-                              <div><input type="text" name="txtemail" size="35" maxlength="40" /></div>
+                              <div><input type="text" name="txtemail" size="35" maxlength="40" value="123_etevaldo@outlook.com"/></div>
                             </label>
                             <label for="txtlogin">
                               <span>Login</span>
-                              <div><input type="text" name="txtlogin" size="20" maxlength="13"/></div>
+                              <div><input type="text" name="txtlogin" size="20" maxlength="13" value="ete123"/></div>
                             </label>
                             <label for="txtsenha">
                               <span>Senha</span>
-                              <div><input type="text" name="txtsenha" size="20" maxlength="15"/></div>
+                              <div><input type="text" name="txtsenha" size="20" maxlength="15" value="123321et"/></div>
                             </label>
                           </div>
                           <div class="button_alt">
@@ -234,13 +234,13 @@
                 <table>
                   <tr class="HeaderTable">
                     <td>Número do Pedido</td>
-                    <td>Valor Total (R$)</td>
+                    <td>Valor Total</td>
                     <td>Data do Pedido</td>
                     <td>Situação</td>
                   </tr>
                   <tr class="1">
                     <td>123</td>
-                    <td>99,32</td>
+                    <td>R$ 99,32</td>
                     <td>19/11/2013</td>
                     <td>Andamento</td>
                   </tr>
@@ -250,17 +250,17 @@
                       <table>
                         <tr class="HeaderSlide">
                           <td>Jogo</td>
-                          <td>Valor Unidade (R$)</td>
+                          <td>Valor Unidade</td>
                           <td>Quantidade</td>
                         </tr>
                         <tr>
                           <td>Diablo</td>
-                          <td>50,00</td>
+                          <td>R$ 50,00</td>
                           <td>2</td>
                         </tr>
                         <tr>
                           <td>Sonic</td>
-                          <td>83</td>
+                          <td>R$ 83,00</td>
                           <td>1</td>
                         </tr>
                       </table>
@@ -269,13 +269,13 @@
                   </tr>
                   <tr>
                     <td>2</td>
-                    <td>50,32</td>
+                    <td>R$ 50,32</td>
                     <td>01/09/2013</td>
                     <td>Andamento</td>
                   </tr>
                   <tr>
                     <td>5658</td>
-                    <td>129,32</td>
+                    <td>R$ 129,32</td>
                     <td>19/11/2013</td>
                     <td>Finalizado</td>
                   </tr>

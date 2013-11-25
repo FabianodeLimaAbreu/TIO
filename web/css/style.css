@@ -387,7 +387,7 @@ ul.ul_conta li {margin-top: 10px; float: left; margin-left: 30px;}
 .meus_pedidos table tr{cursor:pointer}
 .meus_pedidos .describe{display:none;}
 .slide{position: relative; float: left; width: 600px;}
-.slide td{border: 2px solid #CAE1FF; padding: 10px 0px; height: 30px; width: 70px; text-align: center;}
+.slide td{border: none; padding: 10px 0px; height: 15px; width: 70px; text-align: center;}
 .slide tr{cursor:default}
 .slide table{position: relative; width: 900px; left: 50%; margin-left: -292px; }
 .HeaderSlide {font-weight: bold; color:#dd3200;}
