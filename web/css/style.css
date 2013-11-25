@@ -50,7 +50,7 @@ nav .holder a.sel{background: url(../images/gui.png) no-repeat;background-positi
 #container .content{position: relative;float:left;width: 960px;height: auto;min-height: 600px;padding:10px;background:url(../images/content_bkg.png) repeat;}
 .home #container .content{width: 960px;height: auto;}
 #tabs{position: relative;float:left; margin: 0;}
-iframe{position:relative;float: left;width: 500px;height:500px;border:1px solid red;/*display:none;*/}
+iframe{position:relative;float: left;width: 500px;height:500px;border:1px solid red;display:none;}
 
 /*Sidebar*/
 .sidebar{position:relative;float: left;width: 228px;height:300px;color:#f5f5f5;}
@@ -384,8 +384,10 @@ ul.ul_conta li {margin-top: 10px; float: left; margin-left: 30px;}
 .meus_pedidos td{border: 2px solid gray; padding: 10px 0px; height: 30px; width: 70px; text-align: center;}
 .meus_pedidos .HeaderTable{font-weight: bold; color: #0a80c1}
 
+.meus_pedidos table tr{cursor:pointer}
 .meus_pedidos .describe{display:none;}
 .slide{position: relative; float: left; width: 600px;}
 .slide td{border: 2px solid #CAE1FF; padding: 10px 0px; height: 30px; width: 70px; text-align: center;}
+.slide tr{cursor:default}
 .slide table{position: relative; width: 900px; left: 50%; margin-left: -292px; }
 .HeaderSlide {font-weight: bold; color:#dd3200;}

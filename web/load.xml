@@ -238,13 +238,13 @@
                     <td>Data do Pedido</td>
                     <td>Situação</td>
                   </tr>
-                  <tr>
+                  <tr class="1">
                     <td>123</td>
                     <td>99,32</td>
                     <td>19/11/2013</td>
                     <td>Andamento</td>
                   </tr>
-                  <tr class="describe">
+                  <tr id="1" class="describe">
                     <td colspan= "4">
                       <div class="slide">
                       <table>

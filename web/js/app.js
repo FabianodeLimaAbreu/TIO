@@ -662,6 +662,14 @@ var MeusPedidos=function(){
     this.render=function(){
             menu.disable();
             this.elContainer.fadeIn();
+            $("tr").click(function(a){
+                var id=$(this).attr("class");
+                $("table").find("tr.describe").each(function(){
+                    if($(this).attr("id")===id){
+                        $(this).slideToggle("slow");
+                    }
+                });
+            });
     };
 };
 
