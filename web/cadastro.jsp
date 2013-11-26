@@ -67,8 +67,8 @@
                             </label>
                             <label for="txtsexo">
                                 <span class="position_aux1">Sexo</span>
-                                <br />M<input type="radio" name="txtsexo" />
-                                F<input type="radio" name="txtsexo" /><br />
+                                <br />M<input type="radio" name="txtsexo" value="2"/>
+                                F<input type="radio" name="txtsexo" value="1"/><br />
                             </label>
                             <label for="txtrg">
                                 <span>RG</span>
@@ -186,6 +186,13 @@
         <script type="text/javascript" src="js/methods.js"></script>
         <script type="text/javascript" src="js/validate.js"></script>
         <script>
+            /*$("input[type='submit'").click(function(){
+                $("input[name='txtsexo']").each(function(){
+                    if($(this).attr("checked")==="checked"){
+                        alert($(this).val());
+                    }
+                });
+            });*/
             jQuery(function($){
                 $("#campoData").mask("99/99/9999");
                 $("#campoTelefone").mask("(999) 9999-9999");
@@ -235,7 +242,7 @@
                         minlength:3
                     },
                     txtnumero:{
-                        required:true,
+                        required:true
                     },
                     txtcep:{
                         required:true,

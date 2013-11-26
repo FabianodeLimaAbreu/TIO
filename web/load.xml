@@ -183,10 +183,6 @@
                               <span>Login</span>
                               <div><input type="text" name="txtlogin" size="20" maxlength="13" value="ete123"/></div>
                             </label>
-                            <label for="txtsenha">
-                              <span>Senha</span>
-                              <div><input type="text" name="txtsenha" size="20" maxlength="15" value="123321et"/></div>
-                            </label>
                           </div>
                           <div class="button_alt">
                               <input type="submit" name="cadastrar" value="Alterar">
@@ -203,7 +199,7 @@
                             <br /><br />
                               <label for="txtnovasenha">
                               <span>Nova Senha</span>
-                              <div><input type="text" name="txtnovasenha" size="20"></div>
+                              <div><input type="password" name="txtnovasenha" size="20"></div>
                             </label>
                             <label for="txtsenhalogin">
                               <span>Login</span>
