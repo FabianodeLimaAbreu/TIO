@@ -293,7 +293,6 @@
 
                     //Variáveis que recebem os parâmetros passados por url.
                     String nome = request.getParameter("txtnome");
-                    String sexo = request.getParameter("txtsexo");
                     String rg = request.getParameter("txtrg");
                     String cpf = request.getParameter("txtcpf");
                     String dataNascimento = request.getParameter("txtdata");
@@ -309,14 +308,7 @@
                     String cidade = request.getParameter("txtcidade");
                     int codestado = Integer.parseInt(request.getParameter("txtestado"));
 
-                    int codsexo = 0;
-
-                    //Tratativa pra passar o código do sexo
-                    if (sexo.trim() == "F") {
-                        codsexo = 1;
-                    } else if (sexo.trim() == "M") {
-                        codsexo = 2;
-                    }
+                    int codsexo = Integer.parseInt(request.getParameter("txtsexo"));
 
                     Cadastro c = new Cadastro(nome, codsexo, rg, cpf, dataNascimento, telefone, email, login, senha, rua, numero, cep, bairro, cidade, codestado, complemento);
                     c.cadastrar();
