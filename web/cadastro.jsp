@@ -3,6 +3,11 @@
     Created on : 19/09/2013, 13:34:50
     Author     : Gabriiel
 --%>
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.List"%>
+<%@page import="cadastro.*"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="DAO.GerenciadorDeConexao"%>
 <%@page import="javax.swing.JOptionPane"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
@@ -31,13 +36,12 @@
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <link href="css/iehack.css" rel="stylesheet">
     <![endif]-->
-    <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="shortcut icon" href="favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     </head>
     <body>
-<% if (request.getParameter("acao") == null)
-{ 
-	//JOptionPane.showMessageDialog(null,"Não houve nenhuma tentativa de conexão");
+        <% if (request.getParameter("acao") == null) {
+                //JOptionPane.showMessageDialog(null,"Não houve nenhuma tentativa de conexão");
 %>          
         <div id="wrap">
             <!--Wrap de todo o conteudo-->
@@ -47,96 +51,125 @@
                 </div>
             </header>
             <div id="container" class="holder">
-              <div class="content">
-                  <div class="title">
-                      <p>Cadastro de Clientes</p>
-                  </div>
+                <div class="content">
+                    <div class="title">
+                        <p>Cadastro de Clientes</p>
+                    </div>
 
-                  <form name="frmcadastrar" id="id_cadastrar" action="cadastro.jsp?acao=cadastrar" method="post">
-                    <div class="cad_geral">
-                      <p>Dados Pessoais</p>
-                    </div>
-                  <div class="cad_geral">
-                    <label for="txtnome">
-                      <span>Nome Completo</span>
-                      <br /><input type="text" size="54px" name="txtnome" maxlength="45"/>
-                    </label>
-                    <label for="txtsexo">
-                      <span class="position_aux1">Sexo</span>
-                      <br />M<input type="radio" name="txtsexo" value="masc"/>
-                            F<input type="radio" name="txtsexo" value="fem"br />
-                    </label>
-                    <label for="txtrg">
-                      <span>RG</span>
-                      <br/><input type="text" name="txtrg" id="campoRg" size="20px"/>
-                    </label>
-                    <label for="txtcpf">
-                      <span>CPF</span>
-                      <br/><input type="text" name="txtcpf" id="campoCpf" size="20px" />
-                    </label>
-                    <label for="txtdata">
-                      <span>Data de Nascimento</span>
-                      <br/><input type="text" name="txtdata" size="15px" id="campoData" /> 
-                    </label>
-                    <label for="txttelefone">
-                      <span>Telefone</span>
-                      <br /><input type="text" id="campoTelefone" name="txttelefone" size="20" />
-                    </label>
-                    <label for="txtemail">
-                      <span>Email</span>
-                      <br /><input type="text" name="txtemail" size="35" maxlength="40"/>
-                    </label>
-                    <label for="txtlogin">
-                      <span>Login</span>
-                      <br /><input type="text" name="txtlogin" size="20" maxlength="13"/>
-                    </label>
-                    <label for="txtsenha">
-                      <span>Senha</span>
-                      <br /><input type="password" name="txtsenha" size="20" maxlength="15"/>
-                    </label>
-                  <div class="cad_geral">
-                     <br /><p>Endereço</p>
-                  </div>
-                  <label for="txtrua">
-                    <span>Rua</span>
-                    <br /><input type="text" name="txtrua" size="54px" maxlength="50"/>
-                  </label>
-                  <label for="txtnumero">
-                    <span>Número</span>
-                    <br /><input name="txtnumero" type="text" size="3px" class="input_num" maxlength="5"/>
-                  </label>
-                  <label for="txtcep">
-                    <span>CEP</span>
-                    <br /><input type="text" name="txtcep" id="campoCep"/>
-                  </label>
-                  <label for="txtcompl">
-                    <span>Complemento</span>
-                    <br /><input name="txtcompl" type="text" class="input_cad" maxlength="20" />
-                  </label>
-                  <label for="txtbairro">
-                    <span>Bairro</span>
-                    <br /><input name="txtbairro" type="text" size="20" maxlength="21" />
-                  </label>
-                  <label for="txtcidade">
-                    <span>Cidade</span>
-                    <br /><input name="txtcidade" type="text" size="20" class="input_cad" maxlength="30" />
-                  </label>
-                  <label for="txtestado">
-                    <span>Estado</span>
-                    <br /><input name="txtestado" type="text" size="20" class="input_cad" />
-                  </label>
-                </div>
-                    <div class="main">
-                      <br />
-                      <input type="submit" name="cadastrar" value="Cadastrar">
-                      <input type="button" name="cancelar" value="Cancelar" onClick="window.location.href='home.jsp';">
-                    </div>
-                    <div class="coment">
-                    	<!--Div de status-->
-                    </div>
-                  </form>
-                  </div>     
-              <footer>
+                    <form name="frmcadastrar" id="id_cadastrar" action="cadastro.jsp?acao=cadastrar" method="post">
+                        <div class="cad_geral">
+                            <p>Dados Pessoais</p>
+                        </div>
+                        <div class="cad_geral">
+                            <label for="txtnome">
+                                <span>Nome Completo</span>
+                                <br /><input type="text" size="54px" name="txtnome" maxlength="45"/>
+                            </label>
+                            <label for="txtsexo">
+                                <span class="position_aux1">Sexo</span>
+                                <br />M<input type="radio" name="txtsexo" />
+                                F<input type="radio" name="txtsexo" /><br />
+                            </label>
+                            <label for="txtrg">
+                                <span>RG</span>
+                                <br/><input type="text" name="txtrg" id="campoRg" size="20px"/>
+                            </label>
+                            <label for="txtcpf">
+                                <span>CPF</span>
+                                <br/><input type="text" name="txtcpf" id="campoCpf" size="20px" />
+                            </label>
+                            <label for="txtdata">
+                                <span>Data de Nascimento</span>
+                                <br/><input type="text" name="txtdata" size="15px" id="campoData" /> 
+                            </label>
+                            <label for="txttelefone">
+                                <span>Telefone</span>
+                                <br /><input type="text" id="campoTelefone" name="txttelefone" size="20" />
+                            </label>
+                            <label for="txtemail">
+                                <span>Email</span>
+                                <br /><input type="text" name="txtemail" size="35" maxlength="40"/>
+                            </label>
+                            <label for="txtlogin">
+                                <span>Login</span>
+                                <br /><input type="text" name="txtlogin" size="20" maxlength="13"/>
+                            </label>
+                            <label for="txtsenha">
+                                <span>Senha</span>
+                                <br /><input type="password" name="txtsenha" size="20" maxlength="15"/>
+                            </label>
+                            <div class="cad_geral">
+                                <br /><p>Endereço</p>
+                            </div>
+                            <label for="txtrua">
+                                <span>Rua</span>
+                                <br /><input type="text" name="txtrua" size="54px" maxlength="50"/>
+                            </label>
+                            <label for="txtnumero">
+                                <span>Número</span>
+                                <br /><input name="txtnumero" type="text" size="3px" class="input_num" maxlength="5"/>
+                            </label>
+                            <label for="txtcep">
+                                <span>CEP</span>
+                                <br /><input type="text" name="txtcep" id="campoCep"/>
+                            </label>
+                            <label for="txtcompl">
+                                <span>Complemento</span>
+                                <br /><input name="txtcompl" type="text" class="input_cad" maxlength="20" />
+                            </label>
+                            <label for="txtbairro">
+                                <span>Bairro</span>
+                                <br /><input name="txtbairro" type="text" size="20" maxlength="21" />
+                            </label>
+                            <label for="txtcidade">
+                                <span>Cidade</span>
+                                <br /><input name="txtcidade" type="text" size="20" class="input_cad" maxlength="30" />
+                            </label>
+                            <label for="txtestado">
+                                <span>Estado</span>
+                                <br />
+                                <select name="txtestado" size="1">
+                                    <option value = "1">AC</option>
+                                    <option value = "2">AL</option>
+                                    <option value = "3">AM</option>
+                                    <option value = "4">AP</option>
+                                    <option value = "5">BA</option>
+                                    <option value = "6">CE</option>
+                                    <option value = "7">DF</option>
+                                    <option value = "8">ES</option>
+                                    <option value = "9">GO</option>
+                                    <option value = "10">MA</option>
+                                    <option value = "11">MG</option>
+                                    <option value = "12">MS</option>
+                                    <option value = "13">MT</option>
+                                    <option value = "14">PA</option>
+                                    <option value = "15">PB</option>
+                                    <option value = "16">PE</option>
+                                    <option value = "17">PI</option>
+                                    <option value = "18">PR</option>
+                                    <option value = "19">RJ</option>
+                                    <option value = "20">RN</option>
+                                    <option value = "21">RR</option>
+                                    <option value = "22">RO</option>
+                                    <option value = "23">RS</option>
+                                    <option value = "24">SC</option>
+                                    <option value = "25">SE</option>
+                                    <option value = "26">SP</option>
+                                    <option value = "27">TO</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="main">
+                            <br />
+                            <input type="submit" name="cadastrar" value="Cadastrar">
+                            <input type="button" name="cancelar" value="Cancelar" onClick="window.location.href='home.jsp';">
+                        </div>
+                        <div class="coment">
+                            <!--Div de status-->
+                        </div>
+                    </form>
+                </div>     
+                <footer>
                     <div class="payform">
                         <h1>FORMA DE PAGAMENTO</h1>
                         Boleto<br/>
@@ -151,15 +184,15 @@
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/maskedinput.js"></script>
         <script type="text/javascript" src="js/methods.js"></script>
-         <script type="text/javascript" src="js/validate.js"></script>
+        <script type="text/javascript" src="js/validate.js"></script>
         <script>
-          jQuery(function($){
-              $("#campoData").mask("99/99/9999");
-              $("#campoTelefone").mask("(99) 9999-9999");
-              $("#campoCpf").mask("999.999.999 - 99");
-              $("#campoRg").mask("99.999.999 - 9");
-              $("#campoCep").mask("99999 - 999");
-              $("#campoTelefone").mask("(999) 9999-9999");
+            jQuery(function($){
+                $("#campoData").mask("99/99/9999");
+                $("#campoTelefone").mask("(999) 9999-9999");
+                $("#campoCpf").mask("999.999.999 - 99");
+                $("#campoRg").mask("99.999.999 - 9");
+                $("#campoCep").mask("99999 - 999");
+                $("#campoTelefone").mask("(999) 999-9999");
             });
 			
             $("form").validate({
@@ -169,8 +202,8 @@
                         minlength:3
                     },
                     txtrg:{
-                            required:true,
-                            minlength:9
+                        required:true,
+                        minlength:9
                     },
                     txtcpf:{
                         required:true,
@@ -178,7 +211,8 @@
                     },
                     txtemail:{
                         required:true,
-                        minlength:7
+                        minlength:7,
+                        //valid_email
                     },
                     txtdata:{
                         required:true,
@@ -201,7 +235,7 @@
                         minlength:3
                     },
                     txtnumero:{
-                            required:true
+                        required:true,
                     },
                     txtcep:{
                         required:true,
@@ -216,8 +250,7 @@
                         minlength:3
                     },
                     txtestado:{
-                        required:true,
-                        minlength:2
+                        required:true
                     }					
                 },
                 messages: {
@@ -241,49 +274,53 @@
                     $(".coment").html(error);
                 }
             });
-	</script>
-<% } 
- else					      
-    {
-           // JOptionPane.showMessageDialog(null,"Houve Uma tentativa de conexão");
+        </script>
+        <% } else {
 
-        try						
-         {					  						   
-         //Carregar o Driver do Postgresql
-                              //Class.forName("org.postgresql.Driver");
-           //Classe para o Banco SQL.
-           Class.forName("net.sourceforge.jtds.jdbc.Driver"); 
-           //JOptionPane.showMessageDialog(null,"Driver Carregado");
+                Connection con = null;
+                try {
 
-           // Conexão com o banco PostGreSql
-                                      //Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/Game","postgres","crla010773");
-           //Conexão com o Banco SQL.
-           Connection con = DriverManager.getConnection("jdbc:jtds:sqlserver://localhost:8084/Drummond;instance=SQLEXPRESS", "sql", "sql"); 
-           //JOptionPane.showMessageDialog(null,"Conexão Realizada com Sucesso");
-           
-         Statement st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
 
-         st.executeUpdate(" insert into cadastro (nome, sexo, rg, cpf, nascimento, telefone, email, login, senha, rua, numero, cep, complemento, bairro, cidade, estado) "
-         + "values ('"+request.getParameter("txtnome")+"','"+request.getParameter("txtsexo")+"','"+request.getParameter("txtrg")+"','"+request.getParameter("txtcpf")+"',"
-         + "'"+request.getParameter("txtdata")+"','"+request.getParameter("txttelefone")+"','"+request.getParameter("txtemail")+"','"+request.getParameter("txtlogin")+"',"
-         + "'"+request.getParameter("txtsenha")+"','"+request.getParameter("txtrua")+"','"+request.getParameter("txtnumero")+"','"+request.getParameter("txtcep")+"',"
-         + "'"+request.getParameter("txtcompl")+"','"+request.getParameter("txtbairro")+"','"+request.getParameter("txtcidade")+"','"+request.getParameter("txtestado")+"')");
+                    //Conexão com o Banco SQL.
+                    con = GerenciadorDeConexao.getConexao();
 
-         JOptionPane.showMessageDialog(null,"Dados Gravado com Sucesso");
-         con.close();
-         response.sendRedirect("home.jsp");
-         }						
+                    //Variáveis que recebem os parâmetros passados por url.
+                    String nome = request.getParameter("txtnome");
+                    String sexo = request.getParameter("txtsexo");
+                    String rg = request.getParameter("txtrg");
+                    String cpf = request.getParameter("txtcpf");
+                    String dataNascimento = request.getParameter("txtdata");
+                    String telefone = request.getParameter("txttelefone");
+                    String email = request.getParameter("txtemail");
+                    String login = request.getParameter("txtlogin");
+                    String senha = request.getParameter("txtsenha");
+                    String rua = request.getParameter("txtrua");
+                    int numero = Integer.parseInt(request.getParameter("txtnumero"));
+                    String cep = request.getParameter("txtcep");
+                    String complemento = request.getParameter("txtcomplemento");
+                    String bairro = request.getParameter("txtbairro");
+                    String cidade = request.getParameter("txtcidade");
+                    int codestado = Integer.parseInt(request.getParameter("txtestado"));
 
-          catch(ClassNotFoundException erroClass)
-          {
-          JOptionPane.showMessageDialog(null,"Classe Driver JDBC não foi Localizado, erro = "+erroClass);
-          } 
+                    int codsexo = 0;
 
-         catch(SQLException erroSQL)
-          {
-          JOptionPane.showMessageDialog(null,"Erro de conexão com o Banco de Dados, erro = "+erroSQL);
-          }				  
-      }%>        
-        
+                    //Tratativa pra passar o código do sexo
+                    if (sexo.trim() == "F") {
+                        codsexo = 1;
+                    } else if (sexo.trim() == "M") {
+                        codsexo = 2;
+                    }
+
+                    Cadastro c = new Cadastro(nome, codsexo, rg, cpf, dataNascimento, telefone, email, login, senha, rua, numero, cep, bairro, cidade, codestado, complemento);
+                    c.cadastrar();
+
+                } catch (SQLException erroSQL) {
+                    JOptionPane.showMessageDialog(null, "Erro: " + erroSQL.toString());
+                } finally {
+                    GerenciadorDeConexao.closeConexao(con);
+                    response.sendRedirect("home.jsp");
+                }
+            }%>        
+
     </body>
 </html>
