@@ -240,7 +240,7 @@
                   </tr>
                   <tr class="1">
                     <td>123</td>
-                    <td>R$ 99,32</td>
+                    <td>R$ 133,00</td>
                     <td>19/11/2013</td>
                     <td>Andamento</td>
                   </tr>
@@ -267,17 +267,63 @@
                       </div>
                     </td>
                   </tr>
-                  <tr>
+                  <tr class="2">
                     <td>2</td>
-                    <td>R$ 50,32</td>
+                    <td>R$ 112,00</td>
                     <td>01/09/2013</td>
                     <td>Andamento</td>
                   </tr>
-                  <tr>
+                  <tr id="2" class="describe">
+                    <td colspan= "4">
+                      <div class="slide">
+                      <table>
+                        <tr class="HeaderSlide">
+                          <td>Jogo</td>
+                          <td>Valor Unidade</td>
+                          <td>Quantidade</td>
+                        </tr>
+                        <tr>
+                          <td>Fifa 2013</td>
+                          <td>R$ 72,00</td>
+                          <td>2</td>
+                        </tr>
+                        <tr>
+                          <td>Mario World</td>
+                          <td>R$ 40,00</td>
+                          <td>1</td>
+                        </tr>
+                      </table>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="3">
                     <td>5658</td>
-                    <td>R$ 129,32</td>
+                    <td>R$ 157,41</td>
                     <td>19/11/2013</td>
                     <td>Finalizado</td>
+                  </tr>
+                  <tr id="3" class="describe">
+                    <td colspan= "4">
+                      <div class="slide">
+                      <table>
+                        <tr class="HeaderSlide">
+                          <td>Jogo</td>
+                          <td>Valor Unidade</td>
+                          <td>Quantidade</td>
+                        </tr>
+                        <tr>
+                          <td>Train Simulator 2014</td>
+                          <td>R$ 84,41</td>
+                          <td>2</td>
+                        </tr>
+                        <tr>
+                          <td>GRID 2</td>
+                          <td>R$ 73,00</td>
+                          <td>1</td>
+                        </tr>
+                      </table>
+                      </div>
+                    </td>
                   </tr>
                  </table>
                 </div>
