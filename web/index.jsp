@@ -53,7 +53,7 @@
                             <input type="submit" class="button s-quart neat bsearch" value="" />
                         </div>
                     </form>
-                    <p>Olá, <span class="name">Etevaldo</span></p>
+                    <p>Olá, <span class="name">Bruna</span></p>
                     <a class="button s-one-six bcart" href="#cart"><span class="button neat count">0</span></a>
                 </div>
             </header>
