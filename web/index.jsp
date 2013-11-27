@@ -32,7 +32,7 @@
     <body>
         <div id="wrap" class="hide">
             <div class="mask_default mask">
-                <img src="images/loader.GIF" class="loader">
+                <img src="images/loader.gif" class="loader">
             </div>
             <!--Wrap de todo o conteudo-->
             <header>

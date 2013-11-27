@@ -171,7 +171,7 @@ var Modal=function(el){
              case "cart":
                 this.text.removeClass("bad");
                 this.aviso.find("h2").text("Pedido realizado com sucesso!");
-                this.aviso.find("p").text("Sua compra foi realizada com sucesso!");
+                this.aviso.find("p").text("Aguarde contato telefônico para confirmação da compra em até 24 horas!");
                 break;
              case "cartEmpty":
                 this.text.addClass("bad");
