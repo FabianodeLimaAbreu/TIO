@@ -150,13 +150,13 @@
                               <br /><br />
                             <label for="txtnome">
                               <span>Nome completo</span>
-                              <div><input type="text" size="54px" name="txtnome" maxlength="45" value="Etevaldo Silva Santos"/></div>
+                              <div><input type="text" size="54px" name="txtnome" maxlength="45" value="Bruna"/></div>
                             </label>
                             <label for="txtsexo">
                               <span class="ajust_sexo">Sexo</span>
                               <div class="op_sexo">
-                                <span>M</span><input type="radio" name="txtsexo" checked="TRUE";/>
-                                <span>F</span><input type="radio" name="txtsexo" />
+                                <span>M</span><input type="radio" name="txtsexo" />
+                                <span>F</span><input type="radio" name="txtsexo" checked="TRUE";/>
                               </div>
                             </label>
                             <label for="txtrg">
